@@ -1,0 +1,87 @@
+system:
+  device: "cuda"  # cuda or cpu
+  seed: 42
+  log_dir: "./logs"
+  debug_mode: false
+
+# Document processing configuration
+document_processor:
+  spacy_model: "en_core_web_lg"
+  transformer_model: "Jean-Baptiste/camembert-ner-with-dates"
+  use_spacy: true
+  use_transformers: true
+  relation_proximity_threshold: 100  # characters
+  merge_confidence_threshold: 0.7
+
+# Multi-view graph construction
+multi_view:
+  semantic:
+    enable: true
+    tfidf_min_df: 2
+    tfidf_max_df: 0.95
+    similarity_threshold: 0.3
+  structural:
+    enable: true
+    hierarchy:
+      - ["DOCUMENT", "SECTION"]
+      - ["SECTION", "PARAGRAPH"]
+      - ["PARAGRAPH", "SENTENCE"]
+  temporal:
+    enable: true
+    time_format: "%Y-%m-%d"
+    max_temporal_gap: 30  # days
+  meta_graph:
+    enable: true
+    min_relation_frequency: 5
+
+# Neural Architecture Search parameters
+nas:
+  search_space:
+    gnn_layers: ["GCN", "GAT", "GraphSAGE", "GIN"]
+    temporal_ops: ["TGCN", "EvolveGCN", "DyGNN"]
+    attention_heads: [2, 4, 8]
+  controller:
+    hidden_size: 128
+    lstm_layers: 2
+    exploration_rate: 0.3
+  training:
+    nas_epochs: 50
+    population_size: 20
+    validation_split: 0.2
+
+# Few-shot/Zero-shot learning
+few_shot:
+  enable: true
+  prototype_dim: 128
+  entity_similarity_threshold: 0.65
+  relation_similarity_threshold: 0.55
+  support_set_size: 5
+  maml:
+    inner_lr: 0.01
+    meta_lr: 0.001
+
+# Temporal adaptation
+temporal:
+  update_method: "gru"  # options: gru, tgcn, evolve
+  embedding_dim: 256
+  prune_stale_edges: true
+  staleness_threshold: 30  # days
+  history_window: 7
+
+# Training parameters
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  epochs: 100
+  patience: 10
+  loss_weights:
+    entity: 0.6
+    relation: 0.3
+    temporal: 0.1
+
+# Path configurations
+paths:
+  data_dir: "./data"
+  output_dir: "./output"
+  pretrained_models: "./models"
+  domain_configs: "./config/domain_configs"
