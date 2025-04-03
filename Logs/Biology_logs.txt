@@ -1,0 +1,2853 @@
+7.7s 1 {'PERSON': 788, 'ORG': 935, 'CARDINAL': 403, 'GPE': 575, 'PRODUCT': 109, 'NORP': 102, 'DATE': 172, 'LOC': 49, 'FAC': 25, 'WORK_OF_ART': 5, 'EVENT': 4, 'LAW': 13, 'ORDINAL': 3, 'PERCENT': 1}
+9.6s 2 Collecting torch-geometric
+9.6s 3 Downloading torch_geometric-2.6.1-py3-none-any.whl.metadata (63 kB)
+9.6s 4 [?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/63.1 kB[0m [31m?[0m eta [36m-:--:--[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m63.1/63.1 kB[0m [31m2.9 MB/s[0m eta [36m0:00:00[0m
+9.6s 5 [?25hRequirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (3.11.12)
+9.6s 6 Requirement already satisfied: fsspec in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (2024.12.0)
+9.6s 7 Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (3.1.4)
+9.6s 8 Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (1.26.4)
+9.6s 9 Requirement already satisfied: psutil>=5.8.0 in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (5.9.5)
+9.6s 10 Requirement already satisfied: pyparsing in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (3.2.0)
+9.6s 11 Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (2.32.3)
+9.6s 12 Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from torch-geometric) (4.67.1)
+9.6s 13 Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (2.4.6)
+9.6s 14 Requirement already satisfied: aiosignal>=1.1.2 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (1.3.2)
+9.6s 15 Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (5.0.1)
+9.6s 16 Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (25.1.0)
+9.6s 17 Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (1.5.0)
+9.6s 18 Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (6.1.0)
+9.6s 19 Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (0.2.1)
+9.6s 20 Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->torch-geometric) (1.18.3)
+9.7s 21 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch-geometric) (3.0.2)
+9.7s 22 Requirement already satisfied: mkl_fft in /usr/local/lib/python3.10/dist-packages (from numpy->torch-geometric) (1.3.8)
+9.7s 23 Requirement already satisfied: mkl_random in /usr/local/lib/python3.10/dist-packages (from numpy->torch-geometric) (1.2.4)
+9.7s 24 Requirement already satisfied: mkl_umath in /usr/local/lib/python3.10/dist-packages (from numpy->torch-geometric) (0.1.1)
+9.7s 25 Requirement already satisfied: mkl in /usr/local/lib/python3.10/dist-packages (from numpy->torch-geometric) (2025.0.1)
+9.7s 26 Requirement already satisfied: tbb4py in /usr/local/lib/python3.10/dist-packages (from numpy->torch-geometric) (2022.0.0)
+9.7s 27 Requirement already satisfied: mkl-service in /usr/local/lib/python3.10/dist-packages (from numpy->torch-geometric) (2.4.1)
+9.7s 28 Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->torch-geometric) (3.4.1)
+9.7s 29 Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests->torch-geometric) (3.10)
+9.7s 30 Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->torch-geometric) (2.3.0)
+9.7s 31 Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->torch-geometric) (2025.1.31)
+9.8s 32 Requirement already satisfied: typing-extensions>=4.1.0 in /usr/local/lib/python3.10/dist-packages (from multidict<7.0,>=4.5->aiohttp->torch-geometric) (4.12.2)
+9.8s 33 Requirement already satisfied: intel-openmp>=2024 in /usr/local/lib/python3.10/dist-packages (from mkl->numpy->torch-geometric) (2024.2.0)
+9.8s 34 Requirement already satisfied: tbb==2022.* in /usr/local/lib/python3.10/dist-packages (from mkl->numpy->torch-geometric) (2022.0.0)
+9.8s 35 Requirement already satisfied: tcmlib==1.* in /usr/local/lib/python3.10/dist-packages (from tbb==2022.*->mkl->numpy->torch-geometric) (1.2.0)
+9.8s 36 Requirement already satisfied: intel-cmplr-lib-rt in /usr/local/lib/python3.10/dist-packages (from mkl_umath->numpy->torch-geometric) (2024.2.0)
+9.8s 37 Requirement already satisfied: intel-cmplr-lib-ur==2024.2.0 in /usr/local/lib/python3.10/dist-packages (from intel-openmp>=2024->mkl->numpy->torch-geometric) (2024.2.0)
+9.8s 38 Downloading torch_geometric-2.6.1-py3-none-any.whl (1.1 MB)
+9.8s 39 [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.1/1.1 MB[0m [31m36.0 MB/s[0m eta [36m0:00:00[0m
+13.4s 40 [?25hInstalling collected packages: torch-geometric
+14.5s 41 Successfully installed torch-geometric-2.6.1
+33.5s 42 2025-03-30 18:50:39.456078: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+33.8s 43 2025-03-30 18:50:39.734390: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+33.9s 44 2025-03-30 18:50:39.821521: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+57.4s 45 <ipython-input-16-a07d119450ca>:12: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+57.4s 46 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
+57.4s 47 for rel, embed in tqdm_notebook(embed_dict.items(), total= len(embed_dict), desc = "Processing Embeddings: "):
+58.3s 48 <ipython-input-20-f43bff4d4fc9>:9: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+58.3s 49 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
+58.3s 50 for clust in tqdm_notebook(centroids_cluster, total = len(centroids_cluster), desc = "Finding BestName"):
+59.7s 51 Total Node labels:  1147
+68.1s 52 <ipython-input-45-7d1187f0f09e>:1: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+68.1s 53 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
+68.1s 54 for view, edge_info in tqdm_notebook(view_edge_data.items(), total = len(view_edge_data), desc = "Search for best Architecture for all the views"):
+68.3s 55 
+68.3s 56 Searching best architecture for view: use
+68.3s 57 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+68.7s 58 Epoch 5/20 Loss: 0.8906 Val F1: 0.2993
+69.0s 59 Epoch 10/20 Loss: 0.7633 Val F1: 0.3224
+69.2s 60 Epoch 15/20 Loss: 0.6694 Val F1: 0.4228
+69.4s 61 Epoch 20/20 Loss: 0.5916 Val F1: 0.4602
+69.4s 62 Trial 1 Final Val F1: 0.4701
+69.4s 63 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+69.4s 64 Epoch 5/20 Loss: 0.9318 Val F1: 0.1023
+69.7s 65 Epoch 10/20 Loss: 0.6995 Val F1: 0.2321
+69.7s 66 Epoch 15/20 Loss: 0.5650 Val F1: 0.3137
+70.0s 67 Epoch 20/20 Loss: 0.4552 Val F1: 0.3646
+70.0s 68 Trial 2 Final Val F1: 0.3576
+70.0s 69 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+70.2s 70 Epoch 5/20 Loss: 0.4972 Val F1: 0.1009
+70.2s 71 Epoch 10/20 Loss: 0.2321 Val F1: 0.1029
+70.5s 72 Epoch 15/20 Loss: 0.1336 Val F1: 0.2461
+70.5s 73 Epoch 20/20 Loss: 0.0892 Val F1: 0.3440
+70.5s 74 Trial 3 Final Val F1: 0.3475
+70.5s 75 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+70.8s 76 Epoch 5/20 Loss: 0.8361 Val F1: 0.1549
+70.8s 77 Epoch 10/20 Loss: 0.5827 Val F1: 0.3086
+70.8s 78 Epoch 15/20 Loss: 0.4594 Val F1: 0.3575
+71.1s 79 Epoch 20/20 Loss: 0.3424 Val F1: 0.4135
+71.1s 80 Trial 4 Final Val F1: 0.4165
+71.1s 81 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+71.1s 82 Epoch 5/20 Loss: 0.9877 Val F1: 0.2476
+71.4s 83 Epoch 10/20 Loss: 0.8562 Val F1: 0.3129
+71.4s 84 Epoch 15/20 Loss: 0.7763 Val F1: 0.3358
+71.8s 85 Epoch 20/20 Loss: 0.7318 Val F1: 0.3842
+71.8s 86 Trial 5 Final Val F1: 0.3833
+71.8s 87 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4} with F1: 0.4700964111807586
+71.8s 88 
+71.8s 89 Searching best architecture for view: has part
+71.8s 90 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+72.0s 91 Epoch 5/20 Loss: 0.8851 Val F1: 0.1547
+72.0s 92 Epoch 10/20 Loss: 0.6015 Val F1: 0.1928
+72.4s 93 Epoch 15/20 Loss: 0.4323 Val F1: 0.3661
+72.4s 94 Epoch 20/20 Loss: 0.2787 Val F1: 0.3870
+72.4s 95 Trial 1 Final Val F1: 0.3775
+72.4s 96 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+72.7s 97 Epoch 5/20 Loss: 0.8871 Val F1: 0.1476
+72.7s 98 Epoch 10/20 Loss: 0.6618 Val F1: 0.2244
+73.0s 99 Epoch 15/20 Loss: 0.5249 Val F1: 0.3651
+73.0s 100 Epoch 20/20 Loss: 0.4040 Val F1: 0.3951
+73.0s 101 Trial 2 Final Val F1: 0.3989
+73.0s 102 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+73.3s 103 Epoch 5/20 Loss: 0.9129 Val F1: 0.0900
+73.3s 104 Epoch 10/20 Loss: 0.6894 Val F1: 0.1819
+73.5s 105 Epoch 15/20 Loss: 0.5513 Val F1: 0.3156
+73.5s 106 Epoch 20/20 Loss: 0.4409 Val F1: 0.3865
+73.5s 107 Trial 3 Final Val F1: 0.3817
+73.5s 108 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+73.5s 109 Epoch 5/20 Loss: 0.9177 Val F1: 0.1641
+73.8s 110 Epoch 10/20 Loss: 0.6777 Val F1: 0.2890
+73.8s 111 Epoch 15/20 Loss: 0.5656 Val F1: 0.3070
+73.8s 112 Epoch 20/20 Loss: 0.4793 Val F1: 0.3574
+73.8s 113 Trial 4 Final Val F1: 0.3480
+73.8s 114 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+74.1s 115 Epoch 5/20 Loss: 0.8503 Val F1: 0.1199
+74.1s 116 Epoch 10/20 Loss: 0.5948 Val F1: 0.1928
+74.5s 117 Epoch 15/20 Loss: 0.4127 Val F1: 0.2781
+74.5s 118 Epoch 20/20 Loss: 0.2617 Val F1: 0.3414
+74.7s 119 Trial 5 Final Val F1: 0.3492
+74.7s 120 Best Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.3989242921607668
+74.7s 121 
+74.7s 122 Searching best architecture for view: employer
+74.7s 123 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+74.7s 124 Epoch 5/20 Loss: 0.9050 Val F1: 0.1588
+75.0s 125 Epoch 10/20 Loss: 0.7553 Val F1: 0.3244
+75.0s 126 Epoch 15/20 Loss: 0.6793 Val F1: 0.3426
+75.2s 127 Epoch 20/20 Loss: 0.6042 Val F1: 0.4002
+75.2s 128 Trial 1 Final Val F1: 0.4027
+75.2s 129 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+75.2s 130 Epoch 5/20 Loss: 0.5574 Val F1: 0.0682
+75.5s 131 Epoch 10/20 Loss: 0.3159 Val F1: 0.2314
+75.5s 132 Epoch 15/20 Loss: 0.1576 Val F1: 0.1970
+75.8s 133 Epoch 20/20 Loss: 0.0919 Val F1: 0.2828
+75.8s 134 Trial 2 Final Val F1: 0.2687
+75.8s 135 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+75.8s 136 Epoch 5/20 Loss: 0.9576 Val F1: 0.0386
+76.0s 137 Epoch 10/20 Loss: 0.7957 Val F1: 0.1857
+76.0s 138 Epoch 15/20 Loss: 0.6496 Val F1: 0.2224
+76.0s 139 Epoch 20/20 Loss: 0.5610 Val F1: 0.3181
+76.0s 140 Trial 3 Final Val F1: 0.3162
+76.0s 141 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+76.4s 142 Epoch 5/20 Loss: 0.9423 Val F1: 0.3051
+76.4s 143 Epoch 10/20 Loss: 0.7793 Val F1: 0.3275
+76.7s 144 Epoch 15/20 Loss: 0.6991 Val F1: 0.3584
+76.7s 145 Epoch 20/20 Loss: 0.6096 Val F1: 0.4240
+76.7s 146 Trial 4 Final Val F1: 0.4297
+76.7s 147 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+77.1s 148 Epoch 5/20 Loss: 0.4835 Val F1: 0.0922
+77.1s 149 Epoch 10/20 Loss: 0.1916 Val F1: 0.2006
+77.5s 150 Epoch 15/20 Loss: 0.0989 Val F1: 0.2171
+77.5s 151 Epoch 20/20 Loss: 0.0625 Val F1: 0.3324
+77.5s 152 Trial 5 Final Val F1: 0.3230
+77.5s 153 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4} with F1: 0.4296604136281105
+77.5s 154 
+77.5s 155 Searching best architecture for view: instance of
+77.5s 156 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+77.8s 157 Epoch 5/20 Loss: 0.8916 Val F1: 0.1955
+77.8s 158 Epoch 10/20 Loss: 0.6456 Val F1: 0.3002
+77.8s 159 Epoch 15/20 Loss: 0.5453 Val F1: 0.3250
+78.0s 160 Epoch 20/20 Loss: 0.4517 Val F1: 0.3482
+78.0s 161 Trial 1 Final Val F1: 0.3486
+78.0s 162 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+78.2s 163 Epoch 5/20 Loss: 0.8249 Val F1: 0.0645
+78.2s 164 Epoch 10/20 Loss: 0.6193 Val F1: 0.2032
+78.7s 165 Epoch 15/20 Loss: 0.4121 Val F1: 0.2466
+78.9s 166 Epoch 20/20 Loss: 0.2539 Val F1: 0.3276
+79.0s 167 Trial 2 Final Val F1: 0.3128
+79.0s 168 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+79.0s 169 Epoch 5/20 Loss: 0.8144 Val F1: 0.1737
+79.2s 170 Epoch 10/20 Loss: 0.5993 Val F1: 0.3078
+79.2s 171 Epoch 15/20 Loss: 0.4646 Val F1: 0.3624
+79.6s 172 Epoch 20/20 Loss: 0.3432 Val F1: 0.4005
+79.6s 173 Trial 3 Final Val F1: 0.4159
+79.6s 174 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+80.0s 175 Epoch 5/20 Loss: 0.8847 Val F1: 0.3015
+80.3s 176 Epoch 10/20 Loss: 0.7483 Val F1: 0.3380
+80.5s 177 Epoch 15/20 Loss: 0.6759 Val F1: 0.4005
+80.8s 178 Epoch 20/20 Loss: 0.5732 Val F1: 0.5250
+80.8s 179 Trial 4 Final Val F1: 0.4883
+80.8s 180 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+80.8s 181 Epoch 5/20 Loss: 0.9166 Val F1: 0.0375
+81.1s 182 Epoch 10/20 Loss: 0.7315 Val F1: 0.2297
+81.1s 183 Epoch 15/20 Loss: 0.5785 Val F1: 0.3031
+81.3s 184 Epoch 20/20 Loss: 0.4648 Val F1: 0.3802
+81.3s 185 Trial 5 Final Val F1: 0.3688
+81.3s 186 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4} with F1: 0.4882863712159999
+81.3s 187 
+81.3s 188 Searching best architecture for view: studied by
+81.3s 189 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+81.5s 190 Epoch 5/20 Loss: 0.6834 Val F1: 0.1553
+81.7s 191 Epoch 10/20 Loss: 0.4454 Val F1: 0.2410
+81.7s 192 Epoch 15/20 Loss: 0.2634 Val F1: 0.3024
+82.1s 193 Epoch 20/20 Loss: 0.1776 Val F1: 0.3139
+82.1s 194 Trial 1 Final Val F1: 0.3191
+82.1s 195 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+82.1s 196 Epoch 5/20 Loss: 0.9444 Val F1: 0.0386
+82.4s 197 Epoch 10/20 Loss: 0.7436 Val F1: 0.2164
+82.4s 198 Epoch 15/20 Loss: 0.5979 Val F1: 0.3051
+82.4s 199 Epoch 20/20 Loss: 0.5029 Val F1: 0.4035
+82.4s 200 Trial 2 Final Val F1: 0.3918
+82.4s 201 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+82.6s 202 Epoch 5/20 Loss: 0.7954 Val F1: 0.2293
+82.6s 203 Epoch 10/20 Loss: 0.5636 Val F1: 0.3113
+82.6s 204 Epoch 15/20 Loss: 0.4490 Val F1: 0.3610
+82.9s 205 Epoch 20/20 Loss: 0.3320 Val F1: 0.3996
+82.9s 206 Trial 3 Final Val F1: 0.4075
+82.9s 207 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+82.9s 208 Epoch 5/20 Loss: 0.9257 Val F1: 0.0657
+83.2s 209 Epoch 10/20 Loss: 0.6993 Val F1: 0.2213
+83.2s 210 Epoch 15/20 Loss: 0.5679 Val F1: 0.2941
+83.4s 211 Epoch 20/20 Loss: 0.4626 Val F1: 0.3507
+83.4s 212 Trial 4 Final Val F1: 0.3505
+83.4s 213 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+83.4s 214 Epoch 5/20 Loss: 0.8604 Val F1: 0.2114
+83.4s 215 Epoch 10/20 Loss: 0.6157 Val F1: 0.3061
+83.7s 216 Epoch 15/20 Loss: 0.4975 Val F1: 0.3305
+83.7s 217 Epoch 20/20 Loss: 0.3841 Val F1: 0.3846
+83.7s 218 Trial 5 Final Val F1: 0.3846
+83.7s 219 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.4074561980548595
+83.7s 220 
+83.7s 221 Searching best architecture for view: followed by
+83.7s 222 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+84.0s 223 Epoch 5/20 Loss: 0.5234 Val F1: 0.0591
+84.0s 224 Epoch 10/20 Loss: 0.2304 Val F1: 0.1309
+84.3s 225 Epoch 15/20 Loss: 0.1398 Val F1: 0.2033
+84.3s 226 Epoch 20/20 Loss: 0.0963 Val F1: 0.3842
+84.3s 227 Trial 1 Final Val F1: 0.3974
+84.3s 228 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+84.6s 229 Epoch 5/20 Loss: 0.5619 Val F1: 0.2339
+84.6s 230 Epoch 10/20 Loss: 0.2583 Val F1: 0.2688
+85.0s 231 Epoch 15/20 Loss: 0.1749 Val F1: 0.3726
+85.0s 232 Epoch 20/20 Loss: 0.1103 Val F1: 0.3737
+85.0s 233 Trial 2 Final Val F1: 0.3810
+85.0s 234 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+85.3s 235 Epoch 5/20 Loss: 0.9732 Val F1: 0.1642
+85.3s 236 Epoch 10/20 Loss: 0.8360 Val F1: 0.3128
+85.6s 237 Epoch 15/20 Loss: 0.7428 Val F1: 0.3410
+85.6s 238 Epoch 20/20 Loss: 0.7110 Val F1: 0.3815
+85.6s 239 Trial 3 Final Val F1: 0.3757
+85.6s 240 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+85.8s 241 Epoch 5/20 Loss: 0.8837 Val F1: 0.2187
+85.8s 242 Epoch 10/20 Loss: 0.6415 Val F1: 0.2988
+85.8s 243 Epoch 15/20 Loss: 0.5302 Val F1: 0.3234
+86.0s 244 Epoch 20/20 Loss: 0.4315 Val F1: 0.3657
+86.0s 245 Trial 4 Final Val F1: 0.3619
+86.0s 246 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+86.0s 247 Epoch 5/20 Loss: 0.9000 Val F1: 0.1623
+86.3s 248 Epoch 10/20 Loss: 0.6526 Val F1: 0.2331
+86.3s 249 Epoch 15/20 Loss: 0.5316 Val F1: 0.3110
+86.6s 250 Epoch 20/20 Loss: 0.4395 Val F1: 0.3558
+86.6s 251 Trial 5 Final Val F1: 0.3617
+86.6s 252 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None} with F1: 0.39742605761673294
+86.6s 253 
+86.6s 254 Searching best architecture for view: country of origin
+86.6s 255 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+86.6s 256 Epoch 5/20 Loss: 0.5724 Val F1: 0.0412
+86.9s 257 Epoch 10/20 Loss: 0.3577 Val F1: 0.1195
+86.9s 258 Epoch 15/20 Loss: 0.1889 Val F1: 0.1894
+87.2s 259 Epoch 20/20 Loss: 0.1100 Val F1: 0.2896
+87.2s 260 Trial 1 Final Val F1: 0.2776
+87.2s 261 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+87.2s 262 Epoch 5/20 Loss: 0.9465 Val F1: 0.2661
+87.5s 263 Epoch 10/20 Loss: 0.8137 Val F1: 0.3308
+87.5s 264 Epoch 15/20 Loss: 0.7293 Val F1: 0.3638
+87.9s 265 Epoch 20/20 Loss: 0.6640 Val F1: 0.4010
+87.9s 266 Trial 2 Final Val F1: 0.4074
+87.9s 267 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+87.9s 268 Epoch 5/20 Loss: 0.9645 Val F1: 0.2163
+88.1s 269 Epoch 10/20 Loss: 0.8441 Val F1: 0.3044
+88.1s 270 Epoch 15/20 Loss: 0.7743 Val F1: 0.3329
+88.4s 271 Epoch 20/20 Loss: 0.6963 Val F1: 0.3609
+88.4s 272 Trial 3 Final Val F1: 0.3629
+88.4s 273 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+88.4s 274 Epoch 5/20 Loss: 0.5245 Val F1: 0.0386
+88.7s 275 Epoch 10/20 Loss: 0.2773 Val F1: 0.0444
+88.7s 276 Epoch 15/20 Loss: 0.1542 Val F1: 0.0401
+89.0s 277 Epoch 20/20 Loss: 0.0910 Val F1: 0.0424
+89.0s 278 Trial 4 Final Val F1: 0.0496
+89.0s 279 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+89.0s 280 Epoch 5/20 Loss: 0.9938 Val F1: 0.1670
+89.3s 281 Epoch 10/20 Loss: 0.8454 Val F1: 0.3137
+89.3s 282 Epoch 15/20 Loss: 0.7573 Val F1: 0.3360
+89.5s 283 Epoch 20/20 Loss: 0.7356 Val F1: 0.3662
+89.5s 284 Trial 5 Final Val F1: 0.3701
+89.5s 285 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2} with F1: 0.40736930341394656
+89.5s 286 
+89.5s 287 Searching best architecture for view: field of work
+89.5s 288 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+89.5s 289 Epoch 5/20 Loss: 0.9332 Val F1: 0.0663
+89.8s 290 Epoch 10/20 Loss: 0.6913 Val F1: 0.2948
+89.8s 291 Epoch 15/20 Loss: 0.5483 Val F1: 0.3202
+90.1s 292 Epoch 20/20 Loss: 0.4492 Val F1: 0.3613
+90.1s 293 Trial 1 Final Val F1: 0.3714
+90.1s 294 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+90.1s 295 Epoch 5/20 Loss: 0.8186 Val F1: 0.1660
+90.3s 296 Epoch 10/20 Loss: 0.5744 Val F1: 0.3070
+90.3s 297 Epoch 15/20 Loss: 0.4579 Val F1: 0.3523
+90.3s 298 Epoch 20/20 Loss: 0.3368 Val F1: 0.3839
+90.3s 299 Trial 2 Final Val F1: 0.4160
+90.3s 300 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+90.6s 301 Epoch 5/20 Loss: 0.5232 Val F1: 0.0850
+90.6s 302 Epoch 10/20 Loss: 0.2317 Val F1: 0.1230
+90.9s 303 Epoch 15/20 Loss: 0.1163 Val F1: 0.0860
+90.9s 304 Epoch 20/20 Loss: 0.0699 Val F1: 0.2549
+90.9s 305 Trial 3 Final Val F1: 0.2571
+90.9s 306 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+91.3s 307 Epoch 5/20 Loss: 0.5296 Val F1: 0.0877
+91.3s 308 Epoch 10/20 Loss: 0.2529 Val F1: 0.1298
+91.6s 309 Epoch 15/20 Loss: 0.1483 Val F1: 0.2270
+91.6s 310 Epoch 20/20 Loss: 0.1006 Val F1: 0.3211
+91.6s 311 Trial 4 Final Val F1: 0.3117
+91.6s 312 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+92.0s 313 Epoch 5/20 Loss: 0.5593 Val F1: 0.0386
+92.0s 314 Epoch 10/20 Loss: 0.2385 Val F1: 0.0974
+92.3s 315 Epoch 15/20 Loss: 0.1431 Val F1: 0.2359
+92.3s 316 Epoch 20/20 Loss: 0.0925 Val F1: 0.3048
+92.3s 317 Trial 5 Final Val F1: 0.3064
+92.3s 318 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.4160420499909047
+92.3s 319 
+92.3s 320 Searching best architecture for view: country
+92.3s 321 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+92.7s 322 Epoch 5/20 Loss: 0.6558 Val F1: 0.2321
+92.7s 323 Epoch 10/20 Loss: 0.3451 Val F1: 0.2111
+93.0s 324 Epoch 15/20 Loss: 0.1852 Val F1: 0.2541
+93.0s 325 Epoch 20/20 Loss: 0.1255 Val F1: 0.4097
+93.0s 326 Trial 1 Final Val F1: 0.4038
+93.0s 327 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+93.4s 328 Epoch 5/20 Loss: 0.6685 Val F1: 0.1661
+93.4s 329 Epoch 10/20 Loss: 0.3706 Val F1: 0.2523
+93.8s 330 Epoch 15/20 Loss: 0.1954 Val F1: 0.2379
+93.8s 331 Epoch 20/20 Loss: 0.1368 Val F1: 0.2959
+93.8s 332 Trial 2 Final Val F1: 0.2763
+93.8s 333 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+94.1s 334 Epoch 5/20 Loss: 0.9348 Val F1: 0.2173
+94.1s 335 Epoch 10/20 Loss: 0.7744 Val F1: 0.2965
+94.5s 336 Epoch 15/20 Loss: 0.6628 Val F1: 0.3399
+94.5s 337 Epoch 20/20 Loss: 0.5863 Val F1: 0.3804
+94.5s 338 Trial 3 Final Val F1: 0.3724
+94.5s 339 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+94.8s 340 Epoch 5/20 Loss: 0.9212 Val F1: 0.1061
+94.8s 341 Epoch 10/20 Loss: 0.6859 Val F1: 0.2223
+95.0s 342 Epoch 15/20 Loss: 0.5685 Val F1: 0.2993
+95.0s 343 Epoch 20/20 Loss: 0.4641 Val F1: 0.3412
+95.0s 344 Trial 4 Final Val F1: 0.3434
+95.0s 345 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+95.3s 346 Epoch 5/20 Loss: 0.9351 Val F1: 0.1095
+95.3s 347 Epoch 10/20 Loss: 0.7023 Val F1: 0.2415
+95.6s 348 Epoch 15/20 Loss: 0.5816 Val F1: 0.3196
+95.6s 349 Epoch 20/20 Loss: 0.4850 Val F1: 0.3438
+95.6s 350 Trial 5 Final Val F1: 0.3463
+95.6s 351 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.40381384214395594
+95.6s 352 
+95.6s 353 Searching best architecture for view: contains administrative territorial entity
+95.6s 354 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+95.8s 355 Epoch 5/20 Loss: 0.8072 Val F1: 0.1577
+95.8s 356 Epoch 10/20 Loss: 0.5925 Val F1: 0.3014
+95.8s 357 Epoch 15/20 Loss: 0.4736 Val F1: 0.3469
+96.1s 358 Epoch 20/20 Loss: 0.3603 Val F1: 0.4195
+96.1s 359 Trial 1 Final Val F1: 0.4250
+96.1s 360 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+96.1s 361 Epoch 5/20 Loss: 0.9080 Val F1: 0.1114
+96.4s 362 Epoch 10/20 Loss: 0.7037 Val F1: 0.2232
+96.4s 363 Epoch 15/20 Loss: 0.5667 Val F1: 0.3562
+96.6s 364 Epoch 20/20 Loss: 0.4681 Val F1: 0.3524
+96.6s 365 Trial 2 Final Val F1: 0.3497
+96.6s 366 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+96.6s 367 Epoch 5/20 Loss: 0.7457 Val F1: 0.1364
+96.9s 368 Epoch 10/20 Loss: 0.4914 Val F1: 0.2215
+96.9s 369 Epoch 15/20 Loss: 0.2767 Val F1: 0.3412
+97.2s 370 Epoch 20/20 Loss: 0.1846 Val F1: 0.3747
+97.2s 371 Trial 3 Final Val F1: 0.4090
+97.2s 372 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+97.2s 373 Epoch 5/20 Loss: 0.6713 Val F1: 0.1291
+97.5s 374 Epoch 10/20 Loss: 0.4038 Val F1: 0.1706
+97.7s 375 Epoch 15/20 Loss: 0.2128 Val F1: 0.2923
+97.7s 376 Epoch 20/20 Loss: 0.1355 Val F1: 0.4239
+97.7s 377 Trial 4 Final Val F1: 0.4182
+97.7s 378 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+98.0s 379 Epoch 5/20 Loss: 0.9319 Val F1: 0.0690
+98.0s 380 Epoch 10/20 Loss: 0.7100 Val F1: 0.2162
+98.0s 381 Epoch 15/20 Loss: 0.5882 Val F1: 0.3057
+98.3s 382 Epoch 20/20 Loss: 0.4857 Val F1: 0.3458
+98.3s 383 Trial 5 Final Val F1: 0.3587
+98.3s 384 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.4249527098629573
+98.3s 385 
+98.3s 386 Searching best architecture for view: subclass of
+98.3s 387 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+98.5s 388 Epoch 5/20 Loss: 0.7539 Val F1: 0.2165
+98.5s 389 Epoch 10/20 Loss: 0.5531 Val F1: 0.2202
+98.8s 390 Epoch 15/20 Loss: 0.3270 Val F1: 0.3248
+98.8s 391 Epoch 20/20 Loss: 0.2088 Val F1: 0.3005
+98.8s 392 Trial 1 Final Val F1: 0.3079
+98.8s 393 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+99.2s 394 Epoch 5/20 Loss: 0.7719 Val F1: 0.1426
+99.2s 395 Epoch 10/20 Loss: 0.4945 Val F1: 0.1644
+99.6s 396 Epoch 15/20 Loss: 0.2838 Val F1: 0.2617
+99.6s 397 Epoch 20/20 Loss: 0.1972 Val F1: 0.4202
+99.6s 398 Trial 2 Final Val F1: 0.4163
+99.6s 399 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+99.9s 400 Epoch 5/20 Loss: 0.9142 Val F1: 0.2117
+99.9s 401 Epoch 10/20 Loss: 0.6670 Val F1: 0.2979
+99.9s 402 Epoch 15/20 Loss: 0.5495 Val F1: 0.3186
+100.1s 403 Epoch 20/20 Loss: 0.4619 Val F1: 0.3542
+100.1s 404 Trial 3 Final Val F1: 0.3506
+100.1s 405 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+100.3s 406 Epoch 5/20 Loss: 0.8000 Val F1: 0.1338
+100.3s 407 Epoch 10/20 Loss: 0.4893 Val F1: 0.1881
+100.7s 408 Epoch 15/20 Loss: 0.2657 Val F1: 0.1966
+100.7s 409 Epoch 20/20 Loss: 0.1662 Val F1: 0.3225
+100.7s 410 Trial 4 Final Val F1: 0.3197
+100.7s 411 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+101.0s 412 Epoch 5/20 Loss: 0.9862 Val F1: 0.1955
+101.0s 413 Epoch 10/20 Loss: 0.8426 Val F1: 0.2984
+101.3s 414 Epoch 15/20 Loss: 0.8002 Val F1: 0.3336
+101.3s 415 Epoch 20/20 Loss: 0.7256 Val F1: 0.3570
+101.3s 416 Trial 5 Final Val F1: 0.3684
+101.3s 417 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.4162810175124928
+101.3s 418 
+101.3s 419 Searching best architecture for view: part of
+101.3s 420 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+101.6s 421 Epoch 5/20 Loss: 0.8452 Val F1: 0.1881
+101.6s 422 Epoch 10/20 Loss: 0.6285 Val F1: 0.3032
+101.9s 423 Epoch 15/20 Loss: 0.5168 Val F1: 0.3387
+101.9s 424 Epoch 20/20 Loss: 0.3992 Val F1: 0.3859
+101.9s 425 Trial 1 Final Val F1: 0.3899
+101.9s 426 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+101.9s 427 Epoch 5/20 Loss: 0.8960 Val F1: 0.2012
+102.1s 428 Epoch 10/20 Loss: 0.6864 Val F1: 0.2962
+102.1s 429 Epoch 15/20 Loss: 0.5700 Val F1: 0.3247
+102.1s 430 Epoch 20/20 Loss: 0.4877 Val F1: 0.3444
+102.1s 431 Trial 2 Final Val F1: 0.3390
+102.1s 432 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+102.4s 433 Epoch 5/20 Loss: 0.8245 Val F1: 0.1569
+102.4s 434 Epoch 10/20 Loss: 0.6091 Val F1: 0.3050
+102.4s 435 Epoch 15/20 Loss: 0.4921 Val F1: 0.3521
+102.7s 436 Epoch 20/20 Loss: 0.3846 Val F1: 0.3835
+102.7s 437 Trial 3 Final Val F1: 0.3753
+102.7s 438 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+102.7s 439 Epoch 5/20 Loss: 0.9096 Val F1: 0.1796
+103.0s 440 Epoch 10/20 Loss: 0.7679 Val F1: 0.3038
+103.0s 441 Epoch 15/20 Loss: 0.6804 Val F1: 0.3316
+103.4s 442 Epoch 20/20 Loss: 0.5708 Val F1: 0.3703
+103.4s 443 Trial 4 Final Val F1: 0.3746
+103.4s 444 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+103.6s 445 Epoch 5/20 Loss: 0.8556 Val F1: 0.2110
+103.9s 446 Epoch 10/20 Loss: 0.6984 Val F1: 0.3099
+104.1s 447 Epoch 15/20 Loss: 0.5881 Val F1: 0.3876
+104.4s 448 Epoch 20/20 Loss: 0.5167 Val F1: 0.5470
+104.4s 449 Trial 5 Final Val F1: 0.5053
+104.4s 450 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.5053135208308521
+104.4s 451 
+104.4s 452 Searching best architecture for view: point in time
+104.4s 453 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+104.4s 454 Epoch 5/20 Loss: 0.7294 Val F1: 0.1231
+104.7s 455 Epoch 10/20 Loss: 0.4451 Val F1: 0.2506
+104.7s 456 Epoch 15/20 Loss: 0.2441 Val F1: 0.2480
+105.0s 457 Epoch 20/20 Loss: 0.1417 Val F1: 0.2593
+105.0s 458 Trial 1 Final Val F1: 0.2802
+105.0s 459 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+105.0s 460 Epoch 5/20 Loss: 0.9622 Val F1: 0.1528
+105.4s 461 Epoch 10/20 Loss: 0.7451 Val F1: 0.3036
+105.4s 462 Epoch 15/20 Loss: 0.6988 Val F1: 0.3406
+105.7s 463 Epoch 20/20 Loss: 0.6064 Val F1: 0.3843
+105.7s 464 Trial 2 Final Val F1: 0.3777
+105.7s 465 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+105.7s 466 Epoch 5/20 Loss: 0.8850 Val F1: 0.1976
+106.0s 467 Epoch 10/20 Loss: 0.6428 Val F1: 0.2739
+106.0s 468 Epoch 15/20 Loss: 0.5416 Val F1: 0.3173
+106.2s 469 Epoch 20/20 Loss: 0.4543 Val F1: 0.3574
+106.2s 470 Trial 3 Final Val F1: 0.3519
+106.2s 471 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+106.2s 472 Epoch 5/20 Loss: 0.9207 Val F1: 0.1785
+106.6s 473 Epoch 10/20 Loss: 0.7264 Val F1: 0.3073
+106.6s 474 Epoch 15/20 Loss: 0.6297 Val F1: 0.3425
+106.9s 475 Epoch 20/20 Loss: 0.5517 Val F1: 0.3880
+106.9s 476 Trial 4 Final Val F1: 0.4137
+106.9s 477 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+106.9s 478 Epoch 5/20 Loss: 0.9068 Val F1: 0.1286
+107.2s 479 Epoch 10/20 Loss: 0.6803 Val F1: 0.2956
+107.2s 480 Epoch 15/20 Loss: 0.5515 Val F1: 0.3204
+107.4s 481 Epoch 20/20 Loss: 0.4515 Val F1: 0.3678
+107.4s 482 Trial 5 Final Val F1: 0.3587
+107.4s 483 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4} with F1: 0.4136524937150973
+107.4s 484 
+107.4s 485 Searching best architecture for view: has cause
+107.4s 486 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+107.4s 487 Epoch 5/20 Loss: 0.9478 Val F1: 0.0635
+107.7s 488 Epoch 10/20 Loss: 0.6857 Val F1: 0.2285
+107.7s 489 Epoch 15/20 Loss: 0.5722 Val F1: 0.2769
+107.9s 490 Epoch 20/20 Loss: 0.4734 Val F1: 0.3378
+107.9s 491 Trial 1 Final Val F1: 0.3422
+107.9s 492 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+107.9s 493 Epoch 5/20 Loss: 0.5236 Val F1: 0.0689
+108.2s 494 Epoch 10/20 Loss: 0.2445 Val F1: 0.1245
+108.2s 495 Epoch 15/20 Loss: 0.1379 Val F1: 0.1520
+108.5s 496 Epoch 20/20 Loss: 0.0954 Val F1: 0.1709
+108.5s 497 Trial 2 Final Val F1: 0.1707
+108.5s 498 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+108.5s 499 Epoch 5/20 Loss: 0.9732 Val F1: 0.1667
+108.8s 500 Epoch 10/20 Loss: 0.8495 Val F1: 0.3131
+108.8s 501 Epoch 15/20 Loss: 0.7811 Val F1: 0.3293
+109.1s 502 Epoch 20/20 Loss: 0.7135 Val F1: 0.3953
+109.1s 503 Trial 3 Final Val F1: 0.3866
+109.1s 504 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+109.1s 505 Epoch 5/20 Loss: 0.8272 Val F1: 0.2074
+109.3s 506 Epoch 10/20 Loss: 0.5883 Val F1: 0.2961
+109.3s 507 Epoch 15/20 Loss: 0.4627 Val F1: 0.3496
+109.3s 508 Epoch 20/20 Loss: 0.3449 Val F1: 0.3994
+109.3s 509 Trial 4 Final Val F1: 0.3987
+109.3s 510 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+109.6s 511 Epoch 5/20 Loss: 0.9409 Val F1: 0.0386
+109.6s 512 Epoch 10/20 Loss: 0.7303 Val F1: 0.1622
+109.6s 513 Epoch 15/20 Loss: 0.6029 Val F1: 0.2999
+109.9s 514 Epoch 20/20 Loss: 0.5045 Val F1: 0.3341
+109.9s 515 Trial 5 Final Val F1: 0.3366
+109.9s 516 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.3986618624757291
+109.9s 517 
+109.9s 518 Searching best architecture for view: has effect
+109.9s 519 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+109.9s 520 Epoch 5/20 Loss: 0.9376 Val F1: 0.3103
+110.2s 521 Epoch 10/20 Loss: 0.8237 Val F1: 0.3192
+110.2s 522 Epoch 15/20 Loss: 0.7497 Val F1: 0.3622
+110.5s 523 Epoch 20/20 Loss: 0.6547 Val F1: 0.3859
+110.5s 524 Trial 1 Final Val F1: 0.3876
+110.5s 525 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+110.5s 526 Epoch 5/20 Loss: 0.8367 Val F1: 0.2229
+110.7s 527 Epoch 10/20 Loss: 0.5954 Val F1: 0.3201
+110.7s 528 Epoch 15/20 Loss: 0.4714 Val F1: 0.3466
+111.0s 529 Epoch 20/20 Loss: 0.3586 Val F1: 0.3847
+111.0s 530 Trial 2 Final Val F1: 0.3923
+111.0s 531 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+111.0s 532 Epoch 5/20 Loss: 0.9626 Val F1: 0.0386
+111.3s 533 Epoch 10/20 Loss: 0.7589 Val F1: 0.1484
+111.3s 534 Epoch 15/20 Loss: 0.6198 Val F1: 0.2749
+111.5s 535 Epoch 20/20 Loss: 0.5252 Val F1: 0.3168
+111.5s 536 Trial 3 Final Val F1: 0.3212
+111.5s 537 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+111.5s 538 Epoch 5/20 Loss: 0.9073 Val F1: 0.1870
+111.8s 539 Epoch 10/20 Loss: 0.6626 Val F1: 0.3040
+111.8s 540 Epoch 15/20 Loss: 0.5504 Val F1: 0.3308
+111.8s 541 Epoch 20/20 Loss: 0.4595 Val F1: 0.3468
+112.0s 542 Trial 4 Final Val F1: 0.3553
+112.0s 543 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+112.0s 544 Epoch 5/20 Loss: 0.9105 Val F1: 0.3030
+112.4s 545 Epoch 10/20 Loss: 0.8232 Val F1: 0.3292
+112.4s 546 Epoch 15/20 Loss: 0.7251 Val F1: 0.3844
+112.8s 547 Epoch 20/20 Loss: 0.6178 Val F1: 0.4612
+112.8s 548 Trial 5 Final Val F1: 0.4553
+112.8s 549 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2} with F1: 0.45530627633743576
+112.8s 550 
+112.8s 551 Searching best architecture for view: number of participants
+112.8s 552 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+112.8s 553 Epoch 5/20 Loss: 0.9398 Val F1: 0.0710
+113.0s 554 Epoch 10/20 Loss: 0.7020 Val F1: 0.2194
+113.0s 555 Epoch 15/20 Loss: 0.5718 Val F1: 0.3051
+113.3s 556 Epoch 20/20 Loss: 0.4633 Val F1: 0.3451
+113.3s 557 Trial 1 Final Val F1: 0.3477
+113.3s 558 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+113.3s 559 Epoch 5/20 Loss: 0.5245 Val F1: 0.1800
+113.7s 560 Epoch 10/20 Loss: 0.2327 Val F1: 0.2044
+113.7s 561 Epoch 15/20 Loss: 0.1179 Val F1: 0.2349
+114.0s 562 Epoch 20/20 Loss: 0.0762 Val F1: 0.2604
+114.0s 563 Trial 2 Final Val F1: 0.2266
+114.0s 564 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+114.0s 565 Epoch 5/20 Loss: 0.9438 Val F1: 0.0441
+114.2s 566 Epoch 10/20 Loss: 0.7490 Val F1: 0.1688
+114.2s 567 Epoch 15/20 Loss: 0.6090 Val F1: 0.2996
+114.2s 568 Epoch 20/20 Loss: 0.5180 Val F1: 0.3241
+114.2s 569 Trial 3 Final Val F1: 0.3252
+114.2s 570 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+114.6s 571 Epoch 5/20 Loss: 0.5047 Val F1: 0.0753
+114.6s 572 Epoch 10/20 Loss: 0.2507 Val F1: 0.3582
+114.9s 573 Epoch 15/20 Loss: 0.1332 Val F1: 0.4012
+114.9s 574 Epoch 20/20 Loss: 0.0818 Val F1: 0.4712
+114.9s 575 Trial 4 Final Val F1: 0.4799
+114.9s 576 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+115.2s 577 Epoch 5/20 Loss: 0.8466 Val F1: 0.2084
+115.2s 578 Epoch 10/20 Loss: 0.6149 Val F1: 0.3043
+115.2s 579 Epoch 15/20 Loss: 0.4888 Val F1: 0.3299
+115.5s 580 Epoch 20/20 Loss: 0.3739 Val F1: 0.3972
+115.5s 581 Trial 5 Final Val F1: 0.3848
+115.5s 582 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.47986203803061617
+115.5s 583 
+115.5s 584 Searching best architecture for view: educated at
+115.5s 585 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+115.5s 586 Epoch 5/20 Loss: 0.5756 Val F1: 0.0902
+115.8s 587 Epoch 10/20 Loss: 0.3165 Val F1: 0.1076
+115.8s 588 Epoch 15/20 Loss: 0.1424 Val F1: 0.1118
+116.2s 589 Epoch 20/20 Loss: 0.0830 Val F1: 0.1660
+116.2s 590 Trial 1 Final Val F1: 0.2002
+116.2s 591 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+116.4s 592 Epoch 5/20 Loss: 0.4890 Val F1: 0.1164
+116.4s 593 Epoch 10/20 Loss: 0.2178 Val F1: 0.1689
+116.7s 594 Epoch 15/20 Loss: 0.1099 Val F1: 0.1569
+116.7s 595 Epoch 20/20 Loss: 0.0660 Val F1: 0.2553
+116.7s 596 Trial 2 Final Val F1: 0.2429
+116.7s 597 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+117.1s 598 Epoch 5/20 Loss: 0.4947 Val F1: 0.0990
+117.1s 599 Epoch 10/20 Loss: 0.2266 Val F1: 0.1753
+117.4s 600 Epoch 15/20 Loss: 0.1228 Val F1: 0.1850
+117.4s 601 Epoch 20/20 Loss: 0.0845 Val F1: 0.2864
+117.4s 602 Trial 3 Final Val F1: 0.2777
+117.4s 603 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+117.8s 604 Epoch 5/20 Loss: 0.5067 Val F1: 0.2355
+117.8s 605 Epoch 10/20 Loss: 0.2310 Val F1: 0.2428
+118.1s 606 Epoch 15/20 Loss: 0.1147 Val F1: 0.3028
+118.1s 607 Epoch 20/20 Loss: 0.0708 Val F1: 0.4322
+118.1s 608 Trial 4 Final Val F1: 0.4126
+118.1s 609 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+118.4s 610 Epoch 5/20 Loss: 0.9181 Val F1: 0.1010
+118.4s 611 Epoch 10/20 Loss: 0.6982 Val F1: 0.2338
+118.7s 612 Epoch 15/20 Loss: 0.5734 Val F1: 0.3049
+118.7s 613 Epoch 20/20 Loss: 0.4663 Val F1: 0.3583
+118.7s 614 Trial 5 Final Val F1: 0.3511
+118.7s 615 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.41264156544873737
+118.7s 616 
+118.7s 617 Searching best architecture for view: different from
+118.7s 618 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+118.9s 619 Epoch 5/20 Loss: 0.8276 Val F1: 0.2216
+118.9s 620 Epoch 10/20 Loss: 0.5907 Val F1: 0.3051
+118.9s 621 Epoch 15/20 Loss: 0.4680 Val F1: 0.3410
+119.2s 622 Epoch 20/20 Loss: 0.3509 Val F1: 0.3852
+119.2s 623 Trial 1 Final Val F1: 0.3965
+119.2s 624 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+119.2s 625 Epoch 5/20 Loss: 0.5688 Val F1: 0.0606
+119.6s 626 Epoch 10/20 Loss: 0.2579 Val F1: 0.3216
+119.6s 627 Epoch 15/20 Loss: 0.1559 Val F1: 0.3455
+120.0s 628 Epoch 20/20 Loss: 0.1068 Val F1: 0.4818
+120.0s 629 Trial 2 Final Val F1: 0.5069
+120.0s 630 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+120.0s 631 Epoch 5/20 Loss: 0.9059 Val F1: 0.1989
+120.0s 632 Epoch 10/20 Loss: 0.6341 Val F1: 0.2982
+120.2s 633 Epoch 15/20 Loss: 0.5135 Val F1: 0.3199
+120.2s 634 Epoch 20/20 Loss: 0.4182 Val F1: 0.3781
+120.2s 635 Trial 3 Final Val F1: 0.3779
+120.2s 636 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+120.5s 637 Epoch 5/20 Loss: 0.9035 Val F1: 0.1685
+120.5s 638 Epoch 10/20 Loss: 0.7406 Val F1: 0.3179
+120.7s 639 Epoch 15/20 Loss: 0.6412 Val F1: 0.3570
+120.7s 640 Epoch 20/20 Loss: 0.5919 Val F1: 0.3874
+120.7s 641 Trial 4 Final Val F1: 0.3870
+120.7s 642 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+121.1s 643 Epoch 5/20 Loss: 0.8232 Val F1: 0.2456
+121.4s 644 Epoch 10/20 Loss: 0.7139 Val F1: 0.3271
+121.6s 645 Epoch 15/20 Loss: 0.5861 Val F1: 0.3943
+121.9s 646 Epoch 20/20 Loss: 0.5025 Val F1: 0.4843
+121.9s 647 Trial 5 Final Val F1: 0.4774
+121.9s 648 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.5068957966204217
+121.9s 649 
+121.9s 650 Searching best architecture for view: follows
+121.9s 651 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+121.9s 652 Epoch 5/20 Loss: 0.9413 Val F1: 0.0694
+122.1s 653 Epoch 10/20 Loss: 0.7192 Val F1: 0.1986
+122.1s 654 Epoch 15/20 Loss: 0.5903 Val F1: 0.4004
+122.1s 655 Epoch 20/20 Loss: 0.4942 Val F1: 0.4143
+122.3s 656 Trial 1 Final Val F1: 0.3766
+122.3s 657 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+122.3s 658 Epoch 5/20 Loss: 0.5515 Val F1: 0.1719
+122.7s 659 Epoch 10/20 Loss: 0.2376 Val F1: 0.2540
+122.7s 660 Epoch 15/20 Loss: 0.1549 Val F1: 0.2818
+123.1s 661 Epoch 20/20 Loss: 0.0985 Val F1: 0.3500
+123.1s 662 Trial 2 Final Val F1: 0.3575
+123.1s 663 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+123.1s 664 Epoch 5/20 Loss: 0.9395 Val F1: 0.0687
+123.3s 665 Epoch 10/20 Loss: 0.7678 Val F1: 0.1853
+123.3s 666 Epoch 15/20 Loss: 0.6114 Val F1: 0.2668
+123.5s 667 Epoch 20/20 Loss: 0.5125 Val F1: 0.4734
+123.5s 668 Trial 3 Final Val F1: 0.4602
+123.5s 669 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+123.7s 670 Epoch 5/20 Loss: 0.5246 Val F1: 0.1536
+123.7s 671 Epoch 10/20 Loss: 0.1983 Val F1: 0.1654
+124.1s 672 Epoch 15/20 Loss: 0.1136 Val F1: 0.1819
+124.1s 673 Epoch 20/20 Loss: 0.0775 Val F1: 0.2826
+124.1s 674 Trial 4 Final Val F1: 0.2800
+124.1s 675 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+124.4s 676 Epoch 5/20 Loss: 0.8839 Val F1: 0.1797
+124.4s 677 Epoch 10/20 Loss: 0.6323 Val F1: 0.2947
+124.4s 678 Epoch 15/20 Loss: 0.5203 Val F1: 0.3253
+124.6s 679 Epoch 20/20 Loss: 0.4183 Val F1: 0.3628
+124.6s 680 Trial 5 Final Val F1: 0.3644
+124.6s 681 Best Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None} with F1: 0.4602025913796158
+124.6s 682 
+124.6s 683 Searching best architecture for view: headquarters location
+124.6s 684 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+124.9s 685 Epoch 5/20 Loss: 0.8157 Val F1: 0.2905
+125.1s 686 Epoch 10/20 Loss: 0.6682 Val F1: 0.3429
+125.3s 687 Epoch 15/20 Loss: 0.5465 Val F1: 0.3879
+125.6s 688 Epoch 20/20 Loss: 0.4436 Val F1: 0.5551
+125.6s 689 Trial 1 Final Val F1: 0.5553
+125.6s 690 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+125.6s 691 Epoch 5/20 Loss: 0.9356 Val F1: 0.1047
+125.8s 692 Epoch 10/20 Loss: 0.6907 Val F1: 0.2228
+125.8s 693 Epoch 15/20 Loss: 0.5720 Val F1: 0.3009
+126.1s 694 Epoch 20/20 Loss: 0.4667 Val F1: 0.3505
+126.1s 695 Trial 2 Final Val F1: 0.3477
+126.1s 696 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+126.1s 697 Epoch 5/20 Loss: 0.9500 Val F1: 0.0381
+126.3s 698 Epoch 10/20 Loss: 0.7670 Val F1: 0.2321
+126.3s 699 Epoch 15/20 Loss: 0.6185 Val F1: 0.2347
+126.5s 700 Epoch 20/20 Loss: 0.5205 Val F1: 0.3303
+126.5s 701 Trial 3 Final Val F1: 0.3313
+126.5s 702 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+126.5s 703 Epoch 5/20 Loss: 0.5659 Val F1: 0.0386
+126.8s 704 Epoch 10/20 Loss: 0.2914 Val F1: 0.1415
+126.8s 705 Epoch 15/20 Loss: 0.1549 Val F1: 0.1981
+127.1s 706 Epoch 20/20 Loss: 0.0960 Val F1: 0.2753
+127.1s 707 Trial 4 Final Val F1: 0.2458
+127.1s 708 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+127.3s 709 Epoch 5/20 Loss: 0.8287 Val F1: 0.2226
+127.6s 710 Epoch 10/20 Loss: 0.6924 Val F1: 0.3266
+127.8s 711 Epoch 15/20 Loss: 0.5939 Val F1: 0.3743
+128.0s 712 Epoch 20/20 Loss: 0.5058 Val F1: 0.4067
+128.0s 713 Trial 5 Final Val F1: 0.4022
+128.0s 714 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.5553328903364156
+128.0s 715 
+128.0s 716 Searching best architecture for view: facet of
+128.0s 717 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+128.4s 718 Epoch 5/20 Loss: 0.9691 Val F1: 0.2815
+128.6s 719 Epoch 10/20 Loss: 0.8120 Val F1: 0.3291
+128.8s 720 Epoch 15/20 Loss: 0.7188 Val F1: 0.3606
+129.1s 721 Epoch 20/20 Loss: 0.6327 Val F1: 0.3995
+129.1s 722 Trial 1 Final Val F1: 0.3976
+129.1s 723 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+129.1s 724 Epoch 5/20 Loss: 0.8138 Val F1: 0.1708
+129.3s 725 Epoch 10/20 Loss: 0.5724 Val F1: 0.3179
+129.3s 726 Epoch 15/20 Loss: 0.4470 Val F1: 0.3551
+129.3s 727 Epoch 20/20 Loss: 0.3245 Val F1: 0.3935
+129.3s 728 Trial 2 Final Val F1: 0.4177
+129.3s 729 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+129.6s 730 Epoch 5/20 Loss: 0.8163 Val F1: 0.1642
+129.6s 731 Epoch 10/20 Loss: 0.5690 Val F1: 0.3113
+129.6s 732 Epoch 15/20 Loss: 0.4577 Val F1: 0.3624
+129.9s 733 Epoch 20/20 Loss: 0.3449 Val F1: 0.4010
+129.9s 734 Trial 3 Final Val F1: 0.4151
+129.9s 735 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+130.1s 736 Epoch 5/20 Loss: 0.5589 Val F1: 0.1422
+130.1s 737 Epoch 10/20 Loss: 0.2484 Val F1: 0.3268
+130.4s 738 Epoch 15/20 Loss: 0.1274 Val F1: 0.3079
+130.4s 739 Epoch 20/20 Loss: 0.0808 Val F1: 0.3482
+130.4s 740 Trial 4 Final Val F1: 0.3335
+130.4s 741 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+130.7s 742 Epoch 5/20 Loss: 0.8299 Val F1: 0.2176
+130.7s 743 Epoch 10/20 Loss: 0.5918 Val F1: 0.3114
+130.9s 744 Epoch 15/20 Loss: 0.4868 Val F1: 0.3428
+130.9s 745 Epoch 20/20 Loss: 0.3709 Val F1: 0.4073
+130.9s 746 Trial 5 Final Val F1: 0.4091
+130.9s 747 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.41765497741811947
+130.9s 748 
+130.9s 749 Searching best architecture for view: has parts of the class
+130.9s 750 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+131.3s 751 Epoch 5/20 Loss: 0.8666 Val F1: 0.2364
+131.5s 752 Epoch 10/20 Loss: 0.6805 Val F1: 0.3390
+131.8s 753 Epoch 15/20 Loss: 0.5940 Val F1: 0.3828
+132.0s 754 Epoch 20/20 Loss: 0.4804 Val F1: 0.4467
+132.0s 755 Trial 1 Final Val F1: 0.4744
+132.0s 756 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+132.0s 757 Epoch 5/20 Loss: 0.9327 Val F1: 0.1557
+132.3s 758 Epoch 10/20 Loss: 0.7289 Val F1: 0.2785
+132.3s 759 Epoch 15/20 Loss: 0.5852 Val F1: 0.3030
+132.5s 760 Epoch 20/20 Loss: 0.4910 Val F1: 0.3326
+132.5s 761 Trial 2 Final Val F1: 0.3530
+132.5s 762 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+132.5s 763 Epoch 5/20 Loss: 0.9338 Val F1: 0.0386
+132.8s 764 Epoch 10/20 Loss: 0.7098 Val F1: 0.2262
+132.8s 765 Epoch 15/20 Loss: 0.5796 Val F1: 0.2622
+133.1s 766 Epoch 20/20 Loss: 0.4789 Val F1: 0.3358
+133.1s 767 Trial 3 Final Val F1: 0.3583
+133.1s 768 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+133.3s 769 Epoch 5/20 Loss: 0.9087 Val F1: 0.2754
+133.6s 770 Epoch 10/20 Loss: 0.7648 Val F1: 0.3346
+133.8s 771 Epoch 15/20 Loss: 0.6616 Val F1: 0.3751
+134.0s 772 Epoch 20/20 Loss: 0.5756 Val F1: 0.4617
+134.0s 773 Trial 4 Final Val F1: 0.4764
+134.0s 774 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+134.0s 775 Epoch 5/20 Loss: 0.9537 Val F1: 0.0386
+134.2s 776 Epoch 10/20 Loss: 0.7365 Val F1: 0.2158
+134.2s 777 Epoch 15/20 Loss: 0.6048 Val F1: 0.2975
+134.2s 778 Epoch 20/20 Loss: 0.5168 Val F1: 0.3245
+134.2s 779 Trial 5 Final Val F1: 0.3297
+134.2s 780 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4} with F1: 0.47643077533366257
+134.4s 781 
+134.4s 782 Searching best architecture for view: number of episodes
+134.4s 783 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+134.4s 784 Epoch 5/20 Loss: 0.8446 Val F1: 0.2004
+134.4s 785 Epoch 10/20 Loss: 0.5905 Val F1: 0.3041
+134.7s 786 Epoch 15/20 Loss: 0.4654 Val F1: 0.3444
+134.7s 787 Epoch 20/20 Loss: 0.3421 Val F1: 0.4181
+134.7s 788 Trial 1 Final Val F1: 0.4244
+134.7s 789 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+135.0s 790 Epoch 5/20 Loss: 0.9236 Val F1: 0.1562
+135.0s 791 Epoch 10/20 Loss: 0.6634 Val F1: 0.2598
+135.2s 792 Epoch 15/20 Loss: 0.5517 Val F1: 0.3230
+135.2s 793 Epoch 20/20 Loss: 0.4667 Val F1: 0.3451
+135.2s 794 Trial 2 Final Val F1: 0.3485
+135.2s 795 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+135.6s 796 Epoch 5/20 Loss: 0.5026 Val F1: 0.1691
+135.6s 797 Epoch 10/20 Loss: 0.2084 Val F1: 0.1889
+136.0s 798 Epoch 15/20 Loss: 0.1243 Val F1: 0.2142
+136.2s 799 Epoch 20/20 Loss: 0.0807 Val F1: 0.2122
+136.2s 800 Trial 3 Final Val F1: 0.2230
+136.2s 801 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+136.2s 802 Epoch 5/20 Loss: 0.9193 Val F1: 0.1049
+136.2s 803 Epoch 10/20 Loss: 0.6738 Val F1: 0.2832
+136.5s 804 Epoch 15/20 Loss: 0.5541 Val F1: 0.3222
+136.5s 805 Epoch 20/20 Loss: 0.4700 Val F1: 0.3616
+136.5s 806 Trial 4 Final Val F1: 0.3514
+136.5s 807 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+136.5s 808 Epoch 5/20 Loss: 0.8818 Val F1: 0.2005
+136.7s 809 Epoch 10/20 Loss: 0.6491 Val F1: 0.2900
+136.7s 810 Epoch 15/20 Loss: 0.5344 Val F1: 0.3154
+136.7s 811 Epoch 20/20 Loss: 0.4324 Val F1: 0.3649
+136.7s 812 Trial 5 Final Val F1: 0.3606
+136.7s 813 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.42443976772773806
+136.7s 814 
+136.7s 815 Searching best architecture for view: conferred by
+136.7s 816 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+137.0s 817 Epoch 5/20 Loss: 0.9542 Val F1: 0.0386
+137.0s 818 Epoch 10/20 Loss: 0.7448 Val F1: 0.1674
+137.0s 819 Epoch 15/20 Loss: 0.6092 Val F1: 0.2982
+137.3s 820 Epoch 20/20 Loss: 0.5167 Val F1: 0.3292
+137.3s 821 Trial 1 Final Val F1: 0.3303
+137.3s 822 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+137.3s 823 Epoch 5/20 Loss: 0.8767 Val F1: 0.2085
+137.3s 824 Epoch 10/20 Loss: 0.6475 Val F1: 0.3069
+137.5s 825 Epoch 15/20 Loss: 0.5311 Val F1: 0.3241
+137.5s 826 Epoch 20/20 Loss: 0.4380 Val F1: 0.3668
+137.5s 827 Trial 2 Final Val F1: 0.3593
+137.5s 828 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+137.5s 829 Epoch 5/20 Loss: 0.8274 Val F1: 0.1563
+137.8s 830 Epoch 10/20 Loss: 0.5817 Val F1: 0.3056
+137.8s 831 Epoch 15/20 Loss: 0.4630 Val F1: 0.3526
+137.8s 832 Epoch 20/20 Loss: 0.3519 Val F1: 0.4262
+137.8s 833 Trial 3 Final Val F1: 0.4188
+137.8s 834 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+138.1s 835 Epoch 5/20 Loss: 0.9455 Val F1: 0.0386
+138.1s 836 Epoch 10/20 Loss: 0.7393 Val F1: 0.2656
+138.1s 837 Epoch 15/20 Loss: 0.6038 Val F1: 0.2875
+138.4s 838 Epoch 20/20 Loss: 0.5215 Val F1: 0.3184
+138.4s 839 Trial 4 Final Val F1: 0.3248
+138.4s 840 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+138.4s 841 Epoch 5/20 Loss: 0.5367 Val F1: 0.1209
+138.8s 842 Epoch 10/20 Loss: 0.2889 Val F1: 0.1900
+138.8s 843 Epoch 15/20 Loss: 0.1494 Val F1: 0.1371
+139.1s 844 Epoch 20/20 Loss: 0.0855 Val F1: 0.1587
+139.1s 845 Trial 5 Final Val F1: 0.1654
+139.1s 846 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.41881121865861143
+139.1s 847 
+139.1s 848 Searching best architecture for view: publication date
+139.1s 849 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+139.1s 850 Epoch 5/20 Loss: 0.8807 Val F1: 0.1983
+139.3s 851 Epoch 10/20 Loss: 0.6589 Val F1: 0.2583
+139.3s 852 Epoch 15/20 Loss: 0.5399 Val F1: 0.3103
+139.3s 853 Epoch 20/20 Loss: 0.4288 Val F1: 0.3589
+139.3s 854 Trial 1 Final Val F1: 0.3563
+139.3s 855 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+139.6s 856 Epoch 5/20 Loss: 0.9457 Val F1: 0.0756
+139.6s 857 Epoch 10/20 Loss: 0.7404 Val F1: 0.2647
+139.6s 858 Epoch 15/20 Loss: 0.6007 Val F1: 0.3037
+139.9s 859 Epoch 20/20 Loss: 0.5107 Val F1: 0.3334
+139.9s 860 Trial 2 Final Val F1: 0.3329
+139.9s 861 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+139.9s 862 Epoch 5/20 Loss: 0.9203 Val F1: 0.1998
+139.9s 863 Epoch 10/20 Loss: 0.6941 Val F1: 0.2183
+140.2s 864 Epoch 15/20 Loss: 0.5863 Val F1: 0.2613
+140.2s 865 Epoch 20/20 Loss: 0.4948 Val F1: 0.3241
+140.2s 866 Trial 3 Final Val F1: 0.3242
+140.2s 867 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+140.5s 868 Epoch 5/20 Loss: 0.4833 Val F1: 0.2497
+140.5s 869 Epoch 10/20 Loss: 0.1777 Val F1: 0.2845
+140.8s 870 Epoch 15/20 Loss: 0.1090 Val F1: 0.2980
+140.8s 871 Epoch 20/20 Loss: 0.0694 Val F1: 0.3560
+140.8s 872 Trial 4 Final Val F1: 0.3316
+140.8s 873 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+141.2s 874 Epoch 5/20 Loss: 1.0026 Val F1: 0.1985
+141.2s 875 Epoch 10/20 Loss: 0.8701 Val F1: 0.2841
+141.5s 876 Epoch 15/20 Loss: 0.7990 Val F1: 0.3285
+141.7s 877 Epoch 20/20 Loss: 0.7327 Val F1: 0.3730
+141.7s 878 Trial 5 Final Val F1: 0.3857
+141.7s 879 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2} with F1: 0.38569750292625166
+141.7s 880 
+141.7s 881 Searching best architecture for view: capital of
+141.7s 882 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+142.0s 883 Epoch 5/20 Loss: 0.9290 Val F1: 0.2884
+142.0s 884 Epoch 10/20 Loss: 0.7791 Val F1: 0.3241
+142.3s 885 Epoch 15/20 Loss: 0.6841 Val F1: 0.3728
+142.3s 886 Epoch 20/20 Loss: 0.5902 Val F1: 0.4320
+142.3s 887 Trial 1 Final Val F1: 0.4150
+142.3s 888 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+142.7s 889 Epoch 5/20 Loss: 0.8446 Val F1: 0.2173
+142.9s 890 Epoch 10/20 Loss: 0.7007 Val F1: 0.3116
+143.1s 891 Epoch 15/20 Loss: 0.5659 Val F1: 0.3828
+143.4s 892 Epoch 20/20 Loss: 0.4825 Val F1: 0.5540
+143.4s 893 Trial 2 Final Val F1: 0.5355
+143.4s 894 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+143.6s 895 Epoch 5/20 Loss: 0.9213 Val F1: 0.1307
+143.8s 896 Epoch 10/20 Loss: 0.6658 Val F1: 0.2213
+144.0s 897 Epoch 15/20 Loss: 0.5616 Val F1: 0.2911
+144.0s 898 Epoch 20/20 Loss: 0.4629 Val F1: 0.3589
+144.0s 899 Trial 3 Final Val F1: 0.3471
+144.0s 900 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+144.3s 901 Epoch 5/20 Loss: 0.8906 Val F1: 0.1941
+144.3s 902 Epoch 10/20 Loss: 0.6541 Val F1: 0.2928
+144.3s 903 Epoch 15/20 Loss: 0.5314 Val F1: 0.3268
+144.6s 904 Epoch 20/20 Loss: 0.4314 Val F1: 0.3667
+144.6s 905 Trial 4 Final Val F1: 0.3606
+144.6s 906 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+144.6s 907 Epoch 5/20 Loss: 0.8821 Val F1: 0.2166
+144.6s 908 Epoch 10/20 Loss: 0.6623 Val F1: 0.2715
+144.9s 909 Epoch 15/20 Loss: 0.5573 Val F1: 0.2997
+144.9s 910 Epoch 20/20 Loss: 0.4617 Val F1: 0.3339
+144.9s 911 Trial 5 Final Val F1: 0.3454
+144.9s 912 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.5354695167274861
+144.9s 913 
+144.9s 914 Searching best architecture for view: location of formation
+144.9s 915 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+145.1s 916 Epoch 5/20 Loss: 0.8801 Val F1: 0.1636
+145.1s 917 Epoch 10/20 Loss: 0.6664 Val F1: 0.2861
+145.1s 918 Epoch 15/20 Loss: 0.5364 Val F1: 0.3160
+145.4s 919 Epoch 20/20 Loss: 0.4432 Val F1: 0.3604
+145.4s 920 Trial 1 Final Val F1: 0.3677
+145.4s 921 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+145.4s 922 Epoch 5/20 Loss: 0.9621 Val F1: 0.0386
+145.7s 923 Epoch 10/20 Loss: 0.7192 Val F1: 0.2965
+145.7s 924 Epoch 15/20 Loss: 0.5765 Val F1: 0.3136
+146.0s 925 Epoch 20/20 Loss: 0.4850 Val F1: 0.3475
+146.0s 926 Trial 2 Final Val F1: 0.3397
+146.0s 927 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+146.0s 928 Epoch 5/20 Loss: 0.9470 Val F1: 0.0645
+146.3s 929 Epoch 10/20 Loss: 0.6908 Val F1: 0.2251
+146.3s 930 Epoch 15/20 Loss: 0.5674 Val F1: 0.2998
+146.6s 931 Epoch 20/20 Loss: 0.4632 Val F1: 0.3541
+146.6s 932 Trial 3 Final Val F1: 0.3505
+146.6s 933 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+146.6s 934 Epoch 5/20 Loss: 0.9486 Val F1: 0.0386
+146.9s 935 Epoch 10/20 Loss: 0.7135 Val F1: 0.1763
+146.9s 936 Epoch 15/20 Loss: 0.5875 Val F1: 0.2997
+147.2s 937 Epoch 20/20 Loss: 0.4868 Val F1: 0.3398
+147.2s 938 Trial 4 Final Val F1: 0.3422
+147.2s 939 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+147.2s 940 Epoch 5/20 Loss: 0.9420 Val F1: 0.0739
+147.5s 941 Epoch 10/20 Loss: 0.7136 Val F1: 0.2164
+147.5s 942 Epoch 15/20 Loss: 0.5904 Val F1: 0.2598
+147.8s 943 Epoch 20/20 Loss: 0.4838 Val F1: 0.4116
+147.8s 944 Trial 5 Final Val F1: 0.3933
+147.8s 945 Best Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.39326858598104053
+147.8s 946 
+147.8s 947 Searching best architecture for view: length
+147.8s 948 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+147.8s 949 Epoch 5/20 Loss: 0.5393 Val F1: 0.0445
+148.1s 950 Epoch 10/20 Loss: 0.2518 Val F1: 0.0532
+148.1s 951 Epoch 15/20 Loss: 0.1367 Val F1: 0.0588
+148.4s 952 Epoch 20/20 Loss: 0.0874 Val F1: 0.1586
+148.4s 953 Trial 1 Final Val F1: 0.1609
+148.4s 954 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+148.7s 955 Epoch 5/20 Loss: 0.9002 Val F1: 0.2228
+148.9s 956 Epoch 10/20 Loss: 0.7677 Val F1: 0.3290
+149.1s 957 Epoch 15/20 Loss: 0.6747 Val F1: 0.3650
+149.3s 958 Epoch 20/20 Loss: 0.5942 Val F1: 0.5230
+149.3s 959 Trial 2 Final Val F1: 0.5013
+149.3s 960 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+149.3s 961 Epoch 5/20 Loss: 0.5416 Val F1: 0.0817
+149.7s 962 Epoch 10/20 Loss: 0.2678 Val F1: 0.1765
+149.7s 963 Epoch 15/20 Loss: 0.1453 Val F1: 0.1805
+149.9s 964 Epoch 20/20 Loss: 0.0971 Val F1: 0.3059
+149.9s 965 Trial 3 Final Val F1: 0.2789
+149.9s 966 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+149.9s 967 Epoch 5/20 Loss: 0.9580 Val F1: 0.1791
+150.3s 968 Epoch 10/20 Loss: 0.7556 Val F1: 0.2989
+150.3s 969 Epoch 15/20 Loss: 0.7013 Val F1: 0.3254
+150.6s 970 Epoch 20/20 Loss: 0.6276 Val F1: 0.3638
+150.6s 971 Trial 4 Final Val F1: 0.3752
+150.6s 972 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+150.6s 973 Epoch 5/20 Loss: 0.9549 Val F1: 0.0587
+150.8s 974 Epoch 10/20 Loss: 0.7671 Val F1: 0.2269
+150.8s 975 Epoch 15/20 Loss: 0.6154 Val F1: 0.3004
+151.0s 976 Epoch 20/20 Loss: 0.5221 Val F1: 0.3310
+151.0s 977 Trial 5 Final Val F1: 0.3298
+151.0s 978 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4} with F1: 0.501348636107907
+151.0s 979 
+151.0s 980 Searching best architecture for view: publisher
+151.0s 981 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+151.0s 982 Epoch 5/20 Loss: 0.5892 Val F1: 0.0464
+151.3s 983 Epoch 10/20 Loss: 0.3257 Val F1: 0.0892
+151.3s 984 Epoch 15/20 Loss: 0.1647 Val F1: 0.0812
+151.6s 985 Epoch 20/20 Loss: 0.0914 Val F1: 0.0707
+151.6s 986 Trial 1 Final Val F1: 0.0777
+151.6s 987 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+151.8s 988 Epoch 5/20 Loss: 0.9391 Val F1: 0.2208
+151.8s 989 Epoch 10/20 Loss: 0.7706 Val F1: 0.3027
+152.1s 990 Epoch 15/20 Loss: 0.6973 Val F1: 0.3434
+152.1s 991 Epoch 20/20 Loss: 0.6083 Val F1: 0.4063
+152.1s 992 Trial 2 Final Val F1: 0.3984
+152.1s 993 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+152.5s 994 Epoch 5/20 Loss: 0.5580 Val F1: 0.1379
+152.5s 995 Epoch 10/20 Loss: 0.2737 Val F1: 0.1249
+152.8s 996 Epoch 15/20 Loss: 0.1468 Val F1: 0.1499
+152.8s 997 Epoch 20/20 Loss: 0.0972 Val F1: 0.2502
+152.8s 998 Trial 3 Final Val F1: 0.2398
+152.8s 999 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+153.1s 1000 Epoch 5/20 Loss: 0.9501 Val F1: 0.0444
+153.1s 1001 Epoch 10/20 Loss: 0.7439 Val F1: 0.2728
+153.1s 1002 Epoch 15/20 Loss: 0.6123 Val F1: 0.3007
+153.4s 1003 Epoch 20/20 Loss: 0.5148 Val F1: 0.3783
+153.4s 1004 Trial 4 Final Val F1: 0.3549
+153.4s 1005 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+153.4s 1006 Epoch 5/20 Loss: 0.4924 Val F1: 0.1023
+153.8s 1007 Epoch 10/20 Loss: 0.1973 Val F1: 0.2210
+153.8s 1008 Epoch 15/20 Loss: 0.0951 Val F1: 0.1853
+154.1s 1009 Epoch 20/20 Loss: 0.0573 Val F1: 0.2545
+154.1s 1010 Trial 5 Final Val F1: 0.2686
+154.1s 1011 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2} with F1: 0.398423440008785
+154.1s 1012 
+154.1s 1013 Searching best architecture for view: student
+154.1s 1014 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+154.1s 1015 Epoch 5/20 Loss: 0.5958 Val F1: 0.0616
+154.4s 1016 Epoch 10/20 Loss: 0.3207 Val F1: 0.1373
+154.4s 1017 Epoch 15/20 Loss: 0.1805 Val F1: 0.1830
+154.7s 1018 Epoch 20/20 Loss: 0.1223 Val F1: 0.3095
+154.7s 1019 Trial 1 Final Val F1: 0.3444
+154.7s 1020 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+154.7s 1021 Epoch 5/20 Loss: 0.9389 Val F1: 0.0566
+154.9s 1022 Epoch 10/20 Loss: 0.7536 Val F1: 0.2260
+154.9s 1023 Epoch 15/20 Loss: 0.6064 Val F1: 0.3023
+154.9s 1024 Epoch 20/20 Loss: 0.5058 Val F1: 0.3370
+155.1s 1025 Trial 2 Final Val F1: 0.3299
+155.1s 1026 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+155.1s 1027 Epoch 5/20 Loss: 0.9283 Val F1: 0.1397
+155.4s 1028 Epoch 10/20 Loss: 0.7060 Val F1: 0.2011
+155.4s 1029 Epoch 15/20 Loss: 0.5842 Val F1: 0.3067
+155.6s 1030 Epoch 20/20 Loss: 0.4891 Val F1: 0.3303
+155.6s 1031 Trial 3 Final Val F1: 0.3340
+155.6s 1032 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+155.6s 1033 Epoch 5/20 Loss: 0.9419 Val F1: 0.1584
+156.0s 1034 Epoch 10/20 Loss: 0.7478 Val F1: 0.3112
+156.0s 1035 Epoch 15/20 Loss: 0.6377 Val F1: 0.3395
+156.3s 1036 Epoch 20/20 Loss: 0.5467 Val F1: 0.3764
+156.3s 1037 Trial 4 Final Val F1: 0.3834
+156.3s 1038 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+156.3s 1039 Epoch 5/20 Loss: 0.9487 Val F1: 0.0565
+156.5s 1040 Epoch 10/20 Loss: 0.7578 Val F1: 0.1880
+156.5s 1041 Epoch 15/20 Loss: 0.6181 Val F1: 0.2475
+156.5s 1042 Epoch 20/20 Loss: 0.5270 Val F1: 0.3302
+156.7s 1043 Trial 5 Final Val F1: 0.3197
+156.7s 1044 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4} with F1: 0.38336372888446385
+156.7s 1045 
+156.7s 1046 Searching best architecture for view: twinned administrative body
+156.7s 1047 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+156.7s 1048 Epoch 5/20 Loss: 0.9153 Val F1: 0.1957
+156.7s 1049 Epoch 10/20 Loss: 0.6480 Val F1: 0.2958
+157.0s 1050 Epoch 15/20 Loss: 0.5255 Val F1: 0.3259
+157.0s 1051 Epoch 20/20 Loss: 0.4250 Val F1: 0.3535
+157.0s 1052 Trial 1 Final Val F1: 0.3586
+157.0s 1053 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+157.2s 1054 Epoch 5/20 Loss: 0.9309 Val F1: 0.1974
+157.2s 1055 Epoch 10/20 Loss: 0.7672 Val F1: 0.2999
+157.4s 1056 Epoch 15/20 Loss: 0.6969 Val F1: 0.3329
+157.4s 1057 Epoch 20/20 Loss: 0.6209 Val F1: 0.3730
+157.4s 1058 Trial 2 Final Val F1: 0.3793
+157.4s 1059 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+157.7s 1060 Epoch 5/20 Loss: 0.8145 Val F1: 0.1844
+157.7s 1061 Epoch 10/20 Loss: 0.5728 Val F1: 0.3105
+157.7s 1062 Epoch 15/20 Loss: 0.4462 Val F1: 0.3539
+157.9s 1063 Epoch 20/20 Loss: 0.3209 Val F1: 0.3905
+157.9s 1064 Trial 3 Final Val F1: 0.4072
+157.9s 1065 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+157.9s 1066 Epoch 5/20 Loss: 0.5448 Val F1: 0.1655
+158.3s 1067 Epoch 10/20 Loss: 0.2771 Val F1: 0.4005
+158.3s 1068 Epoch 15/20 Loss: 0.1323 Val F1: 0.3426
+158.7s 1069 Epoch 20/20 Loss: 0.0843 Val F1: 0.4470
+158.7s 1070 Trial 4 Final Val F1: 0.4440
+158.7s 1071 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+158.7s 1072 Epoch 5/20 Loss: 0.8984 Val F1: 0.1663
+158.7s 1073 Epoch 10/20 Loss: 0.6890 Val F1: 0.2269
+158.9s 1074 Epoch 15/20 Loss: 0.5688 Val F1: 0.3048
+158.9s 1075 Epoch 20/20 Loss: 0.4635 Val F1: 0.3502
+158.9s 1076 Trial 5 Final Val F1: 0.3506
+158.9s 1077 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.44398628596850026
+158.9s 1078 
+158.9s 1079 Searching best architecture for view: member of
+158.9s 1080 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+159.2s 1081 Epoch 5/20 Loss: 0.5463 Val F1: 0.0995
+159.2s 1082 Epoch 10/20 Loss: 0.1974 Val F1: 0.2059
+159.5s 1083 Epoch 15/20 Loss: 0.1033 Val F1: 0.2457
+159.5s 1084 Epoch 20/20 Loss: 0.0644 Val F1: 0.3242
+159.5s 1085 Trial 1 Final Val F1: 0.3107
+159.5s 1086 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+159.9s 1087 Epoch 5/20 Loss: 0.5294 Val F1: 0.1395
+159.9s 1088 Epoch 10/20 Loss: 0.2147 Val F1: 0.1788
+160.2s 1089 Epoch 15/20 Loss: 0.1262 Val F1: 0.3107
+160.2s 1090 Epoch 20/20 Loss: 0.0898 Val F1: 0.4301
+160.2s 1091 Trial 2 Final Val F1: 0.4422
+160.2s 1092 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+160.4s 1093 Epoch 5/20 Loss: 0.8830 Val F1: 0.2174
+160.4s 1094 Epoch 10/20 Loss: 0.6524 Val F1: 0.2901
+160.4s 1095 Epoch 15/20 Loss: 0.5440 Val F1: 0.3161
+160.6s 1096 Epoch 20/20 Loss: 0.4416 Val F1: 0.3639
+160.6s 1097 Trial 3 Final Val F1: 0.3563
+160.6s 1098 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+160.6s 1099 Epoch 5/20 Loss: 0.8712 Val F1: 0.3073
+161.0s 1100 Epoch 10/20 Loss: 0.7423 Val F1: 0.3209
+161.0s 1101 Epoch 15/20 Loss: 0.6624 Val F1: 0.3719
+161.3s 1102 Epoch 20/20 Loss: 0.5676 Val F1: 0.4054
+161.3s 1103 Trial 4 Final Val F1: 0.4088
+161.3s 1104 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+161.3s 1105 Epoch 5/20 Loss: 0.9238 Val F1: 0.1097
+161.5s 1106 Epoch 10/20 Loss: 0.6776 Val F1: 0.2307
+161.5s 1107 Epoch 15/20 Loss: 0.5574 Val F1: 0.3587
+161.8s 1108 Epoch 20/20 Loss: 0.4603 Val F1: 0.4055
+161.8s 1109 Trial 5 Final Val F1: 0.3985
+161.8s 1110 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None} with F1: 0.44223092308139106
+161.8s 1111 
+161.8s 1112 Searching best architecture for view: programming language
+161.8s 1113 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+161.8s 1114 Epoch 5/20 Loss: 0.9193 Val F1: 0.2803
+162.2s 1115 Epoch 10/20 Loss: 0.7930 Val F1: 0.3209
+162.2s 1116 Epoch 15/20 Loss: 0.7224 Val F1: 0.3702
+162.5s 1117 Epoch 20/20 Loss: 0.6483 Val F1: 0.4113
+162.5s 1118 Trial 1 Final Val F1: 0.4381
+162.5s 1119 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+162.5s 1120 Epoch 5/20 Loss: 0.9477 Val F1: 0.0386
+162.7s 1121 Epoch 10/20 Loss: 0.7604 Val F1: 0.1738
+162.7s 1122 Epoch 15/20 Loss: 0.6296 Val F1: 0.2965
+162.7s 1123 Epoch 20/20 Loss: 0.5504 Val F1: 0.3196
+162.7s 1124 Trial 2 Final Val F1: 0.3220
+162.7s 1125 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+163.1s 1126 Epoch 5/20 Loss: 0.5399 Val F1: 0.0960
+163.1s 1127 Epoch 10/20 Loss: 0.2863 Val F1: 0.2497
+163.4s 1128 Epoch 15/20 Loss: 0.1435 Val F1: 0.2603
+163.4s 1129 Epoch 20/20 Loss: 0.0834 Val F1: 0.3149
+163.4s 1130 Trial 3 Final Val F1: 0.2896
+163.4s 1131 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+163.8s 1132 Epoch 5/20 Loss: 0.5265 Val F1: 0.0386
+163.8s 1133 Epoch 10/20 Loss: 0.2668 Val F1: 0.0872
+164.0s 1134 Epoch 15/20 Loss: 0.1376 Val F1: 0.1241
+164.0s 1135 Epoch 20/20 Loss: 0.0865 Val F1: 0.1269
+164.0s 1136 Trial 4 Final Val F1: 0.1556
+164.0s 1137 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+164.3s 1138 Epoch 5/20 Loss: 0.8814 Val F1: 0.2219
+164.3s 1139 Epoch 10/20 Loss: 0.6306 Val F1: 0.3046
+164.3s 1140 Epoch 15/20 Loss: 0.5242 Val F1: 0.3342
+164.5s 1141 Epoch 20/20 Loss: 0.4214 Val F1: 0.3684
+164.5s 1142 Trial 5 Final Val F1: 0.3667
+164.5s 1143 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2} with F1: 0.4380822165565567
+164.5s 1144 
+164.5s 1145 Searching best architecture for view: subsidiary
+164.5s 1146 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+164.5s 1147 Epoch 5/20 Loss: 0.9454 Val F1: 0.0386
+164.7s 1148 Epoch 10/20 Loss: 0.7576 Val F1: 0.1914
+164.7s 1149 Epoch 15/20 Loss: 0.6081 Val F1: 0.2487
+164.9s 1150 Epoch 20/20 Loss: 0.5140 Val F1: 0.3195
+164.9s 1151 Trial 1 Final Val F1: 0.3626
+164.9s 1152 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+164.9s 1153 Epoch 5/20 Loss: 0.9415 Val F1: 0.0386
+165.1s 1154 Epoch 10/20 Loss: 0.7698 Val F1: 0.1980
+165.1s 1155 Epoch 15/20 Loss: 0.6061 Val F1: 0.3039
+165.1s 1156 Epoch 20/20 Loss: 0.5239 Val F1: 0.3325
+165.3s 1157 Trial 2 Final Val F1: 0.3672
+165.3s 1158 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+165.3s 1159 Epoch 5/20 Loss: 0.8079 Val F1: 0.1653
+165.3s 1160 Epoch 10/20 Loss: 0.5895 Val F1: 0.3044
+165.6s 1161 Epoch 15/20 Loss: 0.4704 Val F1: 0.3411
+165.6s 1162 Epoch 20/20 Loss: 0.3562 Val F1: 0.3814
+165.6s 1163 Trial 3 Final Val F1: 0.4042
+165.6s 1164 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+165.9s 1165 Epoch 5/20 Loss: 0.4813 Val F1: 0.1634
+165.9s 1166 Epoch 10/20 Loss: 0.2231 Val F1: 0.2434
+166.3s 1167 Epoch 15/20 Loss: 0.1255 Val F1: 0.2458
+166.3s 1168 Epoch 20/20 Loss: 0.0812 Val F1: 0.2918
+166.3s 1169 Trial 4 Final Val F1: 0.2785
+166.3s 1170 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+166.6s 1171 Epoch 5/20 Loss: 0.5731 Val F1: 0.0450
+166.6s 1172 Epoch 10/20 Loss: 0.2762 Val F1: 0.2074
+166.9s 1173 Epoch 15/20 Loss: 0.1373 Val F1: 0.2528
+166.9s 1174 Epoch 20/20 Loss: 0.0866 Val F1: 0.3111
+166.9s 1175 Trial 5 Final Val F1: 0.2978
+166.9s 1176 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.40415224492323937
+166.9s 1177 
+166.9s 1178 Searching best architecture for view: inception
+166.9s 1179 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+167.2s 1180 Epoch 5/20 Loss: 0.8237 Val F1: 0.1573
+167.2s 1181 Epoch 10/20 Loss: 0.5778 Val F1: 0.3246
+167.2s 1182 Epoch 15/20 Loss: 0.4522 Val F1: 0.3578
+167.4s 1183 Epoch 20/20 Loss: 0.3243 Val F1: 0.3997
+167.4s 1184 Trial 1 Final Val F1: 0.4231
+167.4s 1185 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+167.4s 1186 Epoch 5/20 Loss: 0.5354 Val F1: 0.0386
+167.8s 1187 Epoch 10/20 Loss: 0.2732 Val F1: 0.0730
+167.8s 1188 Epoch 15/20 Loss: 0.1442 Val F1: 0.0730
+168.1s 1189 Epoch 20/20 Loss: 0.0838 Val F1: 0.0809
+168.1s 1190 Trial 2 Final Val F1: 0.0873
+168.1s 1191 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+168.1s 1192 Epoch 5/20 Loss: 0.8951 Val F1: 0.2043
+168.1s 1193 Epoch 10/20 Loss: 0.6480 Val F1: 0.2974
+168.3s 1194 Epoch 15/20 Loss: 0.5381 Val F1: 0.3194
+168.3s 1195 Epoch 20/20 Loss: 0.4385 Val F1: 0.3621
+168.3s 1196 Trial 3 Final Val F1: 0.3479
+168.3s 1197 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+168.3s 1198 Epoch 5/20 Loss: 0.9209 Val F1: 0.0474
+168.6s 1199 Epoch 10/20 Loss: 0.7305 Val F1: 0.2054
+168.6s 1200 Epoch 15/20 Loss: 0.5942 Val F1: 0.2936
+168.6s 1201 Epoch 20/20 Loss: 0.5077 Val F1: 0.3225
+168.6s 1202 Trial 4 Final Val F1: 0.3299
+168.6s 1203 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+169.0s 1204 Epoch 5/20 Loss: 0.4606 Val F1: 0.2236
+169.0s 1205 Epoch 10/20 Loss: 0.1767 Val F1: 0.1020
+169.3s 1206 Epoch 15/20 Loss: 0.0983 Val F1: 0.1008
+169.3s 1207 Epoch 20/20 Loss: 0.0672 Val F1: 0.1050
+169.3s 1208 Trial 5 Final Val F1: 0.1024
+169.3s 1209 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.42310390320880686
+169.3s 1210 
+169.3s 1211 Searching best architecture for view: connects with
+169.3s 1212 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+169.7s 1213 Epoch 5/20 Loss: 0.6528 Val F1: 0.1418
+169.7s 1214 Epoch 10/20 Loss: 0.3865 Val F1: 0.1471
+170.0s 1215 Epoch 15/20 Loss: 0.2029 Val F1: 0.2003
+170.0s 1216 Epoch 20/20 Loss: 0.1283 Val F1: 0.2370
+170.0s 1217 Trial 1 Final Val F1: 0.2170
+170.0s 1218 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+170.4s 1219 Epoch 5/20 Loss: 0.8782 Val F1: 0.3089
+170.6s 1220 Epoch 10/20 Loss: 0.6985 Val F1: 0.3154
+170.8s 1221 Epoch 15/20 Loss: 0.6093 Val F1: 0.3495
+171.1s 1222 Epoch 20/20 Loss: 0.5093 Val F1: 0.4007
+171.1s 1223 Trial 2 Final Val F1: 0.4205
+171.1s 1224 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+171.1s 1225 Epoch 5/20 Loss: 0.7255 Val F1: 0.1707
+171.4s 1226 Epoch 10/20 Loss: 0.5097 Val F1: 0.2234
+171.4s 1227 Epoch 15/20 Loss: 0.2927 Val F1: 0.3626
+171.7s 1228 Epoch 20/20 Loss: 0.1712 Val F1: 0.4524
+171.7s 1229 Trial 3 Final Val F1: 0.4060
+171.7s 1230 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+171.7s 1231 Epoch 5/20 Loss: 0.7979 Val F1: 0.1759
+172.0s 1232 Epoch 10/20 Loss: 0.5755 Val F1: 0.3055
+172.0s 1233 Epoch 15/20 Loss: 0.4505 Val F1: 0.3535
+172.0s 1234 Epoch 20/20 Loss: 0.3281 Val F1: 0.3936
+172.0s 1235 Trial 4 Final Val F1: 0.4167
+172.0s 1236 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+172.2s 1237 Epoch 5/20 Loss: 0.9037 Val F1: 0.2025
+172.2s 1238 Epoch 10/20 Loss: 0.6729 Val F1: 0.2944
+172.2s 1239 Epoch 15/20 Loss: 0.5569 Val F1: 0.3095
+172.5s 1240 Epoch 20/20 Loss: 0.4677 Val F1: 0.3538
+172.5s 1241 Trial 5 Final Val F1: 0.3517
+172.5s 1242 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.4204779622658206
+172.5s 1243 
+172.5s 1244 Searching best architecture for view: notable work
+172.5s 1245 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+172.5s 1246 Epoch 5/20 Loss: 0.9340 Val F1: 0.0850
+172.8s 1247 Epoch 10/20 Loss: 0.6904 Val F1: 0.2131
+172.8s 1248 Epoch 15/20 Loss: 0.5660 Val F1: 0.3059
+173.0s 1249 Epoch 20/20 Loss: 0.4607 Val F1: 0.3511
+173.0s 1250 Trial 1 Final Val F1: 0.3576
+173.0s 1251 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+173.0s 1252 Epoch 5/20 Loss: 0.4773 Val F1: 0.1016
+173.4s 1253 Epoch 10/20 Loss: 0.2312 Val F1: 0.1823
+173.4s 1254 Epoch 15/20 Loss: 0.1431 Val F1: 0.2154
+173.7s 1255 Epoch 20/20 Loss: 0.0999 Val F1: 0.3526
+173.7s 1256 Trial 2 Final Val F1: 0.3665
+173.7s 1257 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+174.0s 1258 Epoch 5/20 Loss: 0.7964 Val F1: 0.2943
+174.2s 1259 Epoch 10/20 Loss: 0.6423 Val F1: 0.3469
+174.4s 1260 Epoch 15/20 Loss: 0.5272 Val F1: 0.4787
+174.7s 1261 Epoch 20/20 Loss: 0.4183 Val F1: 0.6469
+174.7s 1262 Trial 3 Final Val F1: 0.6320
+174.7s 1263 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+174.7s 1264 Epoch 5/20 Loss: 0.9263 Val F1: 0.2279
+174.9s 1265 Epoch 10/20 Loss: 0.7363 Val F1: 0.3174
+174.9s 1266 Epoch 15/20 Loss: 0.6351 Val F1: 0.3535
+175.2s 1267 Epoch 20/20 Loss: 0.5845 Val F1: 0.3851
+175.2s 1268 Trial 4 Final Val F1: 0.3884
+175.2s 1269 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+175.2s 1270 Epoch 5/20 Loss: 0.5077 Val F1: 0.0386
+175.5s 1271 Epoch 10/20 Loss: 0.2373 Val F1: 0.0386
+175.5s 1272 Epoch 15/20 Loss: 0.1211 Val F1: 0.0613
+175.8s 1273 Epoch 20/20 Loss: 0.0803 Val F1: 0.2602
+175.8s 1274 Trial 5 Final Val F1: 0.2356
+175.8s 1275 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.631988365428037
+175.8s 1276 
+175.8s 1277 Searching best architecture for view: discoverer or inventor
+175.8s 1278 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+175.8s 1279 Epoch 5/20 Loss: 0.9447 Val F1: 0.0386
+176.1s 1280 Epoch 10/20 Loss: 0.7508 Val F1: 0.2060
+176.1s 1281 Epoch 15/20 Loss: 0.6107 Val F1: 0.3087
+176.3s 1282 Epoch 20/20 Loss: 0.5145 Val F1: 0.3315
+176.3s 1283 Trial 1 Final Val F1: 0.3313
+176.3s 1284 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+176.7s 1285 Epoch 5/20 Loss: 0.8486 Val F1: 0.2295
+177.0s 1286 Epoch 10/20 Loss: 0.6964 Val F1: 0.3207
+177.3s 1287 Epoch 15/20 Loss: 0.5713 Val F1: 0.4055
+177.6s 1288 Epoch 20/20 Loss: 0.4730 Val F1: 0.5607
+177.6s 1289 Trial 2 Final Val F1: 0.5276
+177.6s 1290 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+177.8s 1291 Epoch 5/20 Loss: 0.9491 Val F1: 0.0644
+177.8s 1292 Epoch 10/20 Loss: 0.7379 Val F1: 0.2221
+178.1s 1293 Epoch 15/20 Loss: 0.5919 Val F1: 0.2732
+178.1s 1294 Epoch 20/20 Loss: 0.4924 Val F1: 0.3967
+178.1s 1295 Trial 3 Final Val F1: 0.3851
+178.1s 1296 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+178.4s 1297 Epoch 5/20 Loss: 0.9881 Val F1: 0.1564
+178.4s 1298 Epoch 10/20 Loss: 0.8236 Val F1: 0.3018
+178.7s 1299 Epoch 15/20 Loss: 0.8063 Val F1: 0.3334
+178.7s 1300 Epoch 20/20 Loss: 0.7353 Val F1: 0.3765
+178.7s 1301 Trial 4 Final Val F1: 0.3814
+178.7s 1302 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+179.0s 1303 Epoch 5/20 Loss: 0.8282 Val F1: 0.2183
+179.2s 1304 Epoch 10/20 Loss: 0.6933 Val F1: 0.3274
+179.5s 1305 Epoch 15/20 Loss: 0.5908 Val F1: 0.3770
+179.7s 1306 Epoch 20/20 Loss: 0.4785 Val F1: 0.5631
+179.7s 1307 Trial 5 Final Val F1: 0.5269
+179.7s 1308 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.5276096566575442
+179.7s 1309 
+179.7s 1310 Searching best architecture for view: shares border with
+179.7s 1311 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+179.9s 1312 Epoch 5/20 Loss: 0.9120 Val F1: 0.1283
+179.9s 1313 Epoch 10/20 Loss: 0.6930 Val F1: 0.1730
+180.3s 1314 Epoch 15/20 Loss: 0.4455 Val F1: 0.1965
+180.3s 1315 Epoch 20/20 Loss: 0.2605 Val F1: 0.3406
+180.3s 1316 Trial 1 Final Val F1: 0.3348
+180.3s 1317 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+180.6s 1318 Epoch 5/20 Loss: 0.9455 Val F1: 0.2596
+180.6s 1319 Epoch 10/20 Loss: 0.8019 Val F1: 0.3173
+181.0s 1320 Epoch 15/20 Loss: 0.7120 Val F1: 0.3442
+181.0s 1321 Epoch 20/20 Loss: 0.6338 Val F1: 0.3897
+181.0s 1322 Trial 2 Final Val F1: 0.3899
+181.0s 1323 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+181.3s 1324 Epoch 5/20 Loss: 0.9178 Val F1: 0.2933
+181.3s 1325 Epoch 10/20 Loss: 0.8220 Val F1: 0.3353
+181.7s 1326 Epoch 15/20 Loss: 0.7239 Val F1: 0.3786
+181.7s 1327 Epoch 20/20 Loss: 0.6809 Val F1: 0.4248
+181.7s 1328 Trial 3 Final Val F1: 0.4282
+181.7s 1329 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+182.0s 1330 Epoch 5/20 Loss: 0.9320 Val F1: 0.0547
+182.0s 1331 Epoch 10/20 Loss: 0.6839 Val F1: 0.2776
+182.3s 1332 Epoch 15/20 Loss: 0.5557 Val F1: 0.3123
+182.3s 1333 Epoch 20/20 Loss: 0.4509 Val F1: 0.3834
+182.3s 1334 Trial 4 Final Val F1: 0.3634
+182.3s 1335 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+182.5s 1336 Epoch 5/20 Loss: 0.9111 Val F1: 0.1899
+182.5s 1337 Epoch 10/20 Loss: 0.6690 Val F1: 0.2957
+182.5s 1338 Epoch 15/20 Loss: 0.5577 Val F1: 0.3163
+182.7s 1339 Epoch 20/20 Loss: 0.4730 Val F1: 0.3523
+182.7s 1340 Trial 5 Final Val F1: 0.3466
+182.7s 1341 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2} with F1: 0.4282000346708289
+182.7s 1342 
+182.7s 1343 Searching best architecture for view: named after
+182.7s 1344 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+182.7s 1345 Epoch 5/20 Loss: 0.9082 Val F1: 0.1761
+182.7s 1346 Epoch 10/20 Loss: 0.6565 Val F1: 0.2902
+183.0s 1347 Epoch 15/20 Loss: 0.5450 Val F1: 0.3215
+183.0s 1348 Epoch 20/20 Loss: 0.4367 Val F1: 0.3649
+183.0s 1349 Trial 1 Final Val F1: 0.3575
+183.0s 1350 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+183.2s 1351 Epoch 5/20 Loss: 0.9813 Val F1: 0.1974
+183.2s 1352 Epoch 10/20 Loss: 0.8794 Val F1: 0.3109
+183.6s 1353 Epoch 15/20 Loss: 0.7830 Val F1: 0.3433
+183.6s 1354 Epoch 20/20 Loss: 0.7172 Val F1: 0.3729
+183.6s 1355 Trial 2 Final Val F1: 0.3804
+183.6s 1356 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+183.8s 1357 Epoch 5/20 Loss: 0.8822 Val F1: 0.2027
+183.8s 1358 Epoch 10/20 Loss: 0.6416 Val F1: 0.3023
+183.8s 1359 Epoch 15/20 Loss: 0.5291 Val F1: 0.3180
+184.0s 1360 Epoch 20/20 Loss: 0.4332 Val F1: 0.3697
+184.0s 1361 Trial 3 Final Val F1: 0.3615
+184.0s 1362 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+184.0s 1363 Epoch 5/20 Loss: 0.5293 Val F1: 0.0386
+184.4s 1364 Epoch 10/20 Loss: 0.2581 Val F1: 0.2236
+184.4s 1365 Epoch 15/20 Loss: 0.1485 Val F1: 0.0812
+184.6s 1366 Epoch 20/20 Loss: 0.0996 Val F1: 0.1895
+184.6s 1367 Trial 4 Final Val F1: 0.1557
+184.6s 1368 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+184.6s 1369 Epoch 5/20 Loss: 0.9475 Val F1: 0.0386
+184.9s 1370 Epoch 10/20 Loss: 0.7624 Val F1: 0.1985
+184.9s 1371 Epoch 15/20 Loss: 0.6217 Val F1: 0.2877
+185.1s 1372 Epoch 20/20 Loss: 0.5374 Val F1: 0.3249
+185.1s 1373 Trial 5 Final Val F1: 0.3231
+185.1s 1374 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2} with F1: 0.38037334603634015
+185.1s 1375 
+185.1s 1376 Searching best architecture for view: based on
+185.1s 1377 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+185.1s 1378 Epoch 5/20 Loss: 0.9636 Val F1: 0.2270
+185.3s 1379 Epoch 10/20 Loss: 0.8114 Val F1: 0.3282
+185.3s 1380 Epoch 15/20 Loss: 0.7667 Val F1: 0.3608
+185.6s 1381 Epoch 20/20 Loss: 0.7020 Val F1: 0.3865
+185.6s 1382 Trial 1 Final Val F1: 0.3875
+185.6s 1383 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+185.6s 1384 Epoch 5/20 Loss: 0.7975 Val F1: 0.1606
+185.8s 1385 Epoch 10/20 Loss: 0.5770 Val F1: 0.3135
+185.8s 1386 Epoch 15/20 Loss: 0.4595 Val F1: 0.3472
+185.8s 1387 Epoch 20/20 Loss: 0.3496 Val F1: 0.4157
+186.0s 1388 Trial 2 Final Val F1: 0.4229
+186.0s 1389 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+186.0s 1390 Epoch 5/20 Loss: 0.9409 Val F1: 0.0386
+186.2s 1391 Epoch 10/20 Loss: 0.7278 Val F1: 0.2191
+186.2s 1392 Epoch 15/20 Loss: 0.6152 Val F1: 0.2890
+186.5s 1393 Epoch 20/20 Loss: 0.5145 Val F1: 0.3227
+186.5s 1394 Trial 3 Final Val F1: 0.3278
+186.5s 1395 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+186.5s 1396 Epoch 5/20 Loss: 0.9323 Val F1: 0.1568
+186.7s 1397 Epoch 10/20 Loss: 0.7382 Val F1: 0.1902
+186.7s 1398 Epoch 15/20 Loss: 0.5878 Val F1: 0.3095
+187.0s 1399 Epoch 20/20 Loss: 0.4921 Val F1: 0.3390
+187.0s 1400 Trial 4 Final Val F1: 0.3358
+187.0s 1401 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+187.0s 1402 Epoch 5/20 Loss: 0.9271 Val F1: 0.1087
+187.2s 1403 Epoch 10/20 Loss: 0.7113 Val F1: 0.2180
+187.2s 1404 Epoch 15/20 Loss: 0.5780 Val F1: 0.2927
+187.5s 1405 Epoch 20/20 Loss: 0.4827 Val F1: 0.3367
+187.5s 1406 Trial 5 Final Val F1: 0.3425
+187.5s 1407 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.422933565975997
+187.5s 1408 
+187.5s 1409 Searching best architecture for view: said to be the same as
+187.5s 1410 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+187.7s 1411 Epoch 5/20 Loss: 0.9154 Val F1: 0.2242
+187.9s 1412 Epoch 10/20 Loss: 0.7842 Val F1: 0.3233
+188.2s 1413 Epoch 15/20 Loss: 0.6686 Val F1: 0.3558
+188.4s 1414 Epoch 20/20 Loss: 0.6227 Val F1: 0.3919
+188.4s 1415 Trial 1 Final Val F1: 0.4203
+188.4s 1416 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+188.6s 1417 Epoch 5/20 Loss: 0.6411 Val F1: 0.2408
+188.6s 1418 Epoch 10/20 Loss: 0.3098 Val F1: 0.2850
+189.1s 1419 Epoch 15/20 Loss: 0.1776 Val F1: 0.3634
+189.1s 1420 Epoch 20/20 Loss: 0.1298 Val F1: 0.3696
+189.1s 1421 Trial 2 Final Val F1: 0.3605
+189.1s 1422 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+189.3s 1423 Epoch 5/20 Loss: 0.9194 Val F1: 0.1557
+189.3s 1424 Epoch 10/20 Loss: 0.7619 Val F1: 0.3085
+189.6s 1425 Epoch 15/20 Loss: 0.6717 Val F1: 0.3310
+189.6s 1426 Epoch 20/20 Loss: 0.6096 Val F1: 0.3789
+189.6s 1427 Trial 3 Final Val F1: 0.3789
+189.6s 1428 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+189.9s 1429 Epoch 5/20 Loss: 0.8366 Val F1: 0.2913
+189.9s 1430 Epoch 10/20 Loss: 0.7116 Val F1: 0.3173
+190.2s 1431 Epoch 15/20 Loss: 0.6282 Val F1: 0.3684
+190.2s 1432 Epoch 20/20 Loss: 0.5114 Val F1: 0.5322
+190.2s 1433 Trial 4 Final Val F1: 0.5218
+190.2s 1434 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+190.6s 1435 Epoch 5/20 Loss: 0.5559 Val F1: 0.1706
+190.6s 1436 Epoch 10/20 Loss: 0.2384 Val F1: 0.2413
+190.9s 1437 Epoch 15/20 Loss: 0.1410 Val F1: 0.3033
+190.9s 1438 Epoch 20/20 Loss: 0.1014 Val F1: 0.3456
+191.1s 1439 Trial 5 Final Val F1: 0.3766
+191.1s 1440 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2} with F1: 0.5218372034730381
+191.1s 1441 
+191.1s 1442 Searching best architecture for view: parent taxon
+191.1s 1443 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+191.1s 1444 Epoch 5/20 Loss: 0.9522 Val F1: 0.0881
+191.4s 1445 Epoch 10/20 Loss: 0.6970 Val F1: 0.2234
+191.4s 1446 Epoch 15/20 Loss: 0.5646 Val F1: 0.3066
+191.7s 1447 Epoch 20/20 Loss: 0.4684 Val F1: 0.3497
+191.7s 1448 Trial 1 Final Val F1: 0.3471
+191.7s 1449 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+191.9s 1450 Epoch 5/20 Loss: 0.9778 Val F1: 0.2215
+191.9s 1451 Epoch 10/20 Loss: 0.8115 Val F1: 0.3293
+192.3s 1452 Epoch 15/20 Loss: 0.7101 Val F1: 0.3546
+192.3s 1453 Epoch 20/20 Loss: 0.6107 Val F1: 0.3949
+192.3s 1454 Trial 2 Final Val F1: 0.3923
+192.3s 1455 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+192.6s 1456 Epoch 5/20 Loss: 0.9516 Val F1: 0.0386
+192.6s 1457 Epoch 10/20 Loss: 0.7812 Val F1: 0.1581
+192.6s 1458 Epoch 15/20 Loss: 0.6262 Val F1: 0.2979
+192.9s 1459 Epoch 20/20 Loss: 0.5362 Val F1: 0.3239
+192.9s 1460 Trial 3 Final Val F1: 0.3193
+192.9s 1461 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+192.9s 1462 Epoch 5/20 Loss: 0.5029 Val F1: 0.1808
+193.2s 1463 Epoch 10/20 Loss: 0.2489 Val F1: 0.2164
+193.2s 1464 Epoch 15/20 Loss: 0.1139 Val F1: 0.1981
+193.6s 1465 Epoch 20/20 Loss: 0.0699 Val F1: 0.2775
+193.6s 1466 Trial 4 Final Val F1: 0.2731
+193.6s 1467 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+193.6s 1468 Epoch 5/20 Loss: 0.9093 Val F1: 0.1875
+193.6s 1469 Epoch 10/20 Loss: 0.6866 Val F1: 0.2381
+193.8s 1470 Epoch 15/20 Loss: 0.5677 Val F1: 0.3007
+193.8s 1471 Epoch 20/20 Loss: 0.4710 Val F1: 0.3612
+193.8s 1472 Trial 5 Final Val F1: 0.3525
+193.8s 1473 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4} with F1: 0.3922744293503672
+193.8s 1474 
+193.8s 1475 Searching best architecture for view: event distance
+193.8s 1476 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+194.1s 1477 Epoch 5/20 Loss: 0.5014 Val F1: 0.1844
+194.1s 1478 Epoch 10/20 Loss: 0.2168 Val F1: 0.2960
+194.4s 1479 Epoch 15/20 Loss: 0.1027 Val F1: 0.2679
+194.4s 1480 Epoch 20/20 Loss: 0.0704 Val F1: 0.3806
+194.4s 1481 Trial 1 Final Val F1: 0.3649
+194.4s 1482 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+194.7s 1483 Epoch 5/20 Loss: 0.8830 Val F1: 0.1965
+194.7s 1484 Epoch 10/20 Loss: 0.6438 Val F1: 0.3116
+194.7s 1485 Epoch 15/20 Loss: 0.5285 Val F1: 0.3183
+194.9s 1486 Epoch 20/20 Loss: 0.4342 Val F1: 0.3666
+194.9s 1487 Trial 2 Final Val F1: 0.3658
+194.9s 1488 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+194.9s 1489 Epoch 5/20 Loss: 0.8341 Val F1: 0.1676
+195.1s 1490 Epoch 10/20 Loss: 0.5777 Val F1: 0.3140
+195.1s 1491 Epoch 15/20 Loss: 0.4703 Val F1: 0.3504
+195.1s 1492 Epoch 20/20 Loss: 0.3580 Val F1: 0.3895
+195.1s 1493 Trial 3 Final Val F1: 0.3985
+195.1s 1494 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+195.5s 1495 Epoch 5/20 Loss: 0.4573 Val F1: 0.1949
+195.5s 1496 Epoch 10/20 Loss: 0.1968 Val F1: 0.2834
+195.9s 1497 Epoch 15/20 Loss: 0.1054 Val F1: 0.2516
+195.9s 1498 Epoch 20/20 Loss: 0.0679 Val F1: 0.2879
+195.9s 1499 Trial 4 Final Val F1: 0.3220
+195.9s 1500 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+196.3s 1501 Epoch 5/20 Loss: 0.8615 Val F1: 0.2371
+196.5s 1502 Epoch 10/20 Loss: 0.6830 Val F1: 0.3245
+196.8s 1503 Epoch 15/20 Loss: 0.5895 Val F1: 0.3985
+197.0s 1504 Epoch 20/20 Loss: 0.4714 Val F1: 0.5068
+197.0s 1505 Trial 5 Final Val F1: 0.4950
+197.0s 1506 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.49496460034469697
+197.0s 1507 
+197.0s 1508 Searching best architecture for view: number of articles
+197.0s 1509 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+197.2s 1510 Epoch 5/20 Loss: 0.4611 Val F1: 0.0499
+197.2s 1511 Epoch 10/20 Loss: 0.2088 Val F1: 0.0813
+197.6s 1512 Epoch 15/20 Loss: 0.1303 Val F1: 0.0749
+197.6s 1513 Epoch 20/20 Loss: 0.0919 Val F1: 0.1182
+197.6s 1514 Trial 1 Final Val F1: 0.1274
+197.6s 1515 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+197.9s 1516 Epoch 5/20 Loss: 0.9423 Val F1: 0.1805
+197.9s 1517 Epoch 10/20 Loss: 0.7842 Val F1: 0.3023
+198.1s 1518 Epoch 15/20 Loss: 0.6897 Val F1: 0.3442
+198.1s 1519 Epoch 20/20 Loss: 0.5981 Val F1: 0.4242
+198.1s 1520 Trial 2 Final Val F1: 0.4268
+198.1s 1521 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+198.4s 1522 Epoch 5/20 Loss: 0.5468 Val F1: 0.0386
+198.4s 1523 Epoch 10/20 Loss: 0.2768 Val F1: 0.1725
+198.7s 1524 Epoch 15/20 Loss: 0.1446 Val F1: 0.1955
+198.7s 1525 Epoch 20/20 Loss: 0.0957 Val F1: 0.3178
+198.7s 1526 Trial 3 Final Val F1: 0.3003
+198.7s 1527 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+199.1s 1528 Epoch 5/20 Loss: 0.5204 Val F1: 0.0853
+199.1s 1529 Epoch 10/20 Loss: 0.2292 Val F1: 0.1239
+199.3s 1530 Epoch 15/20 Loss: 0.1124 Val F1: 0.1557
+199.3s 1531 Epoch 20/20 Loss: 0.0769 Val F1: 0.1984
+199.3s 1532 Trial 4 Final Val F1: 0.1886
+199.3s 1533 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+199.7s 1534 Epoch 5/20 Loss: 0.9812 Val F1: 0.1818
+199.7s 1535 Epoch 10/20 Loss: 0.7978 Val F1: 0.3051
+200.0s 1536 Epoch 15/20 Loss: 0.7101 Val F1: 0.3346
+200.0s 1537 Epoch 20/20 Loss: 0.6641 Val F1: 0.3879
+200.0s 1538 Trial 5 Final Val F1: 0.3836
+200.0s 1539 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2} with F1: 0.426779740172449
+200.0s 1540 
+200.0s 1541 Searching best architecture for view: depicts
+200.0s 1542 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+200.3s 1543 Epoch 5/20 Loss: 0.4775 Val F1: 0.1016
+200.3s 1544 Epoch 10/20 Loss: 0.1985 Val F1: 0.2732
+200.7s 1545 Epoch 15/20 Loss: 0.1046 Val F1: 0.3318
+200.7s 1546 Epoch 20/20 Loss: 0.0688 Val F1: 0.4142
+200.7s 1547 Trial 1 Final Val F1: 0.4302
+200.7s 1548 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+201.0s 1549 Epoch 5/20 Loss: 0.9395 Val F1: 0.1055
+201.0s 1550 Epoch 10/20 Loss: 0.6779 Val F1: 0.2258
+201.2s 1551 Epoch 15/20 Loss: 0.5701 Val F1: 0.3022
+201.2s 1552 Epoch 20/20 Loss: 0.4720 Val F1: 0.3812
+201.2s 1553 Trial 2 Final Val F1: 0.3805
+201.2s 1554 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+201.5s 1555 Epoch 5/20 Loss: 0.9890 Val F1: 0.1938
+201.5s 1556 Epoch 10/20 Loss: 0.8507 Val F1: 0.3222
+201.8s 1557 Epoch 15/20 Loss: 0.8047 Val F1: 0.3404
+201.8s 1558 Epoch 20/20 Loss: 0.7482 Val F1: 0.3606
+201.8s 1559 Trial 3 Final Val F1: 0.3633
+201.8s 1560 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+202.2s 1561 Epoch 5/20 Loss: 0.9102 Val F1: 0.2768
+202.4s 1562 Epoch 10/20 Loss: 0.7701 Val F1: 0.3291
+202.7s 1563 Epoch 15/20 Loss: 0.6924 Val F1: 0.4277
+202.9s 1564 Epoch 20/20 Loss: 0.6106 Val F1: 0.4997
+202.9s 1565 Trial 4 Final Val F1: 0.4851
+202.9s 1566 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+202.9s 1567 Epoch 5/20 Loss: 0.9238 Val F1: 0.1626
+203.2s 1568 Epoch 10/20 Loss: 0.7647 Val F1: 0.3018
+203.2s 1569 Epoch 15/20 Loss: 0.6872 Val F1: 0.3377
+203.4s 1570 Epoch 20/20 Loss: 0.5788 Val F1: 0.3865
+203.4s 1571 Trial 5 Final Val F1: 0.3803
+203.4s 1572 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4} with F1: 0.4851057315412261
+203.4s 1573 
+203.4s 1574 Searching best architecture for view: author
+203.4s 1575 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+203.4s 1576 Epoch 5/20 Loss: 0.5400 Val F1: 0.0386
+203.7s 1577 Epoch 10/20 Loss: 0.2890 Val F1: 0.0451
+203.7s 1578 Epoch 15/20 Loss: 0.1770 Val F1: 0.1396
+204.0s 1579 Epoch 20/20 Loss: 0.1182 Val F1: 0.2038
+204.0s 1580 Trial 1 Final Val F1: 0.2036
+204.0s 1581 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+204.0s 1582 Epoch 5/20 Loss: 0.9442 Val F1: 0.0414
+204.3s 1583 Epoch 10/20 Loss: 0.7362 Val F1: 0.2300
+204.3s 1584 Epoch 15/20 Loss: 0.6114 Val F1: 0.2331
+204.5s 1585 Epoch 20/20 Loss: 0.5234 Val F1: 0.3174
+204.5s 1586 Trial 2 Final Val F1: 0.3219
+204.5s 1587 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+204.5s 1588 Epoch 5/20 Loss: 0.8191 Val F1: 0.2019
+204.5s 1589 Epoch 10/20 Loss: 0.5858 Val F1: 0.2981
+204.8s 1590 Epoch 15/20 Loss: 0.4622 Val F1: 0.3428
+204.8s 1591 Epoch 20/20 Loss: 0.3469 Val F1: 0.3963
+204.8s 1592 Trial 3 Final Val F1: 0.4135
+204.8s 1593 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+204.8s 1594 Epoch 5/20 Loss: 0.8933 Val F1: 0.2064
+205.0s 1595 Epoch 10/20 Loss: 0.6736 Val F1: 0.2737
+205.0s 1596 Epoch 15/20 Loss: 0.5524 Val F1: 0.3184
+205.0s 1597 Epoch 20/20 Loss: 0.4503 Val F1: 0.3606
+205.0s 1598 Trial 4 Final Val F1: 0.3566
+205.0s 1599 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+205.3s 1600 Epoch 5/20 Loss: 0.9740 Val F1: 0.2286
+205.3s 1601 Epoch 10/20 Loss: 0.8099 Val F1: 0.3096
+205.7s 1602 Epoch 15/20 Loss: 0.7463 Val F1: 0.3346
+205.7s 1603 Epoch 20/20 Loss: 0.6911 Val F1: 0.3582
+205.7s 1604 Trial 5 Final Val F1: 0.3635
+205.7s 1605 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.41350702277149726
+205.7s 1606 
+205.7s 1607 Searching best architecture for view: family
+205.7s 1608 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+206.0s 1609 Epoch 5/20 Loss: 0.9305 Val F1: 0.0939
+206.0s 1610 Epoch 10/20 Loss: 0.7056 Val F1: 0.2143
+206.2s 1611 Epoch 15/20 Loss: 0.5840 Val F1: 0.3057
+206.2s 1612 Epoch 20/20 Loss: 0.4894 Val F1: 0.3429
+206.2s 1613 Trial 1 Final Val F1: 0.3405
+206.2s 1614 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+206.5s 1615 Epoch 5/20 Loss: 0.9432 Val F1: 0.0386
+206.5s 1616 Epoch 10/20 Loss: 0.7265 Val F1: 0.2242
+206.7s 1617 Epoch 15/20 Loss: 0.6086 Val F1: 0.2327
+206.7s 1618 Epoch 20/20 Loss: 0.5232 Val F1: 0.2676
+206.7s 1619 Trial 2 Final Val F1: 0.2889
+206.7s 1620 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+206.9s 1621 Epoch 5/20 Loss: 0.9545 Val F1: 0.0386
+206.9s 1622 Epoch 10/20 Loss: 0.7777 Val F1: 0.1722
+207.1s 1623 Epoch 15/20 Loss: 0.6256 Val F1: 0.2376
+207.1s 1624 Epoch 20/20 Loss: 0.5347 Val F1: 0.3168
+207.1s 1625 Trial 3 Final Val F1: 0.3205
+207.1s 1626 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+207.4s 1627 Epoch 5/20 Loss: 0.9972 Val F1: 0.2040
+207.4s 1628 Epoch 10/20 Loss: 0.8490 Val F1: 0.3028
+207.7s 1629 Epoch 15/20 Loss: 0.7780 Val F1: 0.3322
+207.7s 1630 Epoch 20/20 Loss: 0.6885 Val F1: 0.3732
+207.7s 1631 Trial 4 Final Val F1: 0.3875
+207.7s 1632 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+207.9s 1633 Epoch 5/20 Loss: 0.9011 Val F1: 0.1952
+207.9s 1634 Epoch 10/20 Loss: 0.6690 Val F1: 0.2981
+207.9s 1635 Epoch 15/20 Loss: 0.5350 Val F1: 0.3235
+208.2s 1636 Epoch 20/20 Loss: 0.4296 Val F1: 0.3645
+208.2s 1637 Trial 5 Final Val F1: 0.3641
+208.2s 1638 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2} with F1: 0.3874546374212003
+208.2s 1639 
+208.2s 1640 Searching best architecture for view: owned by
+208.2s 1641 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+208.2s 1642 Epoch 5/20 Loss: 0.8834 Val F1: 0.2108
+208.4s 1643 Epoch 10/20 Loss: 0.6139 Val F1: 0.3105
+208.4s 1644 Epoch 15/20 Loss: 0.5080 Val F1: 0.3377
+208.4s 1645 Epoch 20/20 Loss: 0.4081 Val F1: 0.3702
+208.4s 1646 Trial 1 Final Val F1: 0.3976
+208.4s 1647 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+208.7s 1648 Epoch 5/20 Loss: 0.8796 Val F1: 0.2028
+208.7s 1649 Epoch 10/20 Loss: 0.6415 Val F1: 0.3024
+208.9s 1650 Epoch 15/20 Loss: 0.5161 Val F1: 0.3291
+208.9s 1651 Epoch 20/20 Loss: 0.4182 Val F1: 0.3650
+208.9s 1652 Trial 2 Final Val F1: 0.3649
+208.9s 1653 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+209.3s 1654 Epoch 5/20 Loss: 0.5105 Val F1: 0.2065
+209.5s 1655 Epoch 10/20 Loss: 0.2479 Val F1: 0.3180
+209.8s 1656 Epoch 15/20 Loss: 0.1440 Val F1: 0.3535
+210.0s 1657 Epoch 20/20 Loss: 0.1147 Val F1: 0.4433
+210.0s 1658 Trial 3 Final Val F1: 0.4148
+210.0s 1659 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+210.3s 1660 Epoch 5/20 Loss: 0.4886 Val F1: 0.1161
+210.6s 1661 Epoch 10/20 Loss: 0.2180 Val F1: 0.2869
+210.9s 1662 Epoch 15/20 Loss: 0.1385 Val F1: 0.2833
+211.1s 1663 Epoch 20/20 Loss: 0.0942 Val F1: 0.3634
+211.1s 1664 Trial 4 Final Val F1: 0.3730
+211.1s 1665 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+211.1s 1666 Epoch 5/20 Loss: 0.9286 Val F1: 0.1394
+211.3s 1667 Epoch 10/20 Loss: 0.6985 Val F1: 0.2206
+211.3s 1668 Epoch 15/20 Loss: 0.5686 Val F1: 0.3131
+211.6s 1669 Epoch 20/20 Loss: 0.4668 Val F1: 0.3518
+211.6s 1670 Trial 5 Final Val F1: 0.3443
+211.6s 1671 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.41475497139974266
+211.6s 1672 
+211.6s 1673 Searching best architecture for view: located
+211.6s 1674 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+211.6s 1675 Epoch 5/20 Loss: 0.9354 Val F1: 0.0444
+211.9s 1676 Epoch 10/20 Loss: 0.6956 Val F1: 0.2287
+211.9s 1677 Epoch 15/20 Loss: 0.5676 Val F1: 0.3011
+212.2s 1678 Epoch 20/20 Loss: 0.4714 Val F1: 0.3509
+212.2s 1679 Trial 1 Final Val F1: 0.3502
+212.2s 1680 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+212.2s 1681 Epoch 5/20 Loss: 0.9345 Val F1: 0.1892
+212.4s 1682 Epoch 10/20 Loss: 0.6985 Val F1: 0.2080
+212.4s 1683 Epoch 15/20 Loss: 0.5841 Val F1: 0.2874
+212.7s 1684 Epoch 20/20 Loss: 0.4933 Val F1: 0.3294
+212.7s 1685 Trial 2 Final Val F1: 0.3290
+212.7s 1686 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+212.7s 1687 Epoch 5/20 Loss: 0.4915 Val F1: 0.1262
+213.0s 1688 Epoch 10/20 Loss: 0.2189 Val F1: 0.2487
+213.0s 1689 Epoch 15/20 Loss: 0.1228 Val F1: 0.2360
+213.4s 1690 Epoch 20/20 Loss: 0.0815 Val F1: 0.2480
+213.4s 1691 Trial 3 Final Val F1: 0.2602
+213.4s 1692 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+213.4s 1693 Epoch 5/20 Loss: 0.9043 Val F1: 0.1800
+213.7s 1694 Epoch 10/20 Loss: 0.7407 Val F1: 0.3087
+213.7s 1695 Epoch 15/20 Loss: 0.6586 Val F1: 0.3512
+214.0s 1696 Epoch 20/20 Loss: 0.5366 Val F1: 0.3917
+214.0s 1697 Trial 4 Final Val F1: 0.3914
+214.0s 1698 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+214.0s 1699 Epoch 5/20 Loss: 0.8242 Val F1: 0.2063
+214.2s 1700 Epoch 10/20 Loss: 0.5759 Val F1: 0.3077
+214.2s 1701 Epoch 15/20 Loss: 0.4613 Val F1: 0.3504
+214.2s 1702 Epoch 20/20 Loss: 0.3336 Val F1: 0.3861
+214.2s 1703 Trial 5 Final Val F1: 0.4053
+214.2s 1704 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.40527846133934164
+214.4s 1705 
+214.4s 1706 Searching best architecture for view: parent organization
+214.4s 1707 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+214.4s 1708 Epoch 5/20 Loss: 0.9228 Val F1: 0.1698
+214.7s 1709 Epoch 10/20 Loss: 0.7446 Val F1: 0.3100
+214.7s 1710 Epoch 15/20 Loss: 0.6664 Val F1: 0.3560
+214.9s 1711 Epoch 20/20 Loss: 0.5685 Val F1: 0.3967
+214.9s 1712 Trial 1 Final Val F1: 0.3925
+214.9s 1713 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+214.9s 1714 Epoch 5/20 Loss: 0.8963 Val F1: 0.2057
+214.9s 1715 Epoch 10/20 Loss: 0.6524 Val F1: 0.2933
+215.2s 1716 Epoch 15/20 Loss: 0.5370 Val F1: 0.3160
+215.2s 1717 Epoch 20/20 Loss: 0.4442 Val F1: 0.3464
+215.2s 1718 Trial 2 Final Val F1: 0.3518
+215.2s 1719 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+215.2s 1720 Epoch 5/20 Loss: 0.8432 Val F1: 0.1969
+215.5s 1721 Epoch 10/20 Loss: 0.6168 Val F1: 0.3075
+215.5s 1722 Epoch 15/20 Loss: 0.4988 Val F1: 0.3248
+215.5s 1723 Epoch 20/20 Loss: 0.3999 Val F1: 0.3783
+215.5s 1724 Trial 3 Final Val F1: 0.3719
+215.5s 1725 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+215.8s 1726 Epoch 5/20 Loss: 0.9728 Val F1: 0.2501
+215.8s 1727 Epoch 10/20 Loss: 0.8253 Val F1: 0.3219
+216.1s 1728 Epoch 15/20 Loss: 0.7529 Val F1: 0.3633
+216.1s 1729 Epoch 20/20 Loss: 0.6601 Val F1: 0.3900
+216.1s 1730 Trial 4 Final Val F1: 0.3914
+216.1s 1731 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+216.4s 1732 Epoch 5/20 Loss: 0.8973 Val F1: 0.1857
+216.4s 1733 Epoch 10/20 Loss: 0.6744 Val F1: 0.2851
+216.4s 1734 Epoch 15/20 Loss: 0.5650 Val F1: 0.3111
+216.6s 1735 Epoch 20/20 Loss: 0.4696 Val F1: 0.3456
+216.6s 1736 Trial 5 Final Val F1: 0.3438
+216.6s 1737 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2} with F1: 0.392533393645588
+216.6s 1738 
+216.6s 1739 Searching best architecture for view: published in
+216.6s 1740 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+216.6s 1741 Epoch 5/20 Loss: 0.4434 Val F1: 0.0599
+217.0s 1742 Epoch 10/20 Loss: 0.1764 Val F1: 0.1732
+217.0s 1743 Epoch 15/20 Loss: 0.0989 Val F1: 0.2449
+217.3s 1744 Epoch 20/20 Loss: 0.0658 Val F1: 0.3985
+217.3s 1745 Trial 1 Final Val F1: 0.3724
+217.3s 1746 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+217.3s 1747 Epoch 5/20 Loss: 0.9598 Val F1: 0.0386
+217.5s 1748 Epoch 10/20 Loss: 0.7923 Val F1: 0.1055
+217.5s 1749 Epoch 15/20 Loss: 0.6471 Val F1: 0.2325
+217.5s 1750 Epoch 20/20 Loss: 0.5667 Val F1: 0.3019
+217.7s 1751 Trial 2 Final Val F1: 0.3134
+217.7s 1752 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+217.7s 1753 Epoch 5/20 Loss: 0.4828 Val F1: 0.0900
+218.1s 1754 Epoch 10/20 Loss: 0.2207 Val F1: 0.2349
+218.1s 1755 Epoch 15/20 Loss: 0.1191 Val F1: 0.1971
+218.4s 1756 Epoch 20/20 Loss: 0.0809 Val F1: 0.3092
+218.4s 1757 Trial 3 Final Val F1: 0.2968
+218.4s 1758 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+218.7s 1759 Epoch 5/20 Loss: 0.8518 Val F1: 0.2898
+218.9s 1760 Epoch 10/20 Loss: 0.6903 Val F1: 0.3303
+219.2s 1761 Epoch 15/20 Loss: 0.5784 Val F1: 0.3920
+219.3s 1762 Epoch 20/20 Loss: 0.4735 Val F1: 0.5219
+219.3s 1763 Trial 4 Final Val F1: 0.5014
+219.3s 1764 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+219.3s 1765 Epoch 5/20 Loss: 0.9548 Val F1: 0.0386
+219.6s 1766 Epoch 10/20 Loss: 0.7562 Val F1: 0.1928
+219.6s 1767 Epoch 15/20 Loss: 0.6177 Val F1: 0.2416
+219.6s 1768 Epoch 20/20 Loss: 0.5266 Val F1: 0.3289
+219.6s 1769 Trial 5 Final Val F1: 0.3236
+219.6s 1770 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.5014007601962291
+219.8s 1771 
+219.8s 1772 Searching best architecture for view: manufacturer
+219.8s 1773 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+219.8s 1774 Epoch 5/20 Loss: 0.8897 Val F1: 0.2347
+219.8s 1775 Epoch 10/20 Loss: 0.6599 Val F1: 0.2327
+220.0s 1776 Epoch 15/20 Loss: 0.5453 Val F1: 0.3111
+220.0s 1777 Epoch 20/20 Loss: 0.4448 Val F1: 0.3623
+220.0s 1778 Trial 1 Final Val F1: 0.3585
+220.0s 1779 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+220.3s 1780 Epoch 5/20 Loss: 0.4887 Val F1: 0.0386
+220.3s 1781 Epoch 10/20 Loss: 0.2122 Val F1: 0.1985
+220.7s 1782 Epoch 15/20 Loss: 0.1029 Val F1: 0.1905
+220.7s 1783 Epoch 20/20 Loss: 0.0594 Val F1: 0.3082
+220.7s 1784 Trial 2 Final Val F1: 0.3110
+220.7s 1785 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+221.0s 1786 Epoch 5/20 Loss: 0.5409 Val F1: 0.0386
+221.0s 1787 Epoch 10/20 Loss: 0.2847 Val F1: 0.1082
+221.3s 1788 Epoch 15/20 Loss: 0.1441 Val F1: 0.1330
+221.3s 1789 Epoch 20/20 Loss: 0.0818 Val F1: 0.1850
+221.3s 1790 Trial 3 Final Val F1: 0.1569
+221.3s 1791 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+221.5s 1792 Epoch 5/20 Loss: 0.9029 Val F1: 0.1588
+221.5s 1793 Epoch 10/20 Loss: 0.6644 Val F1: 0.2936
+221.5s 1794 Epoch 15/20 Loss: 0.5421 Val F1: 0.3249
+221.8s 1795 Epoch 20/20 Loss: 0.4528 Val F1: 0.3567
+221.8s 1796 Trial 4 Final Val F1: 0.3576
+221.8s 1797 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+221.8s 1798 Epoch 5/20 Loss: 0.8453 Val F1: 0.2239
+222.0s 1799 Epoch 10/20 Loss: 0.5904 Val F1: 0.3186
+222.0s 1800 Epoch 15/20 Loss: 0.4655 Val F1: 0.3499
+222.0s 1801 Epoch 20/20 Loss: 0.3430 Val F1: 0.3918
+222.0s 1802 Trial 5 Final Val F1: 0.4010
+222.0s 1803 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.40100850106275704
+222.0s 1804 
+222.0s 1805 Searching best architecture for view: area
+222.0s 1806 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+222.4s 1807 Epoch 5/20 Loss: 0.5087 Val F1: 0.1734
+222.4s 1808 Epoch 10/20 Loss: 0.2051 Val F1: 0.3311
+222.7s 1809 Epoch 15/20 Loss: 0.1211 Val F1: 0.3241
+222.7s 1810 Epoch 20/20 Loss: 0.0843 Val F1: 0.3344
+222.7s 1811 Trial 1 Final Val F1: 0.3406
+222.7s 1812 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+223.0s 1813 Epoch 5/20 Loss: 0.9434 Val F1: 0.0474
+223.0s 1814 Epoch 10/20 Loss: 0.7295 Val F1: 0.2065
+223.0s 1815 Epoch 15/20 Loss: 0.5987 Val F1: 0.3045
+223.3s 1816 Epoch 20/20 Loss: 0.5025 Val F1: 0.3265
+223.3s 1817 Trial 2 Final Val F1: 0.3313
+223.3s 1818 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+223.3s 1819 Epoch 5/20 Loss: 0.8250 Val F1: 0.1804
+223.3s 1820 Epoch 10/20 Loss: 0.5805 Val F1: 0.3012
+223.6s 1821 Epoch 15/20 Loss: 0.4507 Val F1: 0.3624
+223.6s 1822 Epoch 20/20 Loss: 0.3317 Val F1: 0.4532
+223.6s 1823 Trial 3 Final Val F1: 0.4325
+223.6s 1824 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+223.9s 1825 Epoch 5/20 Loss: 0.5027 Val F1: 0.1018
+223.9s 1826 Epoch 10/20 Loss: 0.2327 Val F1: 0.0387
+224.2s 1827 Epoch 15/20 Loss: 0.1438 Val F1: 0.0387
+224.2s 1828 Epoch 20/20 Loss: 0.0903 Val F1: 0.0660
+224.2s 1829 Trial 4 Final Val F1: 0.0712
+224.2s 1830 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+224.5s 1831 Epoch 5/20 Loss: 0.5246 Val F1: 0.0387
+224.5s 1832 Epoch 10/20 Loss: 0.2305 Val F1: 0.0403
+224.8s 1833 Epoch 15/20 Loss: 0.1432 Val F1: 0.2010
+224.8s 1834 Epoch 20/20 Loss: 0.0995 Val F1: 0.3027
+224.8s 1835 Trial 5 Final Val F1: 0.2625
+224.8s 1836 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.43249863870822414
+224.8s 1837 
+224.8s 1838 Searching best architecture for view: subject has role
+224.8s 1839 Trial 1/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+225.1s 1840 Epoch 5/20 Loss: 0.9372 Val F1: 0.3058
+225.1s 1841 Epoch 10/20 Loss: 0.7832 Val F1: 0.3237
+225.4s 1842 Epoch 15/20 Loss: 0.6866 Val F1: 0.3482
+225.4s 1843 Epoch 20/20 Loss: 0.6100 Val F1: 0.3885
+225.4s 1844 Trial 1 Final Val F1: 0.3967
+225.4s 1845 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+225.7s 1846 Epoch 5/20 Loss: 0.8980 Val F1: 0.1648
+225.7s 1847 Epoch 10/20 Loss: 0.6562 Val F1: 0.2979
+225.7s 1848 Epoch 15/20 Loss: 0.5336 Val F1: 0.3235
+225.9s 1849 Epoch 20/20 Loss: 0.4376 Val F1: 0.3541
+225.9s 1850 Trial 2 Final Val F1: 0.3547
+225.9s 1851 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+225.9s 1852 Epoch 5/20 Loss: 0.9113 Val F1: 0.1752
+226.2s 1853 Epoch 10/20 Loss: 0.7559 Val F1: 0.3132
+226.2s 1854 Epoch 15/20 Loss: 0.6677 Val F1: 0.3364
+226.4s 1855 Epoch 20/20 Loss: 0.5810 Val F1: 0.3771
+226.4s 1856 Trial 3 Final Val F1: 0.3807
+226.4s 1857 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+226.4s 1858 Epoch 5/20 Loss: 0.8784 Val F1: 0.2200
+226.4s 1859 Epoch 10/20 Loss: 0.6214 Val F1: 0.3055
+226.7s 1860 Epoch 15/20 Loss: 0.5186 Val F1: 0.3344
+226.7s 1861 Epoch 20/20 Loss: 0.4238 Val F1: 0.3842
+226.7s 1862 Trial 4 Final Val F1: 0.3713
+226.7s 1863 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+226.7s 1864 Epoch 5/20 Loss: 0.9519 Val F1: 0.0386
+226.9s 1865 Epoch 10/20 Loss: 0.7430 Val F1: 0.1713
+226.9s 1866 Epoch 15/20 Loss: 0.6193 Val F1: 0.2961
+226.9s 1867 Epoch 20/20 Loss: 0.5268 Val F1: 0.4050
+226.9s 1868 Trial 5 Final Val F1: 0.3835
+226.9s 1869 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4} with F1: 0.3967385535631861
+227.1s 1870 
+227.1s 1871 Searching best architecture for view: spouse
+227.1s 1872 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+227.1s 1873 Epoch 5/20 Loss: 0.8920 Val F1: 0.1973
+227.1s 1874 Epoch 10/20 Loss: 0.6478 Val F1: 0.2970
+227.4s 1875 Epoch 15/20 Loss: 0.5260 Val F1: 0.3167
+227.4s 1876 Epoch 20/20 Loss: 0.4269 Val F1: 0.3544
+227.4s 1877 Trial 1 Final Val F1: 0.3574
+227.4s 1878 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+227.6s 1879 Epoch 5/20 Loss: 0.8421 Val F1: 0.2252
+227.6s 1880 Epoch 10/20 Loss: 0.5888 Val F1: 0.3159
+227.6s 1881 Epoch 15/20 Loss: 0.4747 Val F1: 0.3426
+227.9s 1882 Epoch 20/20 Loss: 0.3588 Val F1: 0.3979
+227.9s 1883 Trial 2 Final Val F1: 0.3984
+227.9s 1884 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+227.9s 1885 Epoch 5/20 Loss: 0.9847 Val F1: 0.2711
+228.2s 1886 Epoch 10/20 Loss: 0.8487 Val F1: 0.3144
+228.2s 1887 Epoch 15/20 Loss: 0.7836 Val F1: 0.3426
+228.5s 1888 Epoch 20/20 Loss: 0.7144 Val F1: 0.3775
+228.5s 1889 Trial 3 Final Val F1: 0.3845
+228.5s 1890 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+228.7s 1891 Epoch 5/20 Loss: 0.8043 Val F1: 0.2819
+229.0s 1892 Epoch 10/20 Loss: 0.6734 Val F1: 0.3330
+229.2s 1893 Epoch 15/20 Loss: 0.5608 Val F1: 0.3852
+229.4s 1894 Epoch 20/20 Loss: 0.4558 Val F1: 0.6725
+229.4s 1895 Trial 4 Final Val F1: 0.6018
+229.4s 1896 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+229.4s 1897 Epoch 5/20 Loss: 0.8984 Val F1: 0.1860
+229.4s 1898 Epoch 10/20 Loss: 0.6502 Val F1: 0.3014
+229.7s 1899 Epoch 15/20 Loss: 0.5251 Val F1: 0.3308
+229.7s 1900 Epoch 20/20 Loss: 0.4256 Val F1: 0.3688
+229.7s 1901 Trial 5 Final Val F1: 0.3687
+229.7s 1902 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.6017820467515596
+229.7s 1903 
+229.7s 1904 Searching best architecture for view: opposite of
+229.7s 1905 Trial 1/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+229.9s 1906 Epoch 5/20 Loss: 0.9179 Val F1: 0.0983
+229.9s 1907 Epoch 10/20 Loss: 0.6836 Val F1: 0.2766
+230.2s 1908 Epoch 15/20 Loss: 0.5634 Val F1: 0.3300
+230.2s 1909 Epoch 20/20 Loss: 0.4560 Val F1: 0.4125
+230.2s 1910 Trial 1 Final Val F1: 0.3898
+230.2s 1911 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+230.5s 1912 Epoch 5/20 Loss: 0.9555 Val F1: 0.2459
+230.5s 1913 Epoch 10/20 Loss: 0.8049 Val F1: 0.3192
+230.8s 1914 Epoch 15/20 Loss: 0.7229 Val F1: 0.3516
+230.8s 1915 Epoch 20/20 Loss: 0.6389 Val F1: 0.3893
+230.8s 1916 Trial 2 Final Val F1: 0.3832
+230.8s 1917 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+231.0s 1918 Epoch 5/20 Loss: 0.8433 Val F1: 0.2200
+231.0s 1919 Epoch 10/20 Loss: 0.5848 Val F1: 0.3115
+231.0s 1920 Epoch 15/20 Loss: 0.4710 Val F1: 0.3538
+231.3s 1921 Epoch 20/20 Loss: 0.3666 Val F1: 0.3886
+231.3s 1922 Trial 3 Final Val F1: 0.4070
+231.3s 1923 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+231.3s 1924 Epoch 5/20 Loss: 0.8909 Val F1: 0.1896
+231.3s 1925 Epoch 10/20 Loss: 0.6627 Val F1: 0.2418
+231.6s 1926 Epoch 15/20 Loss: 0.5356 Val F1: 0.3061
+231.6s 1927 Epoch 20/20 Loss: 0.4326 Val F1: 0.3521
+231.6s 1928 Trial 4 Final Val F1: 0.3656
+231.6s 1929 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+231.8s 1930 Epoch 5/20 Loss: 0.8874 Val F1: 0.1842
+231.8s 1931 Epoch 10/20 Loss: 0.6465 Val F1: 0.3006
+231.8s 1932 Epoch 15/20 Loss: 0.5297 Val F1: 0.3169
+232.0s 1933 Epoch 20/20 Loss: 0.4345 Val F1: 0.3667
+232.0s 1934 Trial 5 Final Val F1: 0.3672
+232.0s 1935 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.40700672687136186
+232.0s 1936 
+232.0s 1937 Searching best architecture for view: country of citizenship
+232.0s 1938 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+232.0s 1939 Epoch 5/20 Loss: 0.5446 Val F1: 0.0670
+232.3s 1940 Epoch 10/20 Loss: 0.2837 Val F1: 0.1813
+232.3s 1941 Epoch 15/20 Loss: 0.1465 Val F1: 0.2426
+232.6s 1942 Epoch 20/20 Loss: 0.0918 Val F1: 0.2773
+232.6s 1943 Trial 1 Final Val F1: 0.3103
+232.6s 1944 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+232.6s 1945 Epoch 5/20 Loss: 0.5554 Val F1: 0.2843
+233.0s 1946 Epoch 10/20 Loss: 0.2831 Val F1: 0.3520
+233.0s 1947 Epoch 15/20 Loss: 0.1403 Val F1: 0.4152
+233.3s 1948 Epoch 20/20 Loss: 0.0794 Val F1: 0.5261
+233.3s 1949 Trial 2 Final Val F1: 0.5278
+233.3s 1950 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+233.3s 1951 Epoch 5/20 Loss: 0.9323 Val F1: 0.0386
+233.5s 1952 Epoch 10/20 Loss: 0.7521 Val F1: 0.1825
+233.5s 1953 Epoch 15/20 Loss: 0.6148 Val F1: 0.2972
+233.5s 1954 Epoch 20/20 Loss: 0.5161 Val F1: 0.3423
+233.8s 1955 Trial 3 Final Val F1: 0.3363
+233.8s 1956 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+233.8s 1957 Epoch 5/20 Loss: 0.9389 Val F1: 0.2039
+234.0s 1958 Epoch 10/20 Loss: 0.7801 Val F1: 0.3128
+234.0s 1959 Epoch 15/20 Loss: 0.6811 Val F1: 0.3345
+234.3s 1960 Epoch 20/20 Loss: 0.6082 Val F1: 0.3695
+234.3s 1961 Trial 4 Final Val F1: 0.3649
+234.3s 1962 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+234.3s 1963 Epoch 5/20 Loss: 0.9304 Val F1: 0.1550
+234.6s 1964 Epoch 10/20 Loss: 0.7554 Val F1: 0.2937
+234.6s 1965 Epoch 15/20 Loss: 0.6743 Val F1: 0.3282
+234.9s 1966 Epoch 20/20 Loss: 0.5827 Val F1: 0.4298
+234.9s 1967 Trial 5 Final Val F1: 0.4217
+234.9s 1968 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.5277855318265319
+234.9s 1969 
+234.9s 1970 Searching best architecture for view: is a list of
+234.9s 1971 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+234.9s 1972 Epoch 5/20 Loss: 0.8263 Val F1: 0.2250
+235.2s 1973 Epoch 10/20 Loss: 0.5963 Val F1: 0.3175
+235.2s 1974 Epoch 15/20 Loss: 0.4722 Val F1: 0.3488
+235.2s 1975 Epoch 20/20 Loss: 0.3585 Val F1: 0.3864
+235.2s 1976 Trial 1 Final Val F1: 0.3917
+235.2s 1977 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+235.6s 1978 Epoch 5/20 Loss: 0.9140 Val F1: 0.3158
+235.8s 1979 Epoch 10/20 Loss: 0.7460 Val F1: 0.3344
+236.0s 1980 Epoch 15/20 Loss: 0.6910 Val F1: 0.3946
+236.3s 1981 Epoch 20/20 Loss: 0.5808 Val F1: 0.4906
+236.3s 1982 Trial 2 Final Val F1: 0.4766
+236.3s 1983 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+236.3s 1984 Epoch 5/20 Loss: 0.9399 Val F1: 0.0473
+236.5s 1985 Epoch 10/20 Loss: 0.7124 Val F1: 0.1924
+236.5s 1986 Epoch 15/20 Loss: 0.5768 Val F1: 0.3009
+236.8s 1987 Epoch 20/20 Loss: 0.4818 Val F1: 0.3360
+236.8s 1988 Trial 3 Final Val F1: 0.3392
+236.8s 1989 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+236.8s 1990 Epoch 5/20 Loss: 0.9262 Val F1: 0.0386
+237.0s 1991 Epoch 10/20 Loss: 0.7025 Val F1: 0.2278
+237.0s 1992 Epoch 15/20 Loss: 0.5770 Val F1: 0.3014
+237.3s 1993 Epoch 20/20 Loss: 0.4699 Val F1: 0.3596
+237.3s 1994 Trial 4 Final Val F1: 0.3479
+237.3s 1995 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+237.3s 1996 Epoch 5/20 Loss: 0.4942 Val F1: 0.0386
+237.6s 1997 Epoch 10/20 Loss: 0.2312 Val F1: 0.0513
+237.6s 1998 Epoch 15/20 Loss: 0.1273 Val F1: 0.0792
+237.9s 1999 Epoch 20/20 Loss: 0.0816 Val F1: 0.1829
+237.9s 2000 Trial 5 Final Val F1: 0.2105
+237.9s 2001 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4} with F1: 0.4766333402330806
+237.9s 2002 
+237.9s 2003 Searching best architecture for view: developer
+237.9s 2004 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+237.9s 2005 Epoch 5/20 Loss: 0.8208 Val F1: 0.1660
+238.1s 2006 Epoch 10/20 Loss: 0.5793 Val F1: 0.3182
+238.1s 2007 Epoch 15/20 Loss: 0.4576 Val F1: 0.3522
+238.1s 2008 Epoch 20/20 Loss: 0.3428 Val F1: 0.4127
+238.1s 2009 Trial 1 Final Val F1: 0.4197
+238.1s 2010 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+238.5s 2011 Epoch 5/20 Loss: 0.9145 Val F1: 0.1031
+238.5s 2012 Epoch 10/20 Loss: 0.7110 Val F1: 0.2202
+238.7s 2013 Epoch 15/20 Loss: 0.5754 Val F1: 0.3087
+238.7s 2014 Epoch 20/20 Loss: 0.4789 Val F1: 0.3378
+238.7s 2015 Trial 2 Final Val F1: 0.3492
+238.7s 2016 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+238.9s 2017 Epoch 5/20 Loss: 0.8971 Val F1: 0.1924
+238.9s 2018 Epoch 10/20 Loss: 0.6714 Val F1: 0.2937
+238.9s 2019 Epoch 15/20 Loss: 0.5534 Val F1: 0.3104
+239.2s 2020 Epoch 20/20 Loss: 0.4611 Val F1: 0.3546
+239.2s 2021 Trial 3 Final Val F1: 0.3499
+239.2s 2022 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+239.2s 2023 Epoch 5/20 Loss: 0.5239 Val F1: 0.0645
+239.5s 2024 Epoch 10/20 Loss: 0.2598 Val F1: 0.1165
+239.5s 2025 Epoch 15/20 Loss: 0.1388 Val F1: 0.0676
+239.9s 2026 Epoch 20/20 Loss: 0.0855 Val F1: 0.1041
+239.9s 2027 Trial 4 Final Val F1: 0.0959
+239.9s 2028 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+239.9s 2029 Epoch 5/20 Loss: 0.9900 Val F1: 0.1612
+240.2s 2030 Epoch 10/20 Loss: 0.8519 Val F1: 0.3128
+240.2s 2031 Epoch 15/20 Loss: 0.7750 Val F1: 0.3366
+240.4s 2032 Epoch 20/20 Loss: 0.7128 Val F1: 0.3812
+240.4s 2033 Trial 5 Final Val F1: 0.3731
+240.4s 2034 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.41967601695669127
+240.4s 2035 
+240.4s 2036 Searching best architecture for view: religious order
+240.4s 2037 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+240.4s 2038 Epoch 5/20 Loss: 0.4766 Val F1: 0.0386
+240.7s 2039 Epoch 10/20 Loss: 0.2145 Val F1: 0.1280
+240.7s 2040 Epoch 15/20 Loss: 0.1055 Val F1: 0.1244
+241.0s 2041 Epoch 20/20 Loss: 0.0678 Val F1: 0.1324
+241.0s 2042 Trial 1 Final Val F1: 0.1265
+241.0s 2043 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+241.0s 2044 Epoch 5/20 Loss: 0.8137 Val F1: 0.1696
+241.2s 2045 Epoch 10/20 Loss: 0.5656 Val F1: 0.3200
+241.2s 2046 Epoch 15/20 Loss: 0.4470 Val F1: 0.3675
+241.2s 2047 Epoch 20/20 Loss: 0.3261 Val F1: 0.4213
+241.2s 2048 Trial 2 Final Val F1: 0.4316
+241.2s 2049 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+241.5s 2050 Epoch 5/20 Loss: 0.8988 Val F1: 0.1873
+241.5s 2051 Epoch 10/20 Loss: 0.6747 Val F1: 0.2955
+241.8s 2052 Epoch 15/20 Loss: 0.5574 Val F1: 0.3145
+241.8s 2053 Epoch 20/20 Loss: 0.4736 Val F1: 0.3447
+241.8s 2054 Trial 3 Final Val F1: 0.3427
+241.8s 2055 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+242.1s 2056 Epoch 5/20 Loss: 0.9509 Val F1: 0.0386
+242.1s 2057 Epoch 10/20 Loss: 0.7798 Val F1: 0.1553
+242.4s 2058 Epoch 15/20 Loss: 0.6382 Val F1: 0.2426
+242.4s 2059 Epoch 20/20 Loss: 0.5460 Val F1: 0.3115
+242.4s 2060 Trial 4 Final Val F1: 0.3203
+242.4s 2061 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+242.7s 2062 Epoch 5/20 Loss: 0.8190 Val F1: 0.2113
+242.7s 2063 Epoch 10/20 Loss: 0.5766 Val F1: 0.3051
+243.0s 2064 Epoch 15/20 Loss: 0.4564 Val F1: 0.3436
+243.0s 2065 Epoch 20/20 Loss: 0.3378 Val F1: 0.3909
+243.0s 2066 Trial 5 Final Val F1: 0.4157
+243.0s 2067 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.4315905663693263
+243.0s 2068 
+243.0s 2069 Searching best architecture for view: applies to jurisdiction
+243.0s 2070 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+243.2s 2071 Epoch 5/20 Loss: 0.9067 Val F1: 0.1973
+243.2s 2072 Epoch 10/20 Loss: 0.6611 Val F1: 0.2464
+243.2s 2073 Epoch 15/20 Loss: 0.5445 Val F1: 0.3062
+243.4s 2074 Epoch 20/20 Loss: 0.4440 Val F1: 0.3498
+243.4s 2075 Trial 1 Final Val F1: 0.3512
+243.4s 2076 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+243.4s 2077 Epoch 5/20 Loss: 0.4981 Val F1: 0.0727
+243.8s 2078 Epoch 10/20 Loss: 0.2047 Val F1: 0.2779
+243.8s 2079 Epoch 15/20 Loss: 0.1234 Val F1: 0.2833
+244.2s 2080 Epoch 20/20 Loss: 0.0830 Val F1: 0.3054
+244.2s 2081 Trial 2 Final Val F1: 0.3027
+244.2s 2082 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+244.2s 2083 Epoch 5/20 Loss: 0.9869 Val F1: 0.2064
+244.4s 2084 Epoch 10/20 Loss: 0.8675 Val F1: 0.2754
+244.4s 2085 Epoch 15/20 Loss: 0.7983 Val F1: 0.3231
+244.7s 2086 Epoch 20/20 Loss: 0.7356 Val F1: 0.3669
+244.7s 2087 Trial 3 Final Val F1: 0.3659
+244.7s 2088 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+244.7s 2089 Epoch 5/20 Loss: 0.8074 Val F1: 0.1563
+244.9s 2090 Epoch 10/20 Loss: 0.5849 Val F1: 0.3003
+244.9s 2091 Epoch 15/20 Loss: 0.4681 Val F1: 0.3462
+244.9s 2092 Epoch 20/20 Loss: 0.3476 Val F1: 0.4055
+244.9s 2093 Trial 4 Final Val F1: 0.4235
+244.9s 2094 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+245.2s 2095 Epoch 5/20 Loss: 0.9313 Val F1: 0.2301
+245.2s 2096 Epoch 10/20 Loss: 0.7538 Val F1: 0.3018
+245.5s 2097 Epoch 15/20 Loss: 0.6750 Val F1: 0.3378
+245.5s 2098 Epoch 20/20 Loss: 0.5714 Val F1: 0.3693
+245.5s 2099 Trial 5 Final Val F1: 0.3756
+245.5s 2100 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.4234759336793081
+245.5s 2101 
+245.5s 2102 Searching best architecture for view: part of the series
+245.5s 2103 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+245.9s 2104 Epoch 5/20 Loss: 0.5416 Val F1: 0.0386
+245.9s 2105 Epoch 10/20 Loss: 0.2786 Val F1: 0.0499
+246.2s 2106 Epoch 15/20 Loss: 0.1406 Val F1: 0.0472
+246.2s 2107 Epoch 20/20 Loss: 0.0882 Val F1: 0.1397
+246.2s 2108 Trial 1 Final Val F1: 0.1115
+246.2s 2109 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+246.5s 2110 Epoch 5/20 Loss: 0.9328 Val F1: 0.2649
+246.5s 2111 Epoch 10/20 Loss: 0.7489 Val F1: 0.3201
+246.8s 2112 Epoch 15/20 Loss: 0.6494 Val F1: 0.3604
+246.8s 2113 Epoch 20/20 Loss: 0.5618 Val F1: 0.3946
+246.8s 2114 Trial 2 Final Val F1: 0.3928
+246.8s 2115 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+247.1s 2116 Epoch 5/20 Loss: 0.5398 Val F1: 0.0386
+247.1s 2117 Epoch 10/20 Loss: 0.2625 Val F1: 0.0386
+247.4s 2118 Epoch 15/20 Loss: 0.1330 Val F1: 0.0455
+247.4s 2119 Epoch 20/20 Loss: 0.0844 Val F1: 0.1054
+247.4s 2120 Trial 3 Final Val F1: 0.1243
+247.4s 2121 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+247.7s 2122 Epoch 5/20 Loss: 0.5686 Val F1: 0.0386
+247.7s 2123 Epoch 10/20 Loss: 0.2833 Val F1: 0.2930
+248.1s 2124 Epoch 15/20 Loss: 0.1481 Val F1: 0.1817
+248.1s 2125 Epoch 20/20 Loss: 0.0921 Val F1: 0.3263
+248.1s 2126 Trial 4 Final Val F1: 0.3109
+248.1s 2127 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+248.5s 2128 Epoch 5/20 Loss: 0.5127 Val F1: 0.2975
+248.5s 2129 Epoch 10/20 Loss: 0.2474 Val F1: 0.3045
+248.8s 2130 Epoch 15/20 Loss: 0.1317 Val F1: 0.3615
+248.8s 2131 Epoch 20/20 Loss: 0.0817 Val F1: 0.4012
+248.8s 2132 Trial 5 Final Val F1: 0.4029
+248.8s 2133 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.40286790557853874
+248.8s 2134 
+248.8s 2135 Searching best architecture for view: main subject
+248.8s 2136 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+249.1s 2137 Epoch 5/20 Loss: 0.8873 Val F1: 0.2006
+249.1s 2138 Epoch 10/20 Loss: 0.6532 Val F1: 0.2903
+249.1s 2139 Epoch 15/20 Loss: 0.5421 Val F1: 0.3130
+249.4s 2140 Epoch 20/20 Loss: 0.4416 Val F1: 0.3647
+249.4s 2141 Trial 1 Final Val F1: 0.3585
+249.4s 2142 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+249.4s 2143 Epoch 5/20 Loss: 0.4999 Val F1: 0.0386
+249.7s 2144 Epoch 10/20 Loss: 0.2286 Val F1: 0.2769
+249.7s 2145 Epoch 15/20 Loss: 0.1113 Val F1: 0.1703
+250.0s 2146 Epoch 20/20 Loss: 0.0718 Val F1: 0.1951
+250.0s 2147 Trial 2 Final Val F1: 0.1790
+250.0s 2148 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+250.0s 2149 Epoch 5/20 Loss: 0.5243 Val F1: 0.0444
+250.3s 2150 Epoch 10/20 Loss: 0.2747 Val F1: 0.0931
+250.3s 2151 Epoch 15/20 Loss: 0.1298 Val F1: 0.0871
+250.5s 2152 Epoch 20/20 Loss: 0.0774 Val F1: 0.1493
+250.5s 2153 Trial 3 Final Val F1: 0.1556
+250.5s 2154 Trial 4/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+250.5s 2155 Epoch 5/20 Loss: 0.9333 Val F1: 0.0791
+250.8s 2156 Epoch 10/20 Loss: 0.7229 Val F1: 0.2142
+250.8s 2157 Epoch 15/20 Loss: 0.5825 Val F1: 0.3004
+251.0s 2158 Epoch 20/20 Loss: 0.4791 Val F1: 0.4087
+251.0s 2159 Trial 4 Final Val F1: 0.3943
+251.0s 2160 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+251.0s 2161 Epoch 5/20 Loss: 0.9080 Val F1: 0.2632
+251.4s 2162 Epoch 10/20 Loss: 0.7607 Val F1: 0.3249
+251.4s 2163 Epoch 15/20 Loss: 0.6821 Val F1: 0.3665
+251.7s 2164 Epoch 20/20 Loss: 0.6185 Val F1: 0.4194
+251.7s 2165 Trial 5 Final Val F1: 0.4133
+251.7s 2166 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4} with F1: 0.41334119253552565
+251.7s 2167 
+251.7s 2168 Searching best architecture for view: work period (start)
+251.7s 2169 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+251.9s 2170 Epoch 5/20 Loss: 0.5545 Val F1: 0.1870
+251.9s 2171 Epoch 10/20 Loss: 0.3057 Val F1: 0.2827
+252.3s 2172 Epoch 15/20 Loss: 0.1523 Val F1: 0.2607
+252.3s 2173 Epoch 20/20 Loss: 0.0934 Val F1: 0.4182
+252.3s 2174 Trial 1 Final Val F1: 0.3891
+252.3s 2175 Trial 2/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+252.6s 2176 Epoch 5/20 Loss: 0.8312 Val F1: 0.2026
+252.6s 2177 Epoch 10/20 Loss: 0.5791 Val F1: 0.3129
+252.6s 2178 Epoch 15/20 Loss: 0.4517 Val F1: 0.3634
+252.9s 2179 Epoch 20/20 Loss: 0.3366 Val F1: 0.4028
+252.9s 2180 Trial 2 Final Val F1: 0.4176
+252.9s 2181 Trial 3/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+252.9s 2182 Epoch 5/20 Loss: 0.5165 Val F1: 0.0918
+253.2s 2183 Epoch 10/20 Loss: 0.2768 Val F1: 0.3904
+253.2s 2184 Epoch 15/20 Loss: 0.1354 Val F1: 0.2471
+253.5s 2185 Epoch 20/20 Loss: 0.0860 Val F1: 0.3221
+253.5s 2186 Trial 3 Final Val F1: 0.3141
+253.5s 2187 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+253.5s 2188 Epoch 5/20 Loss: 0.9085 Val F1: 0.1894
+253.5s 2189 Epoch 10/20 Loss: 0.6794 Val F1: 0.2709
+253.7s 2190 Epoch 15/20 Loss: 0.5489 Val F1: 0.3154
+253.7s 2191 Epoch 20/20 Loss: 0.4368 Val F1: 0.3699
+253.7s 2192 Trial 4 Final Val F1: 0.3567
+253.7s 2193 Trial 5/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+253.7s 2194 Epoch 5/20 Loss: 0.8976 Val F1: 0.2112
+254.0s 2195 Epoch 10/20 Loss: 0.6655 Val F1: 0.3032
+254.0s 2196 Epoch 15/20 Loss: 0.5476 Val F1: 0.3243
+254.0s 2197 Epoch 20/20 Loss: 0.4480 Val F1: 0.3594
+254.0s 2198 Trial 5 Final Val F1: 0.3544
+254.0s 2199 Best Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None} with F1: 0.4176121955076443
+254.0s 2200 
+254.0s 2201 Searching best architecture for view: father
+254.0s 2202 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+254.3s 2203 Epoch 5/20 Loss: 0.4976 Val F1: 0.1851
+254.3s 2204 Epoch 10/20 Loss: 0.2271 Val F1: 0.2220
+254.7s 2205 Epoch 15/20 Loss: 0.1318 Val F1: 0.2328
+254.7s 2206 Epoch 20/20 Loss: 0.0856 Val F1: 0.3058
+254.7s 2207 Trial 1 Final Val F1: 0.3014
+254.7s 2208 Trial 2/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+255.0s 2209 Epoch 5/20 Loss: 0.9529 Val F1: 0.0414
+255.0s 2210 Epoch 10/20 Loss: 0.7802 Val F1: 0.1648
+255.0s 2211 Epoch 15/20 Loss: 0.6348 Val F1: 0.2315
+255.3s 2212 Epoch 20/20 Loss: 0.5434 Val F1: 0.2908
+255.3s 2213 Trial 2 Final Val F1: 0.3077
+255.3s 2214 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+255.5s 2215 Epoch 5/20 Loss: 0.8184 Val F1: 0.2815
+255.7s 2216 Epoch 10/20 Loss: 0.6833 Val F1: 0.3229
+255.9s 2217 Epoch 15/20 Loss: 0.5810 Val F1: 0.3774
+256.2s 2218 Epoch 20/20 Loss: 0.4579 Val F1: 0.4982
+256.2s 2219 Trial 3 Final Val F1: 0.4867
+256.2s 2220 Trial 4/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+256.2s 2221 Epoch 5/20 Loss: 0.8060 Val F1: 0.2300
+256.4s 2222 Epoch 10/20 Loss: 0.5722 Val F1: 0.3167
+256.4s 2223 Epoch 15/20 Loss: 0.4408 Val F1: 0.3645
+256.4s 2224 Epoch 20/20 Loss: 0.3239 Val F1: 0.4161
+256.4s 2225 Trial 4 Final Val F1: 0.4387
+256.4s 2226 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+256.7s 2227 Epoch 5/20 Loss: 0.5167 Val F1: 0.0414
+256.7s 2228 Epoch 10/20 Loss: 0.2609 Val F1: 0.1426
+257.0s 2229 Epoch 15/20 Loss: 0.1478 Val F1: 0.3179
+257.0s 2230 Epoch 20/20 Loss: 0.0980 Val F1: 0.4885
+257.0s 2231 Trial 5 Final Val F1: 0.4795
+257.0s 2232 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.48671222337918285
+257.0s 2233 
+257.0s 2234 Searching best architecture for view: date of birth
+257.0s 2235 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+257.4s 2236 Epoch 5/20 Loss: 0.4616 Val F1: 0.2057
+257.4s 2237 Epoch 10/20 Loss: 0.2179 Val F1: 0.1490
+257.7s 2238 Epoch 15/20 Loss: 0.1147 Val F1: 0.1070
+257.7s 2239 Epoch 20/20 Loss: 0.0755 Val F1: 0.1503
+257.7s 2240 Trial 1 Final Val F1: 0.1761
+257.7s 2241 Trial 2/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+258.1s 2242 Epoch 5/20 Loss: 0.8661 Val F1: 0.2264
+258.3s 2243 Epoch 10/20 Loss: 0.6826 Val F1: 0.3291
+258.6s 2244 Epoch 15/20 Loss: 0.5846 Val F1: 0.3823
+258.8s 2245 Epoch 20/20 Loss: 0.4697 Val F1: 0.5448
+258.8s 2246 Trial 2 Final Val F1: 0.5227
+258.8s 2247 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+258.8s 2248 Epoch 5/20 Loss: 0.9419 Val F1: 0.0715
+259.1s 2249 Epoch 10/20 Loss: 0.6837 Val F1: 0.2613
+259.1s 2250 Epoch 15/20 Loss: 0.5572 Val F1: 0.3143
+259.3s 2251 Epoch 20/20 Loss: 0.4591 Val F1: 0.3566
+259.3s 2252 Trial 3 Final Val F1: 0.3523
+259.3s 2253 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+259.6s 2254 Epoch 5/20 Loss: 0.9066 Val F1: 0.2253
+259.8s 2255 Epoch 10/20 Loss: 0.7557 Val F1: 0.3279
+260.0s 2256 Epoch 15/20 Loss: 0.6691 Val F1: 0.3757
+260.2s 2257 Epoch 20/20 Loss: 0.5788 Val F1: 0.5144
+260.2s 2258 Trial 4 Final Val F1: 0.5073
+260.2s 2259 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+260.2s 2260 Epoch 5/20 Loss: 0.9381 Val F1: 0.0386
+260.4s 2261 Epoch 10/20 Loss: 0.7364 Val F1: 0.2326
+260.4s 2262 Epoch 15/20 Loss: 0.6078 Val F1: 0.2946
+260.4s 2263 Epoch 20/20 Loss: 0.5207 Val F1: 0.3356
+260.4s 2264 Trial 5 Final Val F1: 0.3328
+260.4s 2265 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.5226779185006788
+260.6s 2266 
+260.6s 2267 Searching best architecture for view: practiced by
+260.6s 2268 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+260.6s 2269 Epoch 5/20 Loss: 0.5352 Val F1: 0.0414
+260.9s 2270 Epoch 10/20 Loss: 0.3029 Val F1: 0.1048
+260.9s 2271 Epoch 15/20 Loss: 0.1511 Val F1: 0.0951
+261.2s 2272 Epoch 20/20 Loss: 0.0955 Val F1: 0.1942
+261.2s 2273 Trial 1 Final Val F1: 0.1871
+261.2s 2274 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+261.2s 2275 Epoch 5/20 Loss: 0.4582 Val F1: 0.0905
+261.6s 2276 Epoch 10/20 Loss: 0.2025 Val F1: 0.1854
+261.8s 2277 Epoch 15/20 Loss: 0.1218 Val F1: 0.2775
+261.8s 2278 Epoch 20/20 Loss: 0.0770 Val F1: 0.4210
+261.8s 2279 Trial 2 Final Val F1: 0.4000
+261.8s 2280 Trial 3/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+262.1s 2281 Epoch 5/20 Loss: 0.8774 Val F1: 0.1874
+262.1s 2282 Epoch 10/20 Loss: 0.6462 Val F1: 0.3114
+262.1s 2283 Epoch 15/20 Loss: 0.5464 Val F1: 0.3175
+262.3s 2284 Epoch 20/20 Loss: 0.4619 Val F1: 0.3566
+262.3s 2285 Trial 3 Final Val F1: 0.3569
+262.3s 2286 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+262.3s 2287 Epoch 5/20 Loss: 0.5294 Val F1: 0.0836
+262.6s 2288 Epoch 10/20 Loss: 0.2421 Val F1: 0.1806
+262.6s 2289 Epoch 15/20 Loss: 0.1422 Val F1: 0.2335
+263.0s 2290 Epoch 20/20 Loss: 0.0925 Val F1: 0.3006
+263.0s 2291 Trial 4 Final Val F1: 0.3034
+263.0s 2292 Trial 5/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+263.0s 2293 Epoch 5/20 Loss: 0.4851 Val F1: 0.1471
+263.3s 2294 Epoch 10/20 Loss: 0.2023 Val F1: 0.3384
+263.3s 2295 Epoch 15/20 Loss: 0.1260 Val F1: 0.3325
+263.7s 2296 Epoch 20/20 Loss: 0.0791 Val F1: 0.3642
+263.7s 2297 Trial 5 Final Val F1: 0.3586
+263.7s 2298 Best Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.4000496896331672
+263.7s 2299 
+263.7s 2300 Searching best architecture for view: product or material produced
+263.7s 2301 Trial 1/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+263.7s 2302 Epoch 5/20 Loss: 0.5145 Val F1: 0.1015
+264.0s 2303 Epoch 10/20 Loss: 0.2588 Val F1: 0.1543
+264.0s 2304 Epoch 15/20 Loss: 0.1363 Val F1: 0.0791
+264.3s 2305 Epoch 20/20 Loss: 0.0862 Val F1: 0.1100
+264.3s 2306 Trial 1 Final Val F1: 0.1096
+264.3s 2307 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+264.3s 2308 Epoch 5/20 Loss: 0.5077 Val F1: 0.0440
+264.6s 2309 Epoch 10/20 Loss: 0.2289 Val F1: 0.2314
+264.6s 2310 Epoch 15/20 Loss: 0.1302 Val F1: 0.2262
+264.9s 2311 Epoch 20/20 Loss: 0.0893 Val F1: 0.2671
+264.9s 2312 Trial 2 Final Val F1: 0.2477
+264.9s 2313 Trial 3/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+264.9s 2314 Epoch 5/20 Loss: 0.9634 Val F1: 0.0414
+265.1s 2315 Epoch 10/20 Loss: 0.7912 Val F1: 0.2229
+265.1s 2316 Epoch 15/20 Loss: 0.6295 Val F1: 0.2929
+265.1s 2317 Epoch 20/20 Loss: 0.5260 Val F1: 0.3344
+265.1s 2318 Trial 3 Final Val F1: 0.3266
+265.1s 2319 Trial 4/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+265.5s 2320 Epoch 5/20 Loss: 0.5126 Val F1: 0.1005
+265.5s 2321 Epoch 10/20 Loss: 0.2365 Val F1: 0.2813
+265.8s 2322 Epoch 15/20 Loss: 0.1350 Val F1: 0.2514
+265.8s 2323 Epoch 20/20 Loss: 0.0847 Val F1: 0.2627
+265.8s 2324 Trial 4 Final Val F1: 0.2695
+265.8s 2325 Trial 5/5, Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+266.1s 2326 Epoch 5/20 Loss: 0.9329 Val F1: 0.1643
+266.1s 2327 Epoch 10/20 Loss: 0.7100 Val F1: 0.2253
+266.4s 2328 Epoch 15/20 Loss: 0.5797 Val F1: 0.3028
+266.4s 2329 Epoch 20/20 Loss: 0.4751 Val F1: 0.3423
+266.4s 2330 Trial 5 Final Val F1: 0.3418
+266.4s 2331 Best Architecture: {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None} with F1: 0.3417627522994375
+266.4s 2332 
+266.4s 2333 Searching best architecture for view: taxonomic type
+266.4s 2334 Trial 1/5, Architecture: {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+266.6s 2335 Epoch 5/20 Loss: 0.8201 Val F1: 0.2167
+266.6s 2336 Epoch 10/20 Loss: 0.6002 Val F1: 0.2999
+266.6s 2337 Epoch 15/20 Loss: 0.4852 Val F1: 0.3442
+266.9s 2338 Epoch 20/20 Loss: 0.3765 Val F1: 0.3916
+266.9s 2339 Trial 1 Final Val F1: 0.3940
+266.9s 2340 Trial 2/5, Architecture: {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+266.9s 2341 Epoch 5/20 Loss: 0.5202 Val F1: 0.0717
+267.3s 2342 Epoch 10/20 Loss: 0.2580 Val F1: 0.1784
+267.3s 2343 Epoch 15/20 Loss: 0.1188 Val F1: 0.1085
+267.6s 2344 Epoch 20/20 Loss: 0.0700 Val F1: 0.1585
+267.6s 2345 Trial 2 Final Val F1: 0.1410
+267.6s 2346 Trial 3/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+267.6s 2347 Epoch 5/20 Loss: 0.9452 Val F1: 0.2444
+267.9s 2348 Epoch 10/20 Loss: 0.8224 Val F1: 0.3090
+267.9s 2349 Epoch 15/20 Loss: 0.7831 Val F1: 0.3470
+268.1s 2350 Epoch 20/20 Loss: 0.7303 Val F1: 0.3793
+268.1s 2351 Trial 3 Final Val F1: 0.3746
+268.1s 2352 Trial 4/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+268.1s 2353 Epoch 5/20 Loss: 0.9902 Val F1: 0.1675
+268.4s 2354 Epoch 10/20 Loss: 0.8641 Val F1: 0.3005
+268.4s 2355 Epoch 15/20 Loss: 0.7816 Val F1: 0.3237
+268.6s 2356 Epoch 20/20 Loss: 0.7475 Val F1: 0.3692
+268.6s 2357 Trial 4 Final Val F1: 0.3621
+268.6s 2358 Trial 5/5, Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+268.9s 2359 Epoch 5/20 Loss: 0.8825 Val F1: 0.2932
+269.1s 2360 Epoch 10/20 Loss: 0.6967 Val F1: 0.3215
+269.3s 2361 Epoch 15/20 Loss: 0.6225 Val F1: 0.3619
+269.4s 2362 Epoch 20/20 Loss: 0.5058 Val F1: 0.4286
+269.4s 2363 Trial 5 Final Val F1: 0.4339
+269.4s 2364 Best Architecture: {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4} with F1: 0.43392322717672194
+269.5s 2365 use :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+269.5s 2366 has part :  {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2367 employer :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+269.5s 2368 instance of :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+269.5s 2369 studied by :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2370 followed by :  {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.2, 'heads': None}
+269.5s 2371 country of origin :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+269.5s 2372 field of work :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2373 country :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2374 contains administrative territorial entity :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2375 subclass of :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2376 part of :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2377 point in time :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+269.5s 2378 has cause :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2379 has effect :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+269.5s 2380 number of participants :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2381 educated at :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2382 different from :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2383 follows :  {'model_type': 'GraphSAGE', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+269.5s 2384 headquarters location :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2385 facet of :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2386 has parts of the class :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+269.5s 2387 number of episodes :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2388 conferred by :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2389 publication date :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+269.5s 2390 capital of :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2391 location of formation :  {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2392 length :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+269.5s 2393 publisher :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+269.5s 2394 student :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 4}
+269.5s 2395 twinned administrative body :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2396 member of :  {'model_type': 'GIN', 'hidden_channels': 64, 'dropout': 0.3, 'heads': None}
+269.5s 2397 programming language :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+269.5s 2398 subsidiary :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2399 inception :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2400 connects with :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2401 notable work :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2402 discoverer or inventor :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2403 shares border with :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+269.5s 2404 named after :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 2}
+269.5s 2405 based on :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2406 said to be the same as :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 2}
+269.5s 2407 parent taxon :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+269.5s 2408 event distance :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2409 number of articles :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+269.5s 2410 depicts :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+269.5s 2411 author :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2412 family :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 2}
+269.5s 2413 owned by :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2414 located :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2415 parent organization :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.2, 'heads': 2}
+269.5s 2416 published in :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2417 manufacturer :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2418 area :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2419 subject has role :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+269.5s 2420 spouse :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2421 opposite of :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2422 country of citizenship :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2423 is a list of :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.3, 'heads': 4}
+269.5s 2424 developer :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2425 religious order :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2426 applies to jurisdiction :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2427 part of the series :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2428 main subject :  {'model_type': 'GAT', 'hidden_channels': 64, 'dropout': 0.3, 'heads': 4}
+269.5s 2429 work period (start) :  {'model_type': 'GCN', 'hidden_channels': 128, 'dropout': 0.2, 'heads': None}
+269.5s 2430 father :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2431 date of birth :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+269.5s 2432 practiced by :  {'model_type': 'GIN', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2433 product or material produced :  {'model_type': 'GraphSAGE', 'hidden_channels': 128, 'dropout': 0.3, 'heads': None}
+269.5s 2434 taxonomic type :  {'model_type': 'GAT', 'hidden_channels': 128, 'dropout': 0.2, 'heads': 4}
+270.1s 2435 Total nodes: 1147
+270.1s 2436 Train nodes: 917
+270.1s 2437 Validation nodes: 230
+271.0s 2438 <ipython-input-55-96cedff2ecdc>:2: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+271.0s 2439 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
+271.0s 2440 for epoch in tqdm_notebook(range(epochs), total = epochs, desc = "Training Multiview model"):
+282.4s 2441 Epoch 5/1000 Loss: 2.8573 Acc: 0.6643 F1: 0.3310
+294.1s 2442 Epoch 10/1000 Loss: 0.6674 Acc: 0.8282 F1: 0.4147
+305.3s 2443 Epoch 15/1000 Loss: 0.3283 Acc: 0.8701 F1: 0.4962
+316.4s 2444 Epoch 20/1000 Loss: 0.2301 Acc: 0.8989 F1: 0.5059
+327.2s 2445 Epoch 25/1000 Loss: 0.1906 Acc: 0.9224 F1: 0.5368
+337.8s 2446 Epoch 30/1000 Loss: 0.1683 Acc: 0.9207 F1: 0.5440
+349.0s 2447 Epoch 35/1000 Loss: 0.1481 Acc: 0.9294 F1: 0.5287
+360.0s 2448 Epoch 40/1000 Loss: 0.1313 Acc: 0.9337 F1: 0.5521
+371.2s 2449 Epoch 45/1000 Loss: 0.1220 Acc: 0.9398 F1: 0.5606
+382.7s 2450 Epoch 50/1000 Loss: 0.1085 Acc: 0.9442 F1: 0.5801
+393.7s 2451 Epoch 55/1000 Loss: 0.1025 Acc: 0.9494 F1: 0.5938
+405.7s 2452 Epoch 60/1000 Loss: 0.0930 Acc: 0.9730 F1: 0.7109
+417.0s 2453 Epoch 65/1000 Loss: 0.0839 Acc: 0.9756 F1: 0.7106
+428.2s 2454 Epoch 70/1000 Loss: 0.0826 Acc: 0.9756 F1: 0.7124
+440.1s 2455 Epoch 75/1000 Loss: 0.0840 Acc: 0.9747 F1: 0.7331
+450.9s 2456 Epoch 80/1000 Loss: 0.0687 Acc: 0.9765 F1: 0.7352
+461.8s 2457 Epoch 85/1000 Loss: 0.0608 Acc: 0.9765 F1: 0.7197
+473.5s 2458 Epoch 90/1000 Loss: 0.0563 Acc: 0.9773 F1: 0.7486
+484.7s 2459 Epoch 95/1000 Loss: 0.0454 Acc: 0.9773 F1: 0.7310
+495.5s 2460 Epoch 100/1000 Loss: 0.0453 Acc: 0.9765 F1: 0.7209
+507.3s 2461 Epoch 105/1000 Loss: 0.0462 Acc: 0.9782 F1: 0.7318
+518.4s 2462 Epoch 110/1000 Loss: 0.0427 Acc: 0.9791 F1: 0.7397
+529.9s 2463 Epoch 115/1000 Loss: 0.0387 Acc: 0.9791 F1: 0.7530
+541.9s 2464 Epoch 120/1000 Loss: 0.0387 Acc: 0.9791 F1: 0.7462
+553.0s 2465 Epoch 125/1000 Loss: 0.0373 Acc: 0.9782 F1: 0.7401
+564.1s 2466 Epoch 130/1000 Loss: 0.0499 Acc: 0.9791 F1: 0.7396
+576.1s 2467 Epoch 135/1000 Loss: 0.0405 Acc: 0.9799 F1: 0.7632
+587.6s 2468 Epoch 140/1000 Loss: 0.0343 Acc: 0.9808 F1: 0.7554
+598.9s 2469 Epoch 145/1000 Loss: 0.0334 Acc: 0.9799 F1: 0.7550
+610.7s 2470 Epoch 150/1000 Loss: 0.0352 Acc: 0.9791 F1: 0.7337
+622.2s 2471 Epoch 155/1000 Loss: 0.0324 Acc: 0.9808 F1: 0.7475
+633.7s 2472 Epoch 160/1000 Loss: 0.0302 Acc: 0.9817 F1: 0.7764
+645.4s 2473 Epoch 165/1000 Loss: 0.0285 Acc: 0.9887 F1: 0.8222
+656.8s 2474 Epoch 170/1000 Loss: 0.0277 Acc: 0.9878 F1: 0.8172
+668.5s 2475 Epoch 175/1000 Loss: 0.0239 Acc: 0.9878 F1: 0.8272
+679.9s 2476 Epoch 180/1000 Loss: 0.0243 Acc: 0.9895 F1: 0.8368
+691.4s 2477 Epoch 185/1000 Loss: 0.0221 Acc: 0.9956 F1: 0.9083
+703.1s 2478 Epoch 190/1000 Loss: 0.0225 Acc: 0.9956 F1: 0.8984
+714.2s 2479 Epoch 195/1000 Loss: 0.0224 Acc: 0.9956 F1: 0.9083
+725.3s 2480 Epoch 200/1000 Loss: 0.0204 Acc: 0.9956 F1: 0.9083
+737.1s 2481 Epoch 205/1000 Loss: 0.0190 Acc: 0.9956 F1: 0.9083
+748.6s 2482 Epoch 210/1000 Loss: 0.0176 Acc: 0.9956 F1: 0.9083
+760.1s 2483 Epoch 215/1000 Loss: 0.0168 Acc: 0.9956 F1: 0.9083
+772.0s 2484 Epoch 220/1000 Loss: 0.0163 Acc: 0.9956 F1: 0.9083
+783.4s 2485 Epoch 225/1000 Loss: 0.0163 Acc: 0.9956 F1: 0.9083
+795.0s 2486 Epoch 230/1000 Loss: 0.0153 Acc: 0.9956 F1: 0.9083
+807.2s 2487 Epoch 235/1000 Loss: 0.0151 Acc: 0.9956 F1: 0.9083
+819.0s 2488 Epoch 240/1000 Loss: 0.0146 Acc: 0.9956 F1: 0.9083
+831.1s 2489 Epoch 245/1000 Loss: 0.0142 Acc: 0.9956 F1: 0.9083
+842.7s 2490 Epoch 250/1000 Loss: 0.0143 Acc: 0.9956 F1: 0.9083
+854.3s 2491 Epoch 255/1000 Loss: 0.0163 Acc: 0.9956 F1: 0.9083
+866.8s 2492 Epoch 260/1000 Loss: 0.0159 Acc: 0.9956 F1: 0.9083
+878.5s 2493 Epoch 265/1000 Loss: 0.0147 Acc: 0.9956 F1: 0.9083
+890.1s 2494 Epoch 270/1000 Loss: 0.0154 Acc: 0.9956 F1: 0.9083
+902.5s 2495 Epoch 275/1000 Loss: 0.0141 Acc: 0.9956 F1: 0.9083
+914.3s 2496 Epoch 280/1000 Loss: 0.0130 Acc: 0.9956 F1: 0.9083
+926.1s 2497 Epoch 285/1000 Loss: 0.0132 Acc: 0.9956 F1: 0.9083
+938.2s 2498 Epoch 290/1000 Loss: 0.0142 Acc: 0.9956 F1: 0.9048
+949.7s 2499 Epoch 295/1000 Loss: 0.0136 Acc: 0.9948 F1: 0.9073
+961.6s 2500 Epoch 300/1000 Loss: 0.0131 Acc: 0.9939 F1: 0.9063
+972.9s 2501 Epoch 305/1000 Loss: 0.0296 Acc: 0.9956 F1: 0.9083
+984.3s 2502 Epoch 310/1000 Loss: 0.0130 Acc: 0.9956 F1: 0.9083
+996.4s 2503 Epoch 315/1000 Loss: 0.0277 Acc: 0.9956 F1: 0.9083
+1007.9s 2504 Epoch 320/1000 Loss: 0.0123 Acc: 0.9956 F1: 0.9083
+1019.6s 2505 Epoch 325/1000 Loss: 0.0142 Acc: 0.9956 F1: 0.9083
+1031.8s 2506 Epoch 330/1000 Loss: 0.0300 Acc: 0.9956 F1: 0.9083
+1043.3s 2507 Epoch 335/1000 Loss: 0.0118 Acc: 0.9956 F1: 0.9083
+1054.5s 2508 Epoch 340/1000 Loss: 0.0116 Acc: 0.9956 F1: 0.9083
+1066.4s 2509 Epoch 345/1000 Loss: 0.0119 Acc: 0.9956 F1: 0.9083
+1077.8s 2510 Epoch 350/1000 Loss: 0.0111 Acc: 0.9956 F1: 0.9083
+1089.1s 2511 Epoch 355/1000 Loss: 0.0108 Acc: 0.9956 F1: 0.9083
+1101.1s 2512 Epoch 360/1000 Loss: 0.0374 Acc: 0.9956 F1: 0.9083
+1112.3s 2513 Epoch 365/1000 Loss: 0.0144 Acc: 0.9948 F1: 0.9073
+1124.2s 2514 Epoch 370/1000 Loss: 0.0120 Acc: 0.9956 F1: 0.9083
+1135.7s 2515 Epoch 375/1000 Loss: 0.0111 Acc: 0.9956 F1: 0.9083
+1147.1s 2516 Epoch 380/1000 Loss: 0.0103 Acc: 0.9956 F1: 0.9083
+1159.6s 2517 Epoch 385/1000 Loss: 0.0104 Acc: 0.9956 F1: 0.9083
+1171.2s 2518 Epoch 390/1000 Loss: 0.0088 Acc: 0.9956 F1: 0.9083
+1182.8s 2519 Epoch 395/1000 Loss: 0.0088 Acc: 0.9956 F1: 0.9083
+1194.8s 2520 Epoch 400/1000 Loss: 0.0099 Acc: 0.9956 F1: 0.9083
+1206.3s 2521 Epoch 405/1000 Loss: 0.0098 Acc: 0.9956 F1: 0.9083
+1218.3s 2522 Epoch 410/1000 Loss: 0.0093 Acc: 0.9956 F1: 0.9083
+1230.9s 2523 Epoch 415/1000 Loss: 0.0086 Acc: 0.9956 F1: 0.9083
+1242.8s 2524 Epoch 420/1000 Loss: 0.0077 Acc: 0.9956 F1: 0.9083
+1255.1s 2525 Epoch 425/1000 Loss: 0.0081 Acc: 0.9956 F1: 0.9083
+1267.1s 2526 Epoch 430/1000 Loss: 0.0078 Acc: 0.9956 F1: 0.9083
+1278.9s 2527 Epoch 435/1000 Loss: 0.0129 Acc: 0.9956 F1: 0.9083
+1291.4s 2528 Epoch 440/1000 Loss: 0.0074 Acc: 0.9948 F1: 0.9040
+1303.6s 2529 Epoch 445/1000 Loss: 0.0075 Acc: 0.9956 F1: 0.9083
+1315.8s 2530 Epoch 450/1000 Loss: 0.0139 Acc: 0.9956 F1: 0.9083
+1328.5s 2531 Epoch 455/1000 Loss: 0.0076 Acc: 0.9956 F1: 0.9083
+1340.5s 2532 Epoch 460/1000 Loss: 0.0069 Acc: 0.9956 F1: 0.9083
+1353.3s 2533 Epoch 465/1000 Loss: 0.0065 Acc: 0.9956 F1: 0.9083
+1365.4s 2534 Epoch 470/1000 Loss: 0.0063 Acc: 0.9956 F1: 0.9083
+1377.4s 2535 Epoch 475/1000 Loss: 0.0062 Acc: 0.9956 F1: 0.9083
+1389.9s 2536 Epoch 480/1000 Loss: 0.0062 Acc: 0.9956 F1: 0.9083
+1401.7s 2537 Epoch 485/1000 Loss: 0.0059 Acc: 0.9956 F1: 0.9083
+1413.7s 2538 Epoch 490/1000 Loss: 0.0058 Acc: 0.9956 F1: 0.9083
+1426.2s 2539 Epoch 495/1000 Loss: 0.0057 Acc: 0.9956 F1: 0.9083
+1438.2s 2540 Epoch 500/1000 Loss: 0.0056 Acc: 0.9956 F1: 0.9083
+1450.6s 2541 Epoch 505/1000 Loss: 0.0054 Acc: 0.9956 F1: 0.9083
+1463.1s 2542 Epoch 510/1000 Loss: 0.0052 Acc: 0.9956 F1: 0.9083
+1475.4s 2543 Epoch 515/1000 Loss: 0.0050 Acc: 0.9956 F1: 0.9083
+1488.2s 2544 Epoch 520/1000 Loss: 0.0051 Acc: 0.9956 F1: 0.9083
+1500.6s 2545 Epoch 525/1000 Loss: 0.0048 Acc: 0.9956 F1: 0.9083
+1512.7s 2546 Epoch 530/1000 Loss: 0.0046 Acc: 0.9956 F1: 0.9083
+1525.4s 2547 Epoch 535/1000 Loss: 0.0045 Acc: 0.9956 F1: 0.9083
+1537.8s 2548 Epoch 540/1000 Loss: 0.0042 Acc: 0.9956 F1: 0.9083
+1550.5s 2549 Epoch 545/1000 Loss: 0.0041 Acc: 1.0000 F1: 1.0000
+1562.8s 2550 Epoch 550/1000 Loss: 0.0037 Acc: 1.0000 F1: 1.0000
+1575.3s 2551 Epoch 555/1000 Loss: 0.0035 Acc: 1.0000 F1: 1.0000
+1588.1s 2552 Epoch 560/1000 Loss: 0.0032 Acc: 1.0000 F1: 1.0000
+1600.7s 2553 Epoch 565/1000 Loss: 0.0028 Acc: 1.0000 F1: 1.0000
+1613.0s 2554 Epoch 570/1000 Loss: 0.0023 Acc: 1.0000 F1: 1.0000
+1625.7s 2555 Epoch 575/1000 Loss: 0.0023 Acc: 1.0000 F1: 1.0000
+1637.5s 2556 Epoch 580/1000 Loss: 0.0017 Acc: 1.0000 F1: 1.0000
+1650.5s 2557 Epoch 585/1000 Loss: 0.0022 Acc: 1.0000 F1: 1.0000
+1663.1s 2558 Epoch 590/1000 Loss: 0.0016 Acc: 0.9991 F1: 0.9984
+1675.9s 2559 Epoch 595/1000 Loss: 0.0011 Acc: 1.0000 F1: 1.0000
+1689.0s 2560 Epoch 600/1000 Loss: 0.0008 Acc: 0.9983 F1: 0.9842
+1701.9s 2561 Epoch 605/1000 Loss: 0.0014 Acc: 1.0000 F1: 1.0000
+1715.0s 2562 Epoch 610/1000 Loss: 0.0005 Acc: 1.0000 F1: 1.0000
+1727.7s 2563 Epoch 615/1000 Loss: 0.0006 Acc: 1.0000 F1: 1.0000
+1740.5s 2564 Epoch 620/1000 Loss: 0.0005 Acc: 1.0000 F1: 1.0000
+1753.8s 2565 Epoch 625/1000 Loss: 0.0007 Acc: 1.0000 F1: 1.0000
+1766.9s 2566 Epoch 630/1000 Loss: 0.0005 Acc: 1.0000 F1: 1.0000
+1780.3s 2567 Epoch 635/1000 Loss: 0.0003 Acc: 1.0000 F1: 1.0000
+1793.1s 2568 Epoch 640/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1805.7s 2569 Epoch 645/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1819.0s 2570 Epoch 650/1000 Loss: 0.0005 Acc: 1.0000 F1: 1.0000
+1831.8s 2571 Epoch 655/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1845.2s 2572 Epoch 660/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1858.3s 2573 Epoch 665/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1871.5s 2574 Epoch 670/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1885.0s 2575 Epoch 675/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1897.7s 2576 Epoch 680/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1911.2s 2577 Epoch 685/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+1924.2s 2578 Epoch 690/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1937.2s 2579 Epoch 695/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1950.7s 2580 Epoch 700/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1963.8s 2581 Epoch 705/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1977.4s 2582 Epoch 710/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+1990.1s 2583 Epoch 715/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2003.2s 2584 Epoch 720/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2016.8s 2585 Epoch 725/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2030.1s 2586 Epoch 730/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2043.6s 2587 Epoch 735/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2057.0s 2588 Epoch 740/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2070.4s 2589 Epoch 745/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2083.9s 2590 Epoch 750/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2097.2s 2591 Epoch 755/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2110.9s 2592 Epoch 760/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2124.0s 2593 Epoch 765/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2137.7s 2594 Epoch 770/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2150.4s 2595 Epoch 775/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2163.4s 2596 Epoch 780/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2176.9s 2597 Epoch 785/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2189.8s 2598 Epoch 790/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+2203.2s 2599 Epoch 795/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2216.0s 2600 Epoch 800/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2229.4s 2601 Epoch 805/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2242.9s 2602 Epoch 810/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2255.7s 2603 Epoch 815/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2269.0s 2604 Epoch 820/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2282.2s 2605 Epoch 825/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2295.1s 2606 Epoch 830/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2308.5s 2607 Epoch 835/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2321.4s 2608 Epoch 840/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2335.2s 2609 Epoch 845/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2348.2s 2610 Epoch 850/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2361.1s 2611 Epoch 855/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2374.6s 2612 Epoch 860/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2387.9s 2613 Epoch 865/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2401.4s 2614 Epoch 870/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2414.5s 2615 Epoch 875/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2427.4s 2616 Epoch 880/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2440.9s 2617 Epoch 885/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2454.2s 2618 Epoch 890/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2467.8s 2619 Epoch 895/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2480.7s 2620 Epoch 900/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2493.6s 2621 Epoch 905/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2507.5s 2622 Epoch 910/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2520.5s 2623 Epoch 915/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2534.1s 2624 Epoch 920/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2547.0s 2625 Epoch 925/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2560.5s 2626 Epoch 930/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2573.8s 2627 Epoch 935/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2586.9s 2628 Epoch 940/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2600.8s 2629 Epoch 945/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2613.8s 2630 Epoch 950/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2627.6s 2631 Epoch 955/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2640.5s 2632 Epoch 960/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2653.9s 2633 Epoch 965/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2667.3s 2634 Epoch 970/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2680.3s 2635 Epoch 975/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2693.8s 2636 Epoch 980/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2706.8s 2637 Epoch 985/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2719.6s 2638 Epoch 990/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2733.2s 2639 Epoch 995/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2746.4s 2640 Epoch 1000/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+2746.7s 2641 Training complete. Model saved.
+2747.3s 2642 <ipython-input-59-a0dd9f0a6e5e>:2: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+2747.3s 2643 Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
+2747.3s 2644 for epoch in tqdm_notebook(range(epochs), total = epochs, desc = "Training Multiview model"):
+2758.1s 2645 Epoch 5/1000 Loss: 3.9575 Acc: 0.6452 F1: 0.3220
+2767.8s 2646 Epoch 10/1000 Loss: 1.7152 Acc: 0.8570 F1: 0.4193
+2777.9s 2647 Epoch 15/1000 Loss: 0.7231 Acc: 0.8771 F1: 0.4655
+2787.8s 2648 Epoch 20/1000 Loss: 0.3300 Acc: 0.9154 F1: 0.5277
+2798.3s 2649 Epoch 25/1000 Loss: 0.1661 Acc: 0.9564 F1: 0.6165
+2808.2s 2650 Epoch 30/1000 Loss: 0.1184 Acc: 0.9695 F1: 0.6737
+2818.3s 2651 Epoch 35/1000 Loss: 0.0770 Acc: 0.9773 F1: 0.6889
+2829.3s 2652 Epoch 40/1000 Loss: 0.0600 Acc: 0.9799 F1: 0.7029
+2839.7s 2653 Epoch 45/1000 Loss: 0.0466 Acc: 0.9817 F1: 0.7563
+2850.1s 2654 Epoch 50/1000 Loss: 0.0354 Acc: 0.9895 F1: 0.8699
+2861.1s 2655 Epoch 55/1000 Loss: 0.0275 Acc: 0.9956 F1: 0.9477
+2871.5s 2656 Epoch 60/1000 Loss: 0.0223 Acc: 0.9974 F1: 0.9721
+2882.0s 2657 Epoch 65/1000 Loss: 0.0155 Acc: 0.9991 F1: 0.9903
+2893.1s 2658 Epoch 70/1000 Loss: 0.0117 Acc: 0.9991 F1: 0.9903
+2903.7s 2659 Epoch 75/1000 Loss: 0.0077 Acc: 0.9991 F1: 0.9903
+2914.3s 2660 Epoch 80/1000 Loss: 0.0051 Acc: 1.0000 F1: 1.0000
+2925.5s 2661 Epoch 85/1000 Loss: 0.0036 Acc: 1.0000 F1: 1.0000
+2936.0s 2662 Epoch 90/1000 Loss: 0.0025 Acc: 1.0000 F1: 1.0000
+2946.7s 2663 Epoch 95/1000 Loss: 0.0024 Acc: 1.0000 F1: 1.0000
+2957.9s 2664 Epoch 100/1000 Loss: 0.0016 Acc: 1.0000 F1: 1.0000
+2968.5s 2665 Epoch 105/1000 Loss: 0.0012 Acc: 1.0000 F1: 1.0000
+2979.4s 2666 Epoch 110/1000 Loss: 0.0011 Acc: 1.0000 F1: 1.0000
+2990.5s 2667 Epoch 115/1000 Loss: 0.0009 Acc: 1.0000 F1: 1.0000
+3001.3s 2668 Epoch 120/1000 Loss: 0.0007 Acc: 1.0000 F1: 1.0000
+3012.2s 2669 Epoch 125/1000 Loss: 0.0006 Acc: 1.0000 F1: 1.0000
+3023.7s 2670 Epoch 130/1000 Loss: 0.0010 Acc: 1.0000 F1: 1.0000
+3034.5s 2671 Epoch 135/1000 Loss: 0.0005 Acc: 1.0000 F1: 1.0000
+3045.3s 2672 Epoch 140/1000 Loss: 0.0004 Acc: 1.0000 F1: 1.0000
+3056.8s 2673 Epoch 145/1000 Loss: 0.0003 Acc: 1.0000 F1: 1.0000
+3067.6s 2674 Epoch 150/1000 Loss: 0.0004 Acc: 1.0000 F1: 1.0000
+3078.5s 2675 Epoch 155/1000 Loss: 0.0003 Acc: 1.0000 F1: 1.0000
+3089.9s 2676 Epoch 160/1000 Loss: 0.0003 Acc: 1.0000 F1: 1.0000
+3100.7s 2677 Epoch 165/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3111.5s 2678 Epoch 170/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3123.1s 2679 Epoch 175/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3134.0s 2680 Epoch 180/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3144.8s 2681 Epoch 185/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3156.1s 2682 Epoch 190/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3166.8s 2683 Epoch 195/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3177.5s 2684 Epoch 200/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3188.8s 2685 Epoch 205/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3199.7s 2686 Epoch 210/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3210.5s 2687 Epoch 215/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3221.9s 2688 Epoch 220/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3232.7s 2689 Epoch 225/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3243.5s 2690 Epoch 230/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3255.0s 2691 Epoch 235/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3265.9s 2692 Epoch 240/1000 Loss: 0.0002 Acc: 1.0000 F1: 1.0000
+3276.7s 2693 Epoch 245/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3288.2s 2694 Epoch 250/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3298.9s 2695 Epoch 255/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3309.6s 2696 Epoch 260/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3321.0s 2697 Epoch 265/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3331.8s 2698 Epoch 270/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3342.6s 2699 Epoch 275/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3354.1s 2700 Epoch 280/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3364.9s 2701 Epoch 285/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3375.8s 2702 Epoch 290/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3387.3s 2703 Epoch 295/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3397.9s 2704 Epoch 300/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3408.6s 2705 Epoch 305/1000 Loss: 0.0007 Acc: 0.9991 F1: 0.9990
+3419.9s 2706 Epoch 310/1000 Loss: 0.0004 Acc: 1.0000 F1: 1.0000
+3430.6s 2707 Epoch 315/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3441.3s 2708 Epoch 320/1000 Loss: 0.0005 Acc: 1.0000 F1: 1.0000
+3452.5s 2709 Epoch 325/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3463.2s 2710 Epoch 330/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3474.1s 2711 Epoch 335/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3485.5s 2712 Epoch 340/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3496.2s 2713 Epoch 345/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3507.0s 2714 Epoch 350/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3518.2s 2715 Epoch 355/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3529.1s 2716 Epoch 360/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3540.0s 2717 Epoch 365/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3551.2s 2718 Epoch 370/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3561.9s 2719 Epoch 375/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3572.7s 2720 Epoch 380/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3583.9s 2721 Epoch 385/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3594.6s 2722 Epoch 390/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3606.3s 2723 Epoch 395/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3617.1s 2724 Epoch 400/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3627.7s 2725 Epoch 405/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3639.1s 2726 Epoch 410/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3649.9s 2727 Epoch 415/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3660.6s 2728 Epoch 420/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3671.8s 2729 Epoch 425/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3682.6s 2730 Epoch 430/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3693.3s 2731 Epoch 435/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3704.5s 2732 Epoch 440/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3715.2s 2733 Epoch 445/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3725.8s 2734 Epoch 450/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3737.0s 2735 Epoch 455/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3747.7s 2736 Epoch 460/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3758.4s 2737 Epoch 465/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3769.6s 2738 Epoch 470/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3780.5s 2739 Epoch 475/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3791.1s 2740 Epoch 480/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3802.4s 2741 Epoch 485/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+3813.2s 2742 Epoch 490/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3823.9s 2743 Epoch 495/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3835.4s 2744 Epoch 500/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3846.2s 2745 Epoch 505/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3857.1s 2746 Epoch 510/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3868.5s 2747 Epoch 515/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3879.3s 2748 Epoch 520/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3890.1s 2749 Epoch 525/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3901.6s 2750 Epoch 530/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3912.5s 2751 Epoch 535/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3923.2s 2752 Epoch 540/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3934.6s 2753 Epoch 545/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3945.4s 2754 Epoch 550/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3956.0s 2755 Epoch 555/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3967.4s 2756 Epoch 560/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3978.4s 2757 Epoch 565/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+3989.4s 2758 Epoch 570/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4000.8s 2759 Epoch 575/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4011.6s 2760 Epoch 580/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4022.4s 2761 Epoch 585/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4033.7s 2762 Epoch 590/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4044.4s 2763 Epoch 595/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4055.3s 2764 Epoch 600/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4066.6s 2765 Epoch 605/1000 Loss: 0.0001 Acc: 1.0000 F1: 1.0000
+4077.6s 2766 Epoch 610/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4088.5s 2767 Epoch 615/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4100.0s 2768 Epoch 620/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4110.9s 2769 Epoch 625/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4121.6s 2770 Epoch 630/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4133.2s 2771 Epoch 635/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4144.1s 2772 Epoch 640/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4155.2s 2773 Epoch 645/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4166.7s 2774 Epoch 650/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4177.7s 2775 Epoch 655/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4188.7s 2776 Epoch 660/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4200.4s 2777 Epoch 665/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4211.5s 2778 Epoch 670/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4222.6s 2779 Epoch 675/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4234.2s 2780 Epoch 680/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4245.2s 2781 Epoch 685/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4256.2s 2782 Epoch 690/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4268.0s 2783 Epoch 695/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4279.1s 2784 Epoch 700/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4290.1s 2785 Epoch 705/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4301.7s 2786 Epoch 710/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4312.7s 2787 Epoch 715/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4323.9s 2788 Epoch 720/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4335.5s 2789 Epoch 725/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4346.6s 2790 Epoch 730/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4358.4s 2791 Epoch 735/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4369.4s 2792 Epoch 740/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4380.6s 2793 Epoch 745/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4392.4s 2794 Epoch 750/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4403.5s 2795 Epoch 755/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4414.6s 2796 Epoch 760/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4426.3s 2797 Epoch 765/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4437.4s 2798 Epoch 770/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4448.6s 2799 Epoch 775/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4460.3s 2800 Epoch 780/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4471.4s 2801 Epoch 785/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4482.4s 2802 Epoch 790/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4493.9s 2803 Epoch 795/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4505.0s 2804 Epoch 800/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4515.8s 2805 Epoch 805/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4527.4s 2806 Epoch 810/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4538.3s 2807 Epoch 815/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4549.2s 2808 Epoch 820/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4560.7s 2809 Epoch 825/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4571.8s 2810 Epoch 830/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4582.6s 2811 Epoch 835/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4594.2s 2812 Epoch 840/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4605.3s 2813 Epoch 845/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4616.2s 2814 Epoch 850/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4627.8s 2815 Epoch 855/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4638.8s 2816 Epoch 860/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4649.8s 2817 Epoch 865/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4661.9s 2818 Epoch 870/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4672.8s 2819 Epoch 875/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4683.9s 2820 Epoch 880/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4695.1s 2821 Epoch 885/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4706.0s 2822 Epoch 890/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4717.4s 2823 Epoch 895/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4728.5s 2824 Epoch 900/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4739.5s 2825 Epoch 905/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4751.1s 2826 Epoch 910/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4762.1s 2827 Epoch 915/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4773.2s 2828 Epoch 920/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4784.8s 2829 Epoch 925/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4795.8s 2830 Epoch 930/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4806.8s 2831 Epoch 935/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4818.2s 2832 Epoch 940/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4829.2s 2833 Epoch 945/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4840.2s 2834 Epoch 950/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4852.2s 2835 Epoch 955/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4863.2s 2836 Epoch 960/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4874.3s 2837 Epoch 965/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4886.1s 2838 Epoch 970/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4897.3s 2839 Epoch 975/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4908.5s 2840 Epoch 980/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4920.3s 2841 Epoch 985/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4931.4s 2842 Epoch 990/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4942.6s 2843 Epoch 995/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4954.4s 2844 Epoch 1000/1000 Loss: 0.0000 Acc: 1.0000 F1: 1.0000
+4954.7s 2845 Training complete. Model saved.
+4960.3s 2846 /usr/local/lib/python3.10/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+4960.3s 2847 warn(
+4960.3s 2848 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+4961.0s 2849 [NbConvertApp] Writing 483027 bytes to __notebook__.ipynb
+4962.7s 2850 /usr/local/lib/python3.10/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+4962.7s 2851 warn(
+4962.7s 2852 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+4964.0s 2853 [NbConvertApp] Writing 768709 bytes to __results__.html

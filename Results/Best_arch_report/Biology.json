@@ -1,0 +1,422 @@
+{
+    "use": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "has part": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "employer": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "instance of": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "studied by": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "followed by": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "country of origin": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "field of work": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "country": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "contains administrative territorial entity": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "subclass of": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "part of": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "point in time": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "has cause": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "has effect": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "number of participants": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "educated at": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "different from": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "follows": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "headquarters location": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "facet of": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "has parts of the class": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "number of episodes": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "conferred by": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "publication date": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "capital of": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "location of formation": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "length": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "publisher": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "student": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "twinned administrative body": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "member of": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "programming language": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "subsidiary": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "inception": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "connects with": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "notable work": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "discoverer or inventor": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "shares border with": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "named after": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "based on": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "said to be the same as": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "parent taxon": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "event distance": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "number of articles": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "depicts": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "author": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "family": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "owned by": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "located": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "parent organization": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "published in": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "manufacturer": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "area": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "subject has role": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "spouse": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "opposite of": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "country of citizenship": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "is a list of": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "developer": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "religious order": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "applies to jurisdiction": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "part of the series": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "main subject": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "work period (start)": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "father": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "date of birth": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "practiced by": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "product or material produced": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "taxonomic type": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    }
+}

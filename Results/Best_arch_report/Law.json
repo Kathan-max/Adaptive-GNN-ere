@@ -1,0 +1,548 @@
+{
+    "spouse": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "followed by": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "use": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "based on": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "has part": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "part of": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "point in time": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "follows": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "subclass of": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "publication date": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "instance of": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "country": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "field of work": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "capital": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "opposite of": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "different from": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "shares border with": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "present in work": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "characters": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "discoverer or inventor": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "father": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "child": {
+        "model_type": "GCN",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "facet of": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "student": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "publisher": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "number of articles": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "length": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "point in": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "published in": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "said to be the same as": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "has effect": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "has cause": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "number of participants": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "author": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "main subject": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "named after": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "influenced by": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "instance of <triplet>parenleftBig": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "located in the administrative territorial entity": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "educated at": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "studies": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "practiced by": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "area": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "subsidiary": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "parent organization": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "religious order": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "located in the administrative": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "has parts of the class": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "diplomatic relation": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "religion": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "work period (start)": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "used by": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "developer": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "continent": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "inception": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "location of formation": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "owned by": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "industry": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "twinned administrative body": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "product or material produced": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "employer": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "number of episodes": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "elevation above sea level": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "founded by": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "dissolved, abolished or demolished date": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "member of": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "place of birth": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "notable work": {
+        "model_type": "GCN",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "creator": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": 2
+    },
+    "is a list of": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "headquarters location": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "country of citizenship": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "applies to jurisdiction": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "place of publication": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "sibling": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "event distance": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "work location": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "replaces": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "basin country": {
+        "model_type": "GIN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "population": {
+        "model_type": "GraphSAGE",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "programming language": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "member of sports team": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "end time": {
+        "model_type": "GAT",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "country of origin": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "derivative work": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "number of cores": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 2
+    },
+    "designed by": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": 4
+    },
+    "terminus": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    },
+    "family": {
+        "model_type": "GAT",
+        "hidden_channels": 128,
+        "dropout": 0.3,
+        "heads": 4
+    },
+    "location": {
+        "model_type": "GIN",
+        "hidden_channels": 64,
+        "dropout": 0.3,
+        "heads": null
+    },
+    "ranking": {
+        "model_type": "GCN",
+        "hidden_channels": 128,
+        "dropout": 0.2,
+        "heads": null
+    }
+}
