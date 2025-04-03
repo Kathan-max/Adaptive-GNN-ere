@@ -70,5 +70,5 @@ if __name__ == "__main__":
     # total_chunks = viewer.totalChunks()
     # print(json.dumps(inter_chunks, indent=4))
     
-    trimmedData = viewer.dataTrimer(5)
-    viewer.saveData(trimmedData, "E:/Windsor/Sem-2/Topics In Applied AI-GNN/Project/Code/data/Datasets/LawTrimmed.json")
+    trimmedData = viewer.dataTrimer(25)
+    viewer.saveData(trimmedData, "E:/Windsor/Sem-2/Topics In Applied AI-GNN/Project/Code/data/Datasets/LawTrimmed_25.json")
